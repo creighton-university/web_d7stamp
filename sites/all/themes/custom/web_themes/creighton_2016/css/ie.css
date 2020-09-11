@@ -1,0 +1,37 @@
+.header-alert {
+	padding-top: 30px;
+}
+.hero {
+	height: 600px;
+}
+.pane-bean-featured-audience {
+	background-color: #002e6d;  
+}
+.pane-bean-featured-audience .pane-content {
+	background-color: #002e6d;  
+}
+#footer-logo-badge {
+	width: 150px;
+	height: 150px;
+}
+.best-college img {
+	height: 190px;
+}
+#block-cu-quick-search-blocks-footer-search-block {
+	position: absolute;
+	top: 110px;
+	right: 30%;
+	width: 300px;
+}
+.copyright {
+	margin-top: 20px;
+}
+/************************************************************************************************************************/
+/***************************************** Changes for 2016 front page redesign *****************************************/
+/************************************************************************************************************************/
+
+/***************************************** For IE *****************************************/
+
+#mini-panel-floating_schools_colleges .inside {
+	background: url('/sites/all/themes/custom/web_themes/creighton_2016/images/png/triangles-03.png') !important;
+}

@@ -1,0 +1,66 @@
+/**
+ * $PAGER
+ */
+.pager {
+  @include clearfix(true);
+  margin: 0 0 24px 0;
+  padding: 8px 0;
+  width: 100%;
+  font-size: em(14);
+  text-align: center;
+  line-height: 1;
+  border-top: 1px solid $gray1;
+  border-bottom: 1px solid $gray1;
+  li {
+    display: inline-block;
+    a {
+      @extend %color-dkblue;
+      padding: 2px 4px;
+      display: inline-block;
+      text-decoration: none;
+    }
+    &.pager-current {
+      color: $primaryblue;
+      font-size: 1.25em;
+    }
+    &.pager-last, &.pager-next, &.pager-first, &.pager-previous {
+      position: absolute;
+    }
+    &.pager-last {
+      right: 0;
+      top: 0;
+    }
+    &.pager-next {
+      right: 60px;
+      top: 0;
+    }
+    &.pager-previous {
+      left: 60px;
+    }
+    &.pager-first {
+      left: 0;
+    }
+  }
+}
+
+.pager__item {
+  padding: 0;
+}
+
+.pager__item a,
+.pager__item--current,
+.pager__item--ellipsis {
+  padding: 3px 6px;
+}
+.pager__item a:hover {
+  text-decoration: underline;
+}
+.pager__item--current {
+  @extend %color-white;
+  @extend %background-primaryblue;
+  font-weight: normal;
+}
+.pager__item--ellipsis {
+  border: none;
+}
+

@@ -1,0 +1,98 @@
+name = Creighton University 2017
+description = 2017 Subsite Pages Refresh and New Colors
+base theme = creighton_2016
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/subsites.css
+stylesheets[all][] = ../creighton_2016/css/frontpage2016.css
+
+
+; ========================================
+; Scripts
+; ========================================
+
+
+; ========================================
+; Regions
+; ========================================
+regions[alert_header] = Alert Header
+regions[header] = Main Header
+regions[secondary_header] = Secondary Header
+regions[header_image] = Header Image
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[academics_program_title] = Academics Program Title
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[footer] = Footer
+
+; Regions for Main Navigation
+
+regions[main_nav] = Main Mega Navigation
+regions[dropdown_menu] = Drop down toggle for menu
+
+regions[header_searchbox] = Header Search
+regions[header_tranlinks] = Transaction Links
+regions[megamenu_dropdown] = Menu Dropdown
+regions[megamenu_submenu] = Mega Menu Submenu
+
+regions[homepage_slider] = Home Page Slider
+
+; ========================================
+; Plugins
+; ========================================
+plugins[panels][layouts] = panels
+
+; ========================================
+; Settings
+; ========================================
+settings[toggle_logo] = 1
+settings[toggle_name] = 0
+settings[toggle_slogan] = 0
+settings[toggle_node_user_picture] = 1
+settings[toggle_comment_user_picture] = 1
+settings[toggle_comment_user_verification] = 1
+settings[toggle_favicon] = 1
+settings[toggle_main_menu] = 1
+settings[toggle_secondary_menu] = 1
+settings[omega_toggle_front_page_content] = 1
+settings[default_logo] = 0
+settings[logo_path] = "sites/all/themes/custom/web_themes/creighton_2016/images/logos/CU_Logo.png"
+settings[logo_upload] = ""
+settings[default_favicon] = 0
+settings[favicon_path] = ""
+settings[favicon_upload] = ""
+settings[omega_enable_warning] = 1
+settings[omega_toggle_extension_layouts] = 1
+settings[omega_layout] = cu-default-2017
+settings[omega_toggle_extension_development] = 0
+settings[omega_rebuild_theme_registry] = 0
+settings[omega_rebuild_aggregates] = 0
+settings[omega_browser_width_indicator] = 0
+settings[omega_livereload] = 1
+settings[omega_livereload_script] = http://:/livereload.js
+settings[omega_livereload_host] = ""
+settings[omega_livereload_port] = ""
+settings[omega_demo_regions] = 0
+settings[omega_toggle_extension_compatibility] = 1
+settings[omega_conditional_classes_html] = 1
+settings[omega_apple_touch] = 0
+settings[omega_cleartype] = 1
+settings[omega_handheld_friendly] = 1
+settings[omega_mobile_optimized] = 1
+settings[omega_viewport] = 1
+settings[omega_viewport_user_scaleable] = 1
+settings[omega_viewport_initial_scale] = 1.0
+settings[omega_chrome_edge] = 1
+settings[omega_chrome_popup] = 0
+settings[omega_chrome_notice] = 0
+settings[omega_toggle_extension_assets] = 1
+settings[omega_libraries][selectivizr][status] = 0
+settings[omega_libraries][respond][status] = 1
+settings[omega_libraries][pie][status] = 0

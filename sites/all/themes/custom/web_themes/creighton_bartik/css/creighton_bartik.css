@@ -1,0 +1,109 @@
+/**
+ * $FONT-FACE
+ */
+@font-face {
+  font-family: 'texgyrescholabold';
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-bold-webfont.eot");
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-bold-webfont.woff") format("woff"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-bold-webfont.ttf") format("truetype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-bold-webfont.svg#texgyrescholabold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'texgyrescholaregular';
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-regular-webfont.eot");
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-regular-webfont.woff") format("woff"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-regular-webfont.ttf") format("truetype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/texgyreschola-regular-webfont.svg#texgyrescholabold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/BebasNeue-webfont.eot");
+  src: url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/BebasNeue-webfont.woff") format("woff"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/BebasNeue-webfont.ttf") format("truetype"), url("/how2doit/sites/all/themes/custom/web_themes/creighton_bartik/fonts/BebasNeue-webfont.svg#bebas_neueregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1#page-title.title {
+	font-family: 'bebas_neueregular', sans;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAeCAYAAAALvL+DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAABhJREFUGJVjuHDp0gIGJMDEgAZGBYavAABWjANPbiCVBAAAAABJRU5ErkJggg==');
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  padding-bottom: 1.25em;
+  font-size: 2.25em;
+  line-height: 1.25em;
+  margin-top: 0;
+  margin-bottom: .75em;
+  padding-bottom: 1.25em;
+  
+}
+#header a#logo img {
+width: 120px;
+}
+#site-slogan{
+	margin-top:0;
+}
+
+#name-and-slogan {
+    float: left;
+    padding-top: 12px;
+    margin: 0 0 30px 15px;
+}
+#site-name {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 2.5em;
+	}
+
+h1,h2,h3,h4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	color: #002e6d;
+}
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.3em;
+}
+h3 {
+    font-size: 1.1em;
+}
+h4,h5,h6 {
+    font-size: 1.05em;
+}
+
+
+/* TABLES */
+table tr th,table tr th a,table tr th a:hover{
+    font-family: 'bebas_neueregular', sans;
+	color: #FFF;
+    font-weight: normal;
+    font-size: 20px;
+}
+table a{
+	font-size: 1em;
+	}
+/* HACKS */
+.field-name-field-aka {
+	margin: 12px 0;
+	} 
+
+.field-name-field-one-line-description {
+	font-weight: bold;
+	font-size: 18px;
+}
+.field-label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.2em;
+}
+ h3.field-label {
+	font-weight: bold !important;
+}
+.field-label-inline {
+	margin: 0 0 1.2em;
+	}
+.field-name-field-one-line-description {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}

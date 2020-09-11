@@ -1,0 +1,15 @@
+name = Hub Content Setup - Hub Site
+core = 7.x
+package = Academics
+version = 7.x-2.0
+project = hub_content_setup_hub_site
+dependencies[] = views
+dependencies[] = views_data_export
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = academic_program_title_hub
+features[views_view][] = academics_matrix_hub
+features[views_view][] = academics_program_hub
+features[views_view][] = academics_secondary_content_hub
+features[views_view][] = responsive_image_tool
+features_exclude[dependencies][ctools] = ctools

@@ -1,0 +1,33 @@
+/**
+ * $FORM-ITEM
+ */
+.form-item {
+  color: $basegray;
+  label {
+    margin-bottom: 0.4em;
+  }
+  .form-select,
+  .form-text,
+  .form-textarea {
+    @extend %display-block;
+    @extend %background-white;
+    @extend %color-dkgray;
+    @include box-shadow(inset, 0 1px 1px rgba($black, 0.5));
+    @include transition(border linear 0.2s, box-shadow linear 0.2s);
+    border: 1px solid $coolgray;
+    width: 100%;
+  }
+  .description {
+    margin-top: 0.2em;
+    font-style: italic;
+  }
+}
+.container-inline {
+  .form-select,
+  .form-text,
+  .form-textarea {
+    width: auto;
+  }
+}
+
+/* This is a comment */

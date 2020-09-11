@@ -1,0 +1,65 @@
+This repository contains the files specific to a Creighton site named "cu_site." These include a make file, three install profile files, and the site custom modules and themes. The directory structure for a site repository is shown below. These files are intended for running a single site from an install profile (i.e. not for sharing libraries, modules and themes in the sites/all directory).
+
+  modules
+    site
+      cu_site_module_1
+      cu_site_module_2
+      ...
+      README
+  themes
+    site
+      cu_site_theme
+      README
+  cu_site.make
+  cu_site.info
+  cu_site.install
+  cu_site.profile
+  README
+
+After running the site make file, additional directories are added to the profile directory for libraries, contributed modules and themes, and shared Creighton custom modules and themes. The final profile directory structure is shown below.
+
+  libraries
+  modules
+    contrib
+      ctools
+      ...
+    custom
+      cu_shared_module_1
+      cu_shared_module_2
+      ...
+    site
+      cu_site_module_1
+      cu_site_module_2
+      ...
+      README
+  themes
+    contrib
+      omega
+      zen
+    custom
+      cu_shared_theme
+    site
+      cu_site_theme
+      README
+  cu_site.make
+  cu_site.info
+  cu_site.install
+  cu_site.profile
+  README
+
+The site profile directory may reside in the profiles directory beneath the drupal root as shown below.
+
+  drupal root
+    profiles
+      cu_site
+        ...
+
+Alternatively, the site profile directory may reside on the same level as the drupal folder and be linked to the profiles directory beneath the drupal root as shown below.
+
+  drupal
+    profiles
+      cu_site [linked to directory below]
+        ...
+  profiles
+    cu_site
+      ...

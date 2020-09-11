@@ -1,0 +1,214 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ *
+ * Rebuild custom sitemap links from configured views
+ */
+function xmlsitemap_views_cron() {
+  xmlsitemap_views_xmlsitemap_index_links();
+}
+
+/**
+ * Implements hook_xmlsitemap_index_links().
+ *
+ * Delete all xmlsitemap links of type 'view_link'
+ * Save links extracted from enabled views
+ */
+function xmlsitemap_views_xmlsitemap_index_links() {
+  // delete all view_link entries in xmlsitemap table
+  xmlsitemap_link_delete_multiple(array('type' => 'view_link'));
+
+  // process all views, identify views set to be included in sitemap, execute view and parse output to extract links, save links to sitemap table
+  $views = views_get_enabled_views();
+  ksort($views);
+  global $base_url;
+  $xmlsitemap_id = 0;
+  foreach($views as $vname=>$view) {
+    foreach($view->display as $did=>$arr) {
+      if(isset($arr->display_options['xmlsitemap_status']) && $arr->display_options['xmlsitemap_status']) {
+        $view_links = _xmlsitemap_views_execute_view_display_extract_links($view, $did, TRUE);
+        foreach($view_links as $link) {
+          xmlsitemap_link_save(array(
+            'id' => $xmlsitemap_id++,
+            'access' => 1,
+            'status' => 1,
+            'type' => 'view_link',
+            'subtype' => "{$vname}-{$did}",
+            'priority' => XMLSITEMAP_PRIORITY_DEFAULT,
+            'loc' => $link,
+            'language' => LANGUAGE_NONE,
+          ));
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Execute view display and extract links
+ *
+ * @param $view
+ *   A view object.
+ * @param $display_id
+ *   A display identifier.
+ */
+function _xmlsitemap_views_execute_view_display_extract_links(&$view, $display_id, $extract_relative_urls = TRUE) {
+  global $base_url;
+  $xmlsitemap_urls = array();
+
+  // set view display handler to display_plugin of specified display_id
+  $view->display[$display_id]->handler = views_get_plugin('display', $view->display[$display_id]->display_plugin);
+  // set items_per_page very high to avoid pager
+  $view->set_items_per_page(9898);
+  if(isset($view->display[$display_id]->display_options['xmlsitemap_filter_terms']) && strlen($view->display[$display_id]->display_options['xmlsitemap_filter_terms'])) {
+    $xmlsitemap_filter_terms = array($view->display[$display_id]->display_options['xmlsitemap_filter_terms']);
+  } else {
+    $xmlsitemap_filter_terms = array();
+  }
+  preg_match_all('/<a href="(.*?)"/', $view->execute_display($display_id, $xmlsitemap_filter_terms), $matches);
+  foreach($matches[1] as $m) {
+    if(strpos($m, '@') !== FALSE) {
+      // link is an email address, exclude it
+      continue;
+    } else if(! $extract_relative_urls && strpos($m, $base_url) !== 0) {
+      // create absolute URL from relative URL
+      $m = $base_url . $m;
+    } else if($extract_relative_urls && strpos($m, $base_url) === 0) {
+      // create relative URL from absolute URL
+      $m = str_replace($base_url, '', $m);
+    } else if(strpos($m, 'http') === 0) {
+      // link to external site, exclude it
+      continue;
+    }
+    if(strpos($m, '/') === 0) {
+      // URL should never have leading slash
+      $m = substr($m, 1);
+    }
+    if(    array_search($m, $xmlsitemap_urls) === FALSE
+        && strpos($m, 'admin/') !== 0 && strpos($m, $base_url . '/admin/') !== 0
+        && strpos($m, 'front-page?') !== 0 && strpos($m, $base_url . '/front-page?') !== 0
+        && strpos($m, 'order=') === FALSE && strpos($m, 'sort=') === FALSE
+    ) {
+      // add link if it doesn't already exist in the array
+      // admin and front-page paths are most likely exposed filter links, so exclude those
+      $xmlsitemap_urls[] = $m;
+    }
+  }
+
+  sort($xmlsitemap_urls);
+  return $xmlsitemap_urls;
+}
+
+/**
+ * Retrieve array of xmlsitemap links of type 'view_link' and specified subtype from database
+ *
+ * @param $view_id
+ *   Machine name of view to retrieve links for from database.
+ * @param $display_id
+ *   Identifier of display to retrieve links for from database.
+ */
+function _xmlsitemap_views_query_indexed_locs_view_display($view_id, $display_id) {
+  return xmlsitemap_link_load_multiple(array('type' => 'view_link', 'subtype' => "{$view_id}-{$display_id}"));
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function xmlsitemap_views_views_pre_view(&$view, &$display_id, &$args) {
+  // if items_per_page is set to 9898 and xmlsitemap_status is TRUE, assume hook is called from xmlsitemap_views
+  // unset header and footer to prevent extraneous links being extracted from the view
+  if($view->items_per_page == 9898 && isset($view->display_handler->options['xmlsitemap_status']) && $view->display_handler->options['xmlsitemap_status']) {
+    $view->display_handler->default_display->options['header'] = array();
+    $view->display_handler->default_display->options['footer'] = array();
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add Views section to status table with details about views and indexed/available links
+ */
+function xmlsitemap_views_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'xmlsitemap_settings_form') {
+    $views_fieldset = array (
+      '#type' => 'fieldset',
+      '#title' => 'Views',
+      '#collapsible' => 1,
+      '#collapsed' => 1,
+      '#group' => 'xmlsitemap_settings',
+      'summary' => array (
+        '#theme' => 'table',
+        '#header' => array (
+          'View Name',
+          'View Display',
+          'Inclusion',
+          'Priority',
+          'Available',
+          'Indexed',
+        ),
+        '#rows' => array (
+        ),
+      ),
+      '#access' => 1,
+    );
+    $views = views_get_enabled_views();
+    ksort($views);
+    global $base_url;
+    foreach($views as $vname=>$view) {
+      foreach($view->display as $did=>$arr) {
+        if(isset($arr->display_options['xmlsitemap_status']) && $arr->display_options['xmlsitemap_status']) {
+          $xmlsitemap_urls = _xmlsitemap_views_execute_view_display_extract_links($view, $did, TRUE);
+          $xmlsitemap_indexed_urls = _xmlsitemap_views_query_indexed_locs_view_display($vname, $did);
+
+          $views_fieldset['summary']['#rows'][] = array(
+            '<a href="/admin/structure/views/view/' . $vname . '/edit">' . (strlen($view->human_name) ? $view->human_name : $vname) . '</a>',
+            '<a href="/admin/structure/views/view/' . $vname . '/edit/' . $did . '">' . $arr->display_title . '</a>',
+            ($arr->display_options['xmlsitemap_status'] ? 'Included' : 'Excluded'),
+            XMLSITEMAP_PRIORITY_DEFAULT,
+            count($xmlsitemap_urls),
+            count($xmlsitemap_indexed_urls),
+          );
+        }
+      }
+    }
+    _xmlsitemap_views_array_splice_assoc($form, '#validate', 0, array('views' => $views_fieldset));
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function xmlsitemap_views_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'xmlsitemap_views'),
+  );
+}
+
+/**
+ * Helper function to splice an associate array
+ *
+ * @param $input
+ *   Array to splice.
+ * @param $offset
+ *   Associative array key to use as reference point for insertion.
+ * @param $length
+ *   Number of array keys to replace when insertinng $replacement.
+ * @replacement
+ *   Array to insert.
+ */
+function _xmlsitemap_views_array_splice_assoc(&$input, $offset, $length, $replacement) {
+  $replacement = (array) $replacement;
+  $key_indices = array_flip(array_keys($input));
+  if (isset($input[$offset]) && is_string($offset)) {
+    $offset = $key_indices[$offset];
+  }
+  if (isset($input[$length]) && is_string($length)) {
+    $length = $key_indices[$length] - $offset;
+  }
+
+  $input = array_slice($input, 0, $offset, TRUE)
+    + $replacement
+    + array_slice($input, $offset + $length, NULL, TRUE);
+}

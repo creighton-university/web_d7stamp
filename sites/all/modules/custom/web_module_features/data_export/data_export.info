@@ -1,0 +1,13 @@
+name = Data Export
+description = Provides Data Export for Funnelback search.
+core = 7.x
+package = Creighton Optional Packages
+version = 7.x-1.0
+dependencies[] = panels
+dependencies[] = views
+dependencies[] = views_data_export
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = events_views_xml_export
+features[views_view][] = news_gm_2012_data_export
+features_exclude[dependencies][ctools] = ctools

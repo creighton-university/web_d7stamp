@@ -1,0 +1,125 @@
+article.node--counselor, div.node--counselor, #node--counselor--admissions{
+
+	div.field--name-field-photo, #field--name-field-photo img{
+		float: left;
+		@include at-breakpoint(12 em($mobile-end)) {
+			float: none;
+		}
+	}
+	
+	div.field--name-field-full-name, #field--name-field-full-name{
+	    font-size: 28px;
+		color: $dkblue;
+		@extend %font-family-bebas;
+    }
+	
+	div.field--name-field-territory .field__label, div.field--name-field-personal-information .field__label{
+		font-family: $gryes, $georgia;
+		font-size: 1.25em;
+		color: $primaryblue;
+		clear: both;
+	}
+	
+	div.field--name-field-quote{
+		float: left;
+		margin-bottom: 20px;
+	}
+	
+	div.group-counselor-contact-info{
+		padding-left: 275px;
+		margin-bottom: 90px;
+		@include at-breakpoint(12 em($mobile-end)) {
+			padding-left: 0px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+	}
+ 
+}
+#node--counselor--admissions div.group-counselor-contact-info {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.view-id-counselor_view{
+	.counselor-image{
+		float: left;
+		@include at-breakpoint(12 em($mobile-end)) {
+			float: none;
+		}
+	}
+	div.counselor-details{
+		padding-left: 108px;
+		@include at-breakpoint(12 em($mobile-end)) {
+			padding-left: 0px;
+			margin-top: 10px;
+		}
+	}
+	a.counselor-name{
+		font-size: 28px;
+		@extend %font-family-bebas;
+		text-decoration: none;
+	}
+	a.learn-more-btn{
+		color: $green;
+		font-size: 1.2em;
+		@extend %font-family-bebas;
+		text-decoration: none;
+		@extend .icon-green-arrow;
+		background-position: 100px center;
+		display: block;
+		width: 200px;
+		
+	}
+	div.learn-more-section{
+		margin-top: 10px;
+	}
+	div.the-territory-label{
+		font-weight: bold;
+	}
+	p {
+		margin-bottom: 0px;
+	}
+	div.thecounselor{
+		border-top: 1px dotted #ccc;
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+	div.views-row:hover{
+		border-top: 1px solid #d3d3d3;
+	}
+	#usmap{
+		margin-bottom: 10px;
+	}
+}
+
+.icon-button-with-text-wrapper {
+	border: 1px solid #7e898a;
+	background-color: white;
+	display: table;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 1.5em;
+	width: 100%;
+	height: 100%;
+	img{
+		max-height: 50px;
+		max-width: 50px;
+	}
+	a{
+		@extend %color-primaryblue;
+		@extend %font-family-bebas;
+		text-decoration: none;
+	}
+	.icon-button-with-text > .icon-button-item {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.icon-button-with-text > .icon-button-item:nth-of-type(1){
+		width: 60px;
+		text-align: center;
+	}
+}
+
+#svg2 > path{
+	cursor: pointer;
+}

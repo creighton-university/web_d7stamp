@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Academics Search Both feature.
+ */
+
+include_once 'academics_search_both.features.inc';

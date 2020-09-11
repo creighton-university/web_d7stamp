@@ -1,0 +1,230 @@
+/**
+ * $PANELS
+ */
+.panel-pane {
+    //display: inline-block;
+    display: inline;
+    .cu-front-layout & {
+    	display: inline;
+    }
+    .inline-block & {
+    	display: inline-block;
+    	width: 100%;
+    }
+}
+
+// Remove padding on panels rows in col-2 and col-3 classed panels
+.col-2 .panels-flexible-row,
+.col-3 .panels-flexible-row {
+  padding-bottom: 0;
+}
+
+
+/**
+ * Adaptive Layouts
+ */
+.panel-three-four-adaptive,
+.panel-four-three-adaptive {
+// 4x4
+	// 25% column
+	.panel-col-twenty-five {
+		@include at-breakpoint(12 52.875em) {
+			width: 50%;
+		}
+		@include at-breakpoint(12 30em) {
+			width: 100%;
+		}
+		// With one sidebar
+		.has-sidebar-first &,
+		.has-sidebar-second & {
+			@include at-breakpoint(12 65em) {
+				width: 50%;
+			}
+			@include at-breakpoint(12 30em) {
+				width: 100%;
+			}
+		}
+		// With two sidebars
+		.has-two-sidebars & {
+			@include at-breakpoint(12 72.25em) {
+				width: 50%;
+			}
+			@include at-breakpoint(12 30em) {
+				width: 100%;
+			}
+		}
+	}
+	// 25% column in 25%/75% and 75%/25% layouts
+	.line-2-25-75 .panel-col-twenty-five,
+	.line-2-75-25 .panel-col-twenty-five  {
+		@include at-breakpoint(12 52.875em) {
+			width: 33%;
+		}
+		@include at-breakpoint(12 42.5em) {
+			width: 50%
+		}
+		@include at-breakpoint(12 30em) {
+			width: 100%
+		}
+		// With one sidebar
+		.has-sidebar-first &,
+		.has-sidebar-second & {
+			@include at-breakpoint(12 65em) {
+				width: 33%;
+			}
+			@include at-breakpoint(12 52.875em) {
+				width: 50%;
+			}
+			@include at-breakpoint(12 42.5em) {
+				width: 100%
+			}
+		}
+		// With two sidebars
+		.has-two-sidebars & {
+			width: 33%;
+			@include at-breakpoint(12 42.5em) {
+				width: 100%
+			}
+		}	
+	}
+	// 25% column in 50%/25%/25% and 25%/25%/50% layouts
+	.line-3-50-25-25 .panel-col-twenty-five,
+	.line-3-25-25-50 .panel-col-twenty-five {
+		@include at-breakpoint(12 52.875em) {
+			width: 50%;
+		}
+		@include at-breakpoint(12 30em) {
+			width: 100%;
+		}
+	}
+	// 25% column in 25%/50%/25% layout
+	.line-3-25-50-25 .panel-col-twenty-five {
+		@include at-breakpoint(12 65em) {
+			width: 33%;
+			&.lastUnit {
+				display: block;
+				width: 100%;
+				
+			}
+		}
+		@include at-breakpoint(12 42.5em) {
+			width: 100%;
+			&.lastUnit {
+				display: block;
+				width: 100%;
+			}
+		}
+		// With two sidebars
+		.has-two-sidebars & {
+			@include at-breakpoint(12 72.25em) {
+				width: 33%;
+				&.lastUnit {
+					display: block;
+					width: 100%;
+				}
+			}
+			@include at-breakpoint(12 42.5em) {
+				width: 100%;
+				&.lastUnit {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+	// 50% column
+	.panel-col-fifty {
+		@include at-breakpoint(12 30em) {
+			width: 100%;
+		}
+	}
+	// 50% column in 50%/25%/25% and 25%/25%/50% layouts
+	.line-3-50-25-25 .panel-col-fifty,
+	.line-3-25-25-50 .panel-col-fifty {
+		@include at-breakpoint(12 52.875em) {
+			width: 100%;
+		}
+		// With one sidebar
+		.has-sidebar-first &,
+		.has-sidebar-second & {
+			@include at-breakpoint(12 65em) {
+				width: 100%;
+			}
+		}
+	}
+	// 50% column in 25%/50%/25% layout
+	.line-3-25-50-25 .panel-col-fifty {
+		.has-two-sidebars & {
+			@include at-breakpoint(12 72.25em) {
+				width: 66%;
+			}
+			@include at-breakpoint(12 42.5em) {
+				width: 100%;
+			}
+		}
+		@include at-breakpoint(12 65em) {
+			width: 66%;
+		}
+		@include at-breakpoint(12 42.5em) {
+			width: 100%;
+		}
+	}
+	// 75% column in 25%/75% and 75%/25% layouts
+	.line-2-25-75 .panel-col-seventy-five,
+	.line-2-75-25 .panel-col-seventy-five {
+		@include at-breakpoint(12 52.875em) {
+			width: 66%
+		}
+		@include at-breakpoint(12 42.5em) {
+			width: 50%
+		}
+		@include at-breakpoint(12 30em) {
+			width: 100%
+		}
+		// With one sidebar
+		.has-sidebar-first &,
+		.has-sidebar-second & {
+			@include at-breakpoint(12 65em) {
+				width: 66%;
+			}
+			@include at-breakpoint(12 52.875em) {
+				width: 50%;
+			}
+			@include at-breakpoint(12 42.5em) {
+				width: 100%
+			}
+		}
+		// With two sidebars
+		.has-two-sidebars & {
+			width: 66%;
+			@include at-breakpoint(12 42.5em) {
+				width: 100%
+			}
+		}	
+	}
+// 3x3
+	// 33% column
+	.panel-col-thirty-three {
+		@include at-breakpoint(12 42.5em) {
+			width: 100%;
+		}
+	}
+	// 33% column in 33%/66% and 66%/33% layouts
+	.line-2-33-66 .panel-col-thirty-three,
+	.line-2-66-33 .panel-col-thirty-three {
+		@include at-breakpoint(12 42.5em) {
+			width: 100%;
+		}
+	}
+	// 66% column in 33%/66% and 66%/33% layouts
+	.line-2-33-66 .panel-col-sixty-six,
+	.line-2-66-33 .panel-col-sixty-six {
+		@include at-breakpoint(12 42.5em) {
+			width: 100%;
+		}
+	}
+	// Override base-grid.css from panels_extra_layouts
+	.lastUnit {
+		float: left;
+	}
+}

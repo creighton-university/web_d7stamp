@@ -1,0 +1,413 @@
+/* Mobile Main Menu Top and Bottom*/
+.mobile-main-menu-footer ul.menu {
+  overflow: hidden;
+  li {
+    padding: 5px;
+    background-color: $main-menu-li;
+  }
+}
+/* Mobile Search */
+
+/*
+ * Top of Front Page Audience Selection
+ */
+.bean-front-page-audience {
+  /* Override styles from module */
+  .field-collection-container {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+}
+.main-header .mobile-main-menu-footer .field-collection-view .menu li,
+.audience-active .field-collection-view .menu li {
+  display: block;
+  height: auto;
+  width: 100%;  
+  font-family: $bebas;  
+  color: $white;
+  @extend .icon-white-arrow;
+
+  a {
+    width: 85%;  
+    @include at-breakpoint(em($desk-start) 12) {
+      width: 100%;
+    }  
+    font-family: inherit;
+    font-size: inherit;    
+    line-height: 20px; 
+    @include at-breakpoint(12 em($tablet-end)) {
+      line-height: 30px; 
+    } 
+    margin: 0;   
+    padding: inherit;
+    text-decoration: none;
+    white-space: normal;
+    
+    @extend %color-white;
+
+    &:hover {
+      @extend %color-white;
+    }
+  }
+  div {
+    @extend %display-inline-block;   
+
+  }  
+}
+.audience-active .field-collection-view .menu li {
+  /*@extend .icon-arrows-dkblue-right;*/
+ @extend .icon-white-arrow;
+} 
+/*
+ * Secondary Audience Selection
+ */
+.pane-academics-search-schools-2016 .panels-flexible-row-inside-first {   
+  background-color: $audience-select-bg;  
+}
+#secondary-audience-selector {
+  
+
+  ul { padding: 0 0 0 30px; } 
+  li {
+    display: block;
+    float: left;
+    margin: 0 6px 16px 9px;
+    font-size: 19px;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    font-family: $bebas;
+  }
+  div {
+      width: 35px;
+      height: 30px;
+      float: left;
+      background-image: url('/sites/all/themes/custom/web_themes/creighton_2016/images/front-page/icons-audience2-white.png');
+/*       background-image: url('../images/front-page/icons-audience2-white.png');  */
+	
+
+      margin: -4px 4px 0 0; 
+  }
+  #links_curr_students    { background-position: 0px 0px;   }
+  #links_online_students  { background-position: 140px 0px; }
+  #links_alumni_friends   { background-position: 105px 0px; }
+  #links_parents_visitors { background-position: 70px 0px;  }
+  #links_faculty_staff    { background-position: 35px 0px;  }
+}
+//Mobile End
+@include at-breakpoint(12 em($mobile-end)) {
+/* Mobile Main Menu Top and Bottom*/
+
+/* Mobile Search */
+
+/*
+ * Top of Front Page Audience Selection
+ */
+
+/*
+ * Secondary Audience Selection
+ */
+
+  .bean-front-page-audience {
+    border-top: 3px solid $blue;
+    .dropdown-menu > li a {
+      margin-bottom: 2px;
+      margin-left: 12%; 
+      font-family: $bebas;
+      line-height: 44px;
+      color: $audience-select-mobile;     
+    }
+  }
+  .audience-active .field-collection-view .menu li {
+    padding: 5px;
+    background-position: 87% 13px; 
+    font-size: 30px;
+    div {
+      font-size: 26px;
+    }
+  }
+  #secondary-audience-selector {
+    li {
+    width: 40%;
+    text-align: right;
+    }
+    ul { padding: 0 0 0 10%; }
+  }
+}
+//Tablet Start
+@include at-breakpoint(em($tablet-start) 12) {
+/* Mobile Main Menu Top and Bottom*/
+.mobile-main-menu-footer ul.menu {
+  li {
+    /*background-color: transparent;*/
+  }
+}
+/* Mobile Search */
+
+/*
+ * Top of Front Page Audience Selection
+ */
+
+/*
+ * Secondary Audience Selection
+ */
+  .bean-front-page-audience {
+    border-top: 0px;
+    .dropdown {
+      margin-left: 180px; 
+    }
+    .dropdown-menu {
+      margin: 0;
+    }
+    .dropdown-menu > li a {
+        margin-bottom: 5px;
+        margin-left: 20px;        
+        line-height: 39px;
+        color: $audience-select-mobile; 
+      }
+    }
+    .audience-active .field-collection-view .menu li {
+      padding: 6px 8px;
+      background-position: 87% 13px; 
+      font-size: 30px;
+    }
+    #secondary-audience-selector {
+      li {
+      width: 145px;
+      }
+      ul { padding: 0 0 0 30px; }
+    } 
+  
+  
+}
+//End Tablet
+@include at-breakpoint(12 em($tablet-end)) {
+/* Mobile Main Menu Top and Bottom*/
+
+/* Mobile Search */
+
+/*
+ * Top of Front Page Audience Selection
+ */
+
+/*
+ * Secondary Audience Selection
+ */
+  .bean-front-page-audience {
+    background-color: $audience-mobile-bg;
+    .field-collection-view ul.menu {
+      padding: 6px;
+      background-color: $audience-select-bg;
+      -webkit-box-shadow: 3px 3px 6px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow:    3px 3px 6px 0px rgba(50, 50, 50, 0.75);
+      box-shadow:         3px 3px 6px 0px rgba(50, 50, 50, 0.75);
+      li {
+        height: auto;
+
+        margin: 2px 0;
+        background-color: $audience-select-li;
+        
+      }
+    }
+    .dropdown-menu > li a {
+      font-family: $bebas;
+      font-size: 31px; 
+    }
+    #fp-audience-select-marketing {
+      display: none;
+    }
+  }
+  //Main Menu
+  .mobile-main-menu-footer .field-collection-view ul.menu {
+    background-color: $main-menu-bg;
+    padding: 10px;
+    li {
+      margin: 2px 0;
+      line-height: 0;
+    }  
+  }
+  .audience-active .field-collection-view .menu li div {
+      width: 80%;
+      font-size: 26px;
+      white-space: normal;          
+  }
+
+  
+}
+//Desktop Start
+@include at-breakpoint(em($desk-start) 12) {
+/* Mobile Main Menu Top and Bottom*/
+
+/* Mobile Search */
+
+/*
+ * Top of Front Page Audience Selection
+ */
+
+/*
+ * Secondary Audience Selection
+ */ 
+  .bean-front-page-audience {
+    border-top: 0px;
+    background-color: transparent;
+    .field-collection-container {
+      height: 349px;
+      overflow: hidden;
+      padding: 0;      
+    }
+    .dropdown {
+      margin-left: 0px;
+    }
+    .dropdown .field-collection-view {
+      float: left;
+      height: 0px;
+      .menu {    
+        position: absolute;
+        width: 410px;
+        top: 250px;
+        margin-top: -25px;     
+        li {
+          float: left;
+          width: 170px;
+          margin-right: 4px;
+          margin-bottom: 21px;
+          text-align: left;
+        }
+        a {
+            font-size: 20px;
+            margin-top: -3px;
+          } 
+      }
+    }
+    .dropdown-menu {
+      margin: 0px;
+      > li a {
+        white-space: normal; 
+      }
+    }
+    .dropdown-menu > li,
+    .dropdown-menu > li div.audience-button {
+      height: 85px;
+      width: 150px;
+    }
+    .dropdown-menu > li {
+      margin-bottom: 3px;
+      padding: 16px 10px;
+      font-family: $bebas;
+      background-color: $blue; /* IE */
+      background-color: $fp-blue-alpha;
+      /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c019cdb', endColorstr='#4c019cdb'); /* IE */    
+      .audience-button:hover {
+        cursor: pointer;
+      }
+    }
+    .dropdown-menu > li:last-child {
+      margin-bottom: 0px;
+    }
+    .dropdown-menu > :first-child .fp-audience-marketing {
+      width: 320px;
+      display: block;
+    }
+    .dropdown-menu > li a {
+      margin-bottom: 0px;
+      margin-left: 2px;
+      font-family: $bebas;
+      font-size: 28px;
+      line-height: 28px;
+      color: $audience-select-desk;     
+    }
+    .dropdown-menu > li.audience-active {
+      background-color: $fp-dkblue-alpha;
+      /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c002e6d', endColorstr='#4c002e6d'); /* IE */  
+      .field-collection-view .menu li {
+        height: 14px;
+        margin-top: 5px;
+       
+
+        padding: 0 0 0 9px;
+        background: transparent url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2018.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%223.8%20-3.8%2022.6%2030.2%22%20enable-background%3D%22new%203.8%20-3.8%2022.6%2030.2%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%229.2%22%20cy%3D%2223.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%229.2%22%20cy%3D%22-0.8%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2215.2%22%20cy%3D%225.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2215.2%22%20cy%3D%2217.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2221%22%20cy%3D%2211.3%22%20r%3D%223%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E') no-repeat 0 0; 
+        -ms-background-position-x: -79px; /* IE 8,9,10,11 hack */
+        
+      } 
+      .fp-sub-menu div {
+        width: 90%;
+        color: $audience-select-sub;
+        text-transform: uppercase;
+      }    
+    }
+    /* Marketing Headlines and Text */
+    .fp-audience-marketing {
+      display: none;
+      position: absolute;
+      color: $white;
+    }
+    .fp-audience-marketing-large,
+    .fp-audience-marketing-small,
+    .dropdown .field-collection-view .menu {
+      left: 180px;
+    }
+    .fp-audience-marketing-large {
+      top: 14px;
+      font-size: 40px;
+      line-height: 40px;
+      text-transform: uppercase
+    }
+    .fp-audience-marketing-small {
+      width: 320px;
+      top: 142px;
+      font-family: $gryes;
+      font-size: 16px;
+    }
+  }
+  .audience-active {
+    background-image: url('/sites/all/themes/custom/web_themes/creighton_2016/images/front-page/active-main-audience.png');
+    background-repeat: no-repeat;
+    background-position: 129px 0px;
+    .field-collection-view .menu li {
+      padding: 6px 0;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2018.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%223.8%20-3.8%2022.6%2030.2%22%20enable-background%3D%22new%203.8%20-3.8%2022.6%2030.2%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%229.2%22%20cy%3D%2223.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%229.2%22%20cy%3D%22-0.8%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2215.2%22%20cy%3D%225.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2215.2%22%20cy%3D%2217.4%22%20r%3D%223%22%2F%3E%0A%09%3Ccircle%20fill%3D%22%23FFCC4F%22%20cx%3D%2221%22%20cy%3D%2211.3%22%20r%3D%223%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E'); 
+      background-repeat: no-repeat;
+    }
+  }  
+  .icon-white-arrow-mobile { 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2213%22%20height%3D%2222%22%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%2219.834%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%222.166%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%226.713%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%2215.46%22%20r%3D%222.172%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%2210.798%22%20cy%3D%2211%22%20r%3D%222.173%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; 
+    }
+  .pane-bean-featured-audience {
+    position: relative;
+    float: left;
+    bottom: 400px;
+    /*left: 32px;*/
+    height: 0px;
+    width: 550px;
+    /*margin-left: 3%;*/       
+  }
+  .pane-bean-featured-audience .pane-content {
+    height: 350px;
+    background-color: $dkblue;  /* IE */
+    background-color: $fp-dkblue-alpha;
+  }
+  
+  #secondary-audience-selector {
+    height: 60px;
+    width: inherit;
+    left: 32px;
+    right: 32px;
+    margin-left: 3%;
+    margin-right: 3%;
+    ul {
+      padding: 0 32px;
+    }
+    li {
+      width: 20%;
+      margin: -22px 0 0 0;
+    }
+  }
+ .pane-academics-search-schools-2016 .schools-colleges-shadow-audience_links_front_page.schools-colleges-shadow-audience_links_front_page {
+    width: 100%;
+    height: 75px;
+    margin: 0 auto;   
+ }
+ 
+}   

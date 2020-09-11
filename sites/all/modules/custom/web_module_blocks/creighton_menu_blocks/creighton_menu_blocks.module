@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Menu Blocks feature.
+ */
+
+include_once 'creighton_menu_blocks.features.inc';

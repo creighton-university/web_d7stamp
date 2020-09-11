@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Parking Permits feature.
+ */
+
+include_once 'parking_permits.features.inc';

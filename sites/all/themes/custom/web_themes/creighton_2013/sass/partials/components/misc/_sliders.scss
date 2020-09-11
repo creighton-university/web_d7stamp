@@ -1,0 +1,62 @@
+// .hero {
+//     padding-bottom: 0em;
+//     padding-top: 0;
+//     .carousel {
+//         max-width: $container-width + 18.75;
+//         margin: 0 auto;
+//         margin-bottom: -2px;
+//         .item {
+//             background-repeat: no-repeat;
+//             background-position: center top;
+//             background-size: cover;
+//             box-shadow: 0 0 10 rgba(black, 0.3);
+//             @include clearfix;
+//             .content {
+//                 line-height: 1.6em;
+//                 padding-top: 17em;
+//                 padding-bottom: 6.5em;
+//                 @include at-breakpoint(12 em(845)) {
+//                     text-align: center;
+//                     padding-top: 4em;
+//                     @include rgba-background(rgba(black, 0.3));
+//                 }
+
+//                 h1 {
+//                     color: #fff;
+//                     font-family: $gryesBold;
+//                     font-size: 3.50em;
+//                     @include at-breakpoint(12 72em) {
+//                         font-size: 3em;
+//                     }
+
+//                     @include at-breakpoint(12 65em) {
+//                         font-size: 2.75em;
+//                     }
+
+//                     @include at-breakpoint(12 30em) {
+//                         //480px
+//                         font-size: 2em;
+//                         margin-top: 1em;
+//                     }
+
+//                     strong {
+//                         display: block;
+//                         font-family: $bebas;
+//                         color: $yellow;
+//                         font-weight: normal;
+//                         font-size: 1.6em;
+//                         line-height: 1em;
+//                     }
+//                 }
+//                 .link {
+//                     font-family: $gryesBold;
+//                     color: $yellow;
+//                     font-size: 1.3em;
+//                     &:hover {
+//                         color: #fff;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

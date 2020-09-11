@@ -1,0 +1,94 @@
+.view-id-profiles.faculty-profile,
+.view-id-profiles.view-display-id-support_staff,
+.view-id-profiles.view-display-id-administration{
+  .faculty-profile-photo,
+  .faculty-profile-content{
+    @extend %pull-left;
+  }
+  .views-row{
+    @include clearfix();
+    margin-bottom: em(24);
+    &.views-row-last{
+      margin-bottom: 0;
+    }
+  }
+  .faculty-profile-photo{
+    width: 20%;
+    @include at-breakpoint(12 em(620)) {
+      width: 26%;
+    }
+    .image-wrapper{
+      padding-right: 20px;
+    }
+
+
+  }
+
+  .faculty-profile-content{
+    width: 72%;
+    @include at-breakpoint(12 em(620)) {
+      width: 70%;
+    }
+  }
+  h4{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .faculty-profile-link a{
+    @extend .btn-transparent-green;
+    padding: .3em 1.3em .3em 0;
+    background-size: 11%;
+    font-size: em(18);
+    margin: 0;
+  }
+  .profile-office,
+  .profile-phone,
+  .profile-email{
+    font-size: em(13);
+    margin-bottom: em(7);
+    line-height: 1;
+  }
+  .profile-positions{
+    margin-bottom: em(8);
+    line-height: 1.2;
+  }
+  .profile-specialties{
+    font-size: em(14);
+    margin-bottom: em(7);
+    line-height: 1;
+    .specialty-item{
+      display: inline-block;
+    }
+  }
+}
+
+.view-id-profiles.view-display-id-adjunct{
+  .views-row{
+    margin-bottom: em(24);
+    &.views-row-last{
+      margin-bottom: 0;
+    }
+    a{
+      @extend %color-dkblue;
+      text-decoration: none;
+      &:hover{
+        @extend %color-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.lt-ie9 .view-id-profiles.faculty-profile,
+.lt-ie9 .view-id-profiles.view-display-id-support_staff,
+.lt-ie9 .view-id-profiles.view-display-id-administration{
+  .faculty-profile-photo{
+    span, img{
+        width: 100% !important;
+        height: auto !important;
+      }
+  }
+}

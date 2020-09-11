@@ -1,0 +1,325 @@
+/**
+ * $FRONT-SLIDER
+ */
+/* Media Queries to set height of Slider Image to improve UX */
+/* Primary Main www site compile me*/
+@media screen and (min-width: 901px) {
+  .front-page-slider.primary .field-collection-view {
+   min-height: 416px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .front-page-slider.primary .field-collection-view {
+    min-height: 353px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .front-page-slider.primary .field-collection-view {
+    min-height: 282px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .front-page-slider.primary .field-collection-view {
+    min-height: 100px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .front-page-slider.primary .field-collection-view {
+    
+  }
+}
+/* Alt sites not main www site */
+@media screen and (min-width: 901px) {
+  .front-page-slider.alternate .field-collection-view {
+   min-height: 300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 267px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 214px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 100px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .front-page-slider.alternate .field-collection-view {
+    
+  }
+}
+.node--panel section.hero{
+  padding: 0;
+}
+.hero{
+  position: relative;
+}
+.front .tabs--primary{
+  @extend %element-hidden;
+}
+html.js .hero .contextual-links-wrapper{
+  bottom: 15px;
+  right: 10px;
+  top: auto;
+}
+.front-page-slider{
+  // @include transition(all, 0.8s);
+  // min-height: 600px;
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  .bx-viewport{
+    //@include transition(all, 0.2s);
+    //-webkit-transform: translate3d(0, 0, 0);
+  }
+  .field-collection-container{
+    /*height: 501px;*/
+    @include opacity(0);
+    //@include transition(all, 0.8s);
+    margin-bottom: 0;
+    border-bottom: none;
+    .page-block &{
+      @include opacity(1);
+    }
+  }
+  .field-collection-view{
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    .field-collection-view-links{
+      @extend %element-hidden;
+    }
+    @include at-breakpoint(em(1440) 12){
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .container{
+    @include at-breakpoint(12 em(599)) {
+      padding-left: em(10);
+      padding-right: em(10);
+    }
+  }
+}
+
+
+// Primary Slider styles
+.front-page-slider{
+  article{
+    position: relative;
+    overflow: hidden;
+  }
+  .slide-content{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding-top: 16.5%; //15em;
+
+    @include at-breakpoint(12 em(1040)) {
+      padding-top: 19.5%; //10em;
+    }
+    @include at-breakpoint(12 em(845)) {
+      padding-top: 3%;
+    }
+    @include at-breakpoint(12 em(599)) {
+      padding-top: 0;
+    }
+    a {
+      @extend %font-family-gryes-bold;
+      @extend %color-yellow;
+      @include transition(color, 0.2s);
+      font-size: 1.2em;
+      @include at-breakpoint(12 em(845)) {
+        font-size: em(17);
+      }
+      @include at-breakpoint(12 em(480)) {
+        font-size: em(13);
+      }
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  h1 {
+    @extend %font-family-gryes-bold;
+    @extend %color-white;
+    font-size: 3em;
+
+    @include at-breakpoint(12 65em) {
+      font-size: 2.5em;
+    }
+    @include at-breakpoint(12 em(845)) {
+      font-size: 2.2em;
+    }
+    @include at-breakpoint(12 em(480)) {
+      font-size: 1.5em;
+    }
+    strong {
+      @extend %font-family-bebas;
+      @extend %display-block;
+      @extend %color-yellow;
+      font-weight: normal;
+      font-size: 1.6em;
+      line-height: 1em;
+    }
+  }
+  .bx-controls{
+    position: absolute;
+    z-index: 100;
+    right: em(32);
+    bottom: em(20);
+    @include at-breakpoint(12 em(640)){
+      right: 20px;
+      bottom: 0;
+    }
+  }
+}
+
+
+// Alternative Slider Styles
+.front-page-slider{
+.alternate{
+  article{
+    position: relative;
+    overflow: hidden;
+  }
+
+  img{
+    @include at-breakpoint(12 em(1024)) {
+      position: relative;
+      right: 0;
+      top: 0;
+      height: 360px !important;
+      width: auto;
+      max-width: none !important;
+    }
+    @include at-breakpoint(12 em(845)) {
+      position: relative;
+      height: inherit !important;
+      max-width: 100% !important;
+    }
+  }
+  .slide-content{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding-top: 16%;
+
+    @include at-breakpoint(12 em(1024)) {
+      padding-top: 22%;
+    }
+    @include at-breakpoint(12 em(960)) {
+      padding-top: 26%;
+    }
+    @include at-breakpoint(12 em(845)) {
+      padding-top: 8%;
+    }
+    @include at-breakpoint(12 em(599)) {
+      padding-top: 0;
+    }
+    a {
+      @extend %font-family-gryes-bold;
+      @extend .icon-white-arrow;
+      @extend %color-white;
+      @include transition(color, 0.2s);
+      background-position: right center;
+      letter-spacing: 1px;
+      padding-right: 24px;
+      font-size: 1.8em;
+      @include at-breakpoint(12 em(1024)) {
+        font-size: 1em;
+      }
+      @include at-breakpoint(12 em(845)) {
+        font-size: em(17);
+      }
+      @include at-breakpoint(12 em(480)) {
+        font-size: em(13);
+      }
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  h1 {
+    @extend %font-family-gryes-bold;
+    @extend %color-white;
+    font-size: 2.5em;
+
+    @include at-breakpoint(12 em(1140)) {
+      font-size: 2em;
+    }
+    @include at-breakpoint(12 em(1024)) {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+
+    @include at-breakpoint(12 em(845)) {
+      font-size: 1.7em;
+    }
+    @include at-breakpoint(12 em(480)) {
+      font-size: 1.2em;
+    }
+    strong {
+      font-weight: normal;
+      font-size: 1.8em;
+      line-height: 1.1em;
+    }
+  }
+
+}
+}
+
+
+
+.bx-prev,
+.bx-next{
+  @extend %color-white;
+  @extend %display-inline-block;
+  @extend .icon-hero-arrows;
+  @include transition(none);
+  overflow: hidden;
+  text-indent: -999em;
+  width: 45px;
+  height: 45px;
+  // font-size: em(60);
+  line-height: 1;
+  font-weight: 100;
+  margin-left: 20px;
+  @include at-breakpoint(12 em(640)){
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    background-size: 60px auto;
+  }
+}
+.bx-prev {
+  &:hover,
+  &:focus {
+    background-position: 0 -51px;
+    @include at-breakpoint(12 em(640)){
+      background-position: 0 -34px;
+    }
+  }
+}
+.bx-next {
+  background-position: -45px 0px;
+  @include at-breakpoint(12 em(640)){
+      background-position: -30px 0;
+    }
+  &:hover,
+  &:focus {
+    background-position: -45px -51px;
+    @include at-breakpoint(12 em(640)){
+      background-position: -30px -34px;
+    }
+  }
+}
+

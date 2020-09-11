@@ -1,0 +1,42 @@
+.view-display-id-events_secondary,
+.view-display-id-events_secondary_ccas, 
+.view-display-id-events_secondary_law {
+    .details {
+      h5 {
+        font-family: $bebas;
+        color: $blue;
+        font-size: 1em;
+        line-height: 1.2em;
+        a {
+          text-decoration: none;
+          color: $blue;
+          &:hover {
+            color: $dkblue;
+          }
+        }
+      }
+      a {
+          text-decoration: none;
+        }
+      .time, .location {
+        display: block;
+        color: $dkblue;
+        font-style: italic;
+        line-height: 1.1em;
+      }
+      p.excerpt {
+        margin: 0;
+        font-size: .8em;
+        color: $dkblue;
+      }
+    }
+    h3{
+      @extend %font-family-bebas;
+      @extend %color-blue;
+      font-size: em(22);
+    }
+    .event{
+      display: block;
+      margin: 0;
+    }
+}

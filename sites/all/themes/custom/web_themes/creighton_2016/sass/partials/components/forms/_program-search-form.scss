@@ -1,0 +1,43 @@
+/**
+ * $PROGRAM-SEARCH-FORM
+ */
+.view-spoke-view-program-description-search {
+  .views-submit-button {
+    display: none;
+  }
+  .form-item {
+    border: 1px solid $dkblue;
+    input {  
+      color: $dkblue;
+      @extend .icon-search-dkblue;
+      background-position: 98% 6px;
+    }
+  } 
+  .view-content {
+    padding-top: 15px;
+  }
+  .views-row-first {
+    margin-top: 20px;
+  }
+  .views-row {
+    margin-bottom: 25px;
+  }
+  h3 {
+    &.aca-search-heading {
+      font-size: 17px;
+      color: $link-heading;
+    }
+  }
+  @include at-breakpoint(12 em($mobile-end)) {
+    p {
+      margin: 0;
+    }
+  }
+  strong {
+    color: $orange;
+  }
+  .aca-search-url {
+    color: $dkblue;
+    word-break: break-all;
+  }
+}

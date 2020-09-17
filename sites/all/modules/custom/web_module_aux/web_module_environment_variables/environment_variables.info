@@ -1,6 +1,0 @@
-name = Environment Variables
-description = Attempt to automatically detect environment (overridable on System Information page) and provide default settings for select modules/config
-package = Creighton
-core = 7.x
-files[] = environment_variables.autodetect.inc
-files[] = environment_variables.applysettings.inc

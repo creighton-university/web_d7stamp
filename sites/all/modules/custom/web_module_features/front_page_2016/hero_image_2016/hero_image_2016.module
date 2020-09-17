@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Hero Image 2016 feature.
- */
-
-include_once 'hero_image_2016.features.inc';

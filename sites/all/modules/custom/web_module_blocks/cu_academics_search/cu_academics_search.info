@@ -1,6 +1,0 @@
-name = Creighton Academics Search
-description = Block for the front page that holds the search form and additional links.
-core = 7.x
-package = Creighton
-files[] = cu_academics_search.module
-version = "7.x-2.22"

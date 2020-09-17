@@ -1,4 +1,0 @@
-name = Panels Region Background Image
-description = Add custom style plugin for setting a background image for a panel region
-package = Creighton
-core = 7.x

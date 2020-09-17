@@ -1,0 +1,55 @@
+{
+    "name": "nickstankus/web_d7stamp",
+    "authors": [
+        {
+            "name": "Stankus, Nick J.",
+            "email": "NickStankus@creighton.edu"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/7"
+        }
+    ],
+    "require": {
+        "drupal/drupal": "7.72",
+        "drupal/views_bulk_operations": "3.3",
+        "drupal/addressfield_tokens": "1.5",
+        "davidbarratt/custom-installer": "1.0.*@dev",
+        "drupal/block_class": "2.3",
+        "drupal/eva": "1.3",
+        "drupal/ctools": "1.10",
+        "drupal/bean": "1.11",
+        "drupal/block_api": "1.x-dev#deb44570f0ef9ddc68d1cafe207ff29e69c70f36",
+        "drupal/better_exposed_filters": "3.5",
+        "drupal/breakpoints": "1.4",
+        "drupal/date": "2.9",
+        "drupal/diff": "3.2",
+        "drupal/elements": "1.4",
+        "drupal/extlink": "1.18",
+        "drupal/features": "2.10",
+        "drupal/feeds": "2.0-beta2",
+        "drupal/feeds_tamper": "1.1",
+        "drupal/field_collection": "1.0-beta11",
+        "drupal/field_group": "1.5",
+        "drupal/field_permissions": "1.0",
+        "drupal/file_entity": "2.25",
+        "drupal/flexslider": "2.0-rc1",
+        "drupal/picture": "1.3",
+        "drupal/globalredirect": "1.5",
+        "drupal/google_analytics": "2.3",
+        "drupal/honeypot": "1.22",
+        "drupal/panels": "3.7"
+    },
+    "extra": {
+        "custom-installer": {
+            "drupal-module": "docroot/sites/all/modules/contrib/{$name}/",
+            "drupal-theme": "docroot/sites/all/themes/contrib/{$name}/",
+            "drupal-library": "docroot/sites/all/libraries/{$name}/",
+            "drupal-drush": "docroot/sites/all/drush/{$name}/",
+            "drupal-profile": "docroot/profiles/{$name}/",
+            "drupal-core": "docroot/"
+        }
+    }
+}

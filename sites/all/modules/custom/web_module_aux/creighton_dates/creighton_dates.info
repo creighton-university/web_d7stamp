@@ -1,5 +1,0 @@
-name = Creighton Dates
-description = Creighton specific date formats specialized for events view and can be shared with other features or pages
-package = Creighton
-core = 7.x
-

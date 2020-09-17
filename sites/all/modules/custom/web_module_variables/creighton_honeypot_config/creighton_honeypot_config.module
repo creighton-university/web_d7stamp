@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Creighton Honeypot Config feature.
- */
-
-include_once 'creighton_honeypot_config.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Secure Login feature.
- */
-
-include_once 'creighton_secure_login.features.inc';

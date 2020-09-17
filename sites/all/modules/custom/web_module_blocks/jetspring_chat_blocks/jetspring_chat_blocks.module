@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Jetspring Chat Blocks feature.
- */
-
-include_once 'jetspring_chat_blocks.features.inc';

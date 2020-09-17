@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Admissions Counselor Bio feature.
- */
-
-include_once 'admissions_counselor_bio.features.inc';

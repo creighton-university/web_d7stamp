@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Intercollege Transfer Workflow feature.
- */
-
-include_once 'intercollege_transfer_workflow.features.inc';

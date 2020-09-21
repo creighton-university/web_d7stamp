@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit8859313111df6976f464b93a860a36e5
 {
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'cweagans\\Composer\\' => 18,
+        ),
         'D' => 
         array (
             'DavidBarratt\\CustomInstaller\\' => 29,
@@ -14,6 +18,10 @@ class ComposerStaticInit8859313111df6976f464b93a860a36e5
     );
 
     public static $prefixDirsPsr4 = array (
+        'cweagans\\Composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
+        ),
         'DavidBarratt\\CustomInstaller\\' => 
         array (
             0 => __DIR__ . '/..' . '/davidbarratt/custom-installer/src',

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1383c3d6fae1afd1bcc84084dfcca48",
+    "content-hash": "32a3835fd8ceb5b183d6b71ebd58c89b",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -8704,6 +8704,17 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/xmlsitemap"
             }
+        },
+        {
+            "name": "malsup/cycle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malsup/cycle",
+                "reference": "master"
+            },
+            "type": "drupal-library",
+            "time": "2013-11-16T00:48:44+00:00"
         }
     ],
     "packages-dev": [],
@@ -8734,7 +8745,8 @@
         "drupal/video_filter": 20,
         "drupal/views_json_query": 20,
         "drupal/views_php": 15,
-        "drupal/wysiwyg_filter": 5
+        "drupal/wysiwyg_filter": 5,
+        "malsup/cycle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

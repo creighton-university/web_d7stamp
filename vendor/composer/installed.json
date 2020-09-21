@@ -8965,5 +8965,17 @@
         "support": {
             "source": "https://git.drupalcode.org/project/xmlsitemap"
         }
+    },
+    {
+        "name": "malsup/cycle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/malsup/cycle",
+            "reference": "master"
+        },
+        "type": "drupal-library",
+        "installation-source": "source"
     }
 ]

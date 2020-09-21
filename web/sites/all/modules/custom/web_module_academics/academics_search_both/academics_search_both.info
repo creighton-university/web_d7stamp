@@ -1,0 +1,14 @@
+name = Academics Search Both
+description = Academics Search Both
+core = 7.x
+package = Academics
+version = 7.x-1.0
+project = academics_search_both
+dependencies[] = entity
+dependencies[] = search_api
+dependencies[] = search_api_db
+features[features_api][] = api:2
+features[search_api_index][] = default_node_index
+features[search_api_index][] = program_details_search
+features[search_api_server][] = hub_db_server
+mtime = 1424728037

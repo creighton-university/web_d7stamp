@@ -1,0 +1,4 @@
+name = ADA Compliance
+description = Patch form elements to help enforce ADA Compliance web content entered through forms.
+core = 7.x
+package = Accessibility

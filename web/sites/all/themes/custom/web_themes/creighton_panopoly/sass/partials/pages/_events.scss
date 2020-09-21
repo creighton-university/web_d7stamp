@@ -1,0 +1,386 @@
+
+/* cbu04905 added from Beth for now */
+#cu-event-list-vertical-pane-id {
+	h2 {
+	@extend %color-primaryblue;
+	@extend %font-family-bebas;
+	background-color: white !important;
+	display: block;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	}
+	div.view-events-summary  {
+		background-repeat: repeat-x;
+		background-position: top left;
+		background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%226.763%22%20height%3D%226.763%22%20viewBox%3D%2221.462%20-13.794%206.763%206.763%22%20enable-background%3D%22new%2021.462%20-13.794%206.763%206.763%22%3E%3Ccircle%20fill%3D%22%23B9975B%22%20cx%3D%2224.844%22%20cy%3D%22-10.413%22%20r%3D%221.528%22%2F%3E%3C%2Fsvg%3E");
+		padding-top: 10px;
+	}
+	
+
+}
+#cu-event-list-horizontal-pane-id {
+	h2 {
+		@extend .special;
+	}
+}
+
+.creighton-event-item-horizontal { 
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+div.view-events-summary 
+{
+	div.views-row-odd,div.views-row-even {
+	clear:both!important;
+	}
+	
+	div.views-row-even:hover td,
+	tr.even td:hover {
+		background-color:#fff!important;
+	}
+	div.views-row-odd,tr.odd td:hover {
+		background-color:#e5e5e5!important;
+	}
+}
+
+
+.creighton-event-calendar-left,.creighton-event-calendar-center,.creighton-event-calendar-right {
+	display:inline-table;
+}
+
+
+
+
+/* vertical global */
+.creighton-event-item {
+	width:260px;
+	float:left;
+	margin:0 30px 15px 0;
+	padding:10px;
+}
+
+
+/* calendar box global*/
+.creighton-event-calendar-box {
+	border:2px solid #019cdb;
+	width:65px;
+	height:initial;
+}
+
+.box-top-month {
+	@extend %font-family-bebas;
+	background-color:#019cdb;
+	color:#fff;
+	padding:2px;
+	font-size:16px;
+	text-align:center;
+}
+
+.box-bottom-day {
+	@extend %font-family-bebas;
+	background-color:#fff;
+	color:#000;
+	padding:2px;
+	display:block;
+	height:100%;
+	font-size: 32px;
+/*
+	span.date-display-start, span.date-display-end, span.date-display-single {
+		font-size:32px;
+
+	}
+*/
+	
+}
+
+.box-top-month {
+	font-size:24px; /*font embiggened */
+}
+
+.box-bottom-day {
+	padding:8px 4px 4px;
+	text-align:center;
+}
+
+
+
+/* horizontal left */
+.creighton-event-item-horizontal .creighton-event-calendar-left {
+	float:left;
+	margin:0 15px 40px 0;
+	padding:10px 0 0 10px;
+}
+
+
+
+/* sign up link */
+.cu-event-sign-up-link a {
+	@extend %font-family-bebas;
+	display: block;
+	background-color:#73b865;
+	background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2213%22%20height%3D%2222%22%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%2219.834%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%222.166%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%226.713%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%2215.46%22%20r%3D%222.172%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%2210.798%22%20cy%3D%2211%22%20r%3D%222.173%22%2F%3E%3C%2Fsvg%3E");
+/* background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2213%22%20height%3D%2222%22%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%2219.834%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%222.202%22%20cy%3D%222.166%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%226.713%22%20r%3D%222.173%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%226.576%22%20cy%3D%2215.46%22%20r%3D%222.172%22%2F%3E%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%2210.798%22%20cy%3D%2211%22%20r%3D%222.173%22%2F%3E%3C%2Fsvg%3E"); */
+	background-repeat:no-repeat;
+	background-position:90%;
+	background-size:10px;
+	min-width:57px;
+	height:25px;
+	font-size:18px;
+	margin-top:10px;
+	padding:2px 4px;
+}
+@-moz-document url-prefix() {
+	.cu-event-sign-up-link a { 
+		padding: 1px 4px 1px 4px;
+		}
+	}
+
+
+.cu-event-sign-up-link a {
+	color:#fff;
+	text-decoration:none;
+}
+
+.creighton-event-calendar-right .cu-event-sign-up-link a {
+	display:block;
+	margin-left:0;
+	background-position:90%;
+	min-width:57px;
+	width: 80%;
+}
+
+/* vertical sign up link */
+.creighton-event-item .cu-event-sign-up-link a {
+		background-size:10px;
+		width: auto;
+	}
+
+
+/* middle bits */
+.cu-event-name a {
+    @extend %font-family-bebas;
+	color:#002e6d;
+	font-size: 22px;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.creighton-event-item-horizontal {
+	.cu-event-date,.cu-event-time,.cu-event-location,.cu-event-summary,.cu-event-more-info {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	}
+}
+
+
+.creighton-event-item-horizontal .cu-event-date, .creighton-event-item-horizontal .cu-event-time {
+	float:left!important;
+}
+
+.creighton-event-item-horizontal .cu-event-location {
+	clear:both;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij48cGF0aCBmaWxsPSIjOTFDQTZCIiBkPSJNNi43IDEzLjFzLTMuNy00LjYtMy43LTguMmMwLTIuOSAyLjUtNCA0LTQgMS42IDAgNCAxLjEgNCAzLjggMCAzLjgtNC4zIDguNC00LjMgOC40eiIvPjxjaXJjbGUgZmlsbD0iI2ZmZiIgY3g9IjciIGN5PSI1LjEiIHI9IjEuOSIvPjwvc3ZnPg==");
+
+/* 	background-image: url(http://admissions.creighton.edu//profiles/cu_admissions/themes/creighton_admissions/images/events_listing_place_red-sm.png); */
+	background-position: left 1px;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	line-height: 18px;
+	margin-bottom: 2px;
+
+}
+
+.cu-event-desc-bottom {
+	margin:10px 0 0;
+}
+
+.cu-event-more-info {
+	background:url(images/info-icon.gif) left center no-repeat;
+
+}
+
+
+
+/* horizontal */
+.creighton-event-item-horizontal .creighton-event-calendar-left {
+	min-width:65px;
+	max-width:15%;
+}
+
+.creighton-event-calendar-col-2 {
+	display: block;
+}
+
+.creighton-event-item-horizontal .creighton-event-calendar-center {
+	min-width: 260px;
+	max-width: 50%;
+	margin-top: 10px;
+	
+	
+	@include at-breakpoint(12 em($tablet-end)) {
+		width: 60%;
+		min-width: 260px;
+		max-width: 400px;
+  }
+
+  @include at-breakpoint(12 em($mobile-end)) {
+		max-width: 260px;
+		min-width: 200px;
+  }
+}
+
+
+
+  .creighton-event-item-horizontal .creighton-event-calendar-right {
+    float: right;
+    margin-right: 10px;
+    @include at-breakpoint(12 em($mobile-end)) {
+    float: none;
+    margin-left: 80px;
+}
+  }
+
+
+
+/* vertical */
+.creighton-event-item .creighton-event-calendar-right, .creighton-event-item .creighton-event-calendar-left {
+	float: left;
+}
+.creighton-event-item .creighton-event-calendar-right {
+	width: 165px; /* if it exceeds this on my test page, the line breaks */
+	margin-left: 10px;
+	}
+	
+.creighton-event-item {
+	.creighton-event-calendar-right {
+		.cu-event-date, .cu-event-time, .cu-event-location, .cu-event-desc-bottom p, .cu-event-more-info {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 14px;	
+		}
+	}
+}
+/*
+ .creighton-event-calendar-right .cu-event-date, 
+.creighton-event-item .creighton-event-calendar-right .cu-event-time, 
+.creighton-event-item .creighton-event-calendar-right .cu-event-location, 
+.creighton-event-item .creighton-event-calendar-right .cu-event-desc-bottom p,
+.creighton-event-calendar-right .cu-event-more-info {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+}
+*/
+
+.creighton-event-calendar-right .cu-event-more-info {
+	display:block;
+	padding:0 0 0 20px;
+// 	width: 100%;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij48Y2lyY2xlIGZpbGw9IiMzMjU1QTQiIGN4PSI3IiBjeT0iNi45IiByPSI2LjkiLz48dGV4dCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0LjYyNSAxMS4zMDcpIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iJ1RlWEd5cmVTY2hvbGEtQm9sZCciIGZvbnQtc2l6ZT0iMTMiPmk8L3RleHQ+PC9zdmc+");
+
+// 	background-image:url(http://admissions.creighton.edu/sites/admissions.creighton.edu/files/unmanaged/Images/Visit/info-icon.gif);
+	background-repeat:no-repeat;
+	
+}
+.creighton-event-item-horizontal {
+	 .creighton-event-calendar-right {
+		 .cu-event-more-info,
+		 .cu-event-contact a {
+		margin: 4px 0 0 0;
+		height: 20px;
+		}
+	}
+}
+.creighton-event-item-horizontal {
+	 .creighton-event-calendar-right {
+		 .cu-event-more-info {
+			margin-top: 6px;
+		}
+	}
+}
+
+.creighton-event-item {
+	width: 100%;
+	.creighton-event-calendar-right {
+		width: 71%;
+		.cu-event-more-info {
+			margin:4px 0 0 0;
+
+		}
+		
+	}
+}
+
+.creighton-event-item-horizontal .creighton-event-calendar-right  a {
+	text-decoration: none;
+}
+
+.creighton-event-calendar-right .cu-event-contact a {
+	display:block;
+// 	width:100%;
+	padding:0 0 0 20px;
+	margin:0;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij48cGF0aCBmaWxsPSIjMzI1NUE0IiBkPSJNLjMgMi4zaDEzLjV2OS4zaC0xMy41eiIvPjxwYXRoIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIuOTgyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZmlsbD0ibm9uZSIgZD0iTS42IDEwLjlsNi40LTUgNi40IDUuMiIvPjxwYXRoIGZpbGw9IiMzMjU1QTQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIuOTgyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTS42IDIuOGw2LjQgNSA2LjMtNS4yIi8+PHBhdGggc3Ryb2tlPSIjMzI1NUE0IiBzdHJva2Utd2lkdGg9Ii40OTEiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZmlsbD0ibm9uZSIgZD0iTS4zIDIuM2gxMy41djkuM2gtMTMuNXoiLz48L3N2Zz4=");
+
+// 	background-image:url(http://admissions.creighton.edu/profiles/cu_admissions/themes/creighton_admissions/images/events_contact_blue.png);
+	background-position:left 4px;
+	background-repeat:no-repeat;
+	font-size: 14px;
+}
+
+.creighton-event-calendar-center .cu-event-summary {
+	font-family:Times,serif;
+}
+
+.creighton-event-calendar-center .cu-event-summary p, .creighton-event-item .cu-event-summary p {
+	margin:0;
+}
+
+.creighton-event-calendar-center .cu-event-date {
+	display:block;
+	font-family:Times,serif;
+	/* file size: 0.5ko | already optimized | base64 size: 0.7ko */
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij48cGF0aCBmaWxsPSIjOTFDQTZCIiBkPSJNNC4xIDQuNmMtLjUgMC0uOS0uNC0uOS0uOXYtMS4zYzAtLjUuNC0uOS45LS45cy45LjQuOS45djEuM2MtLjEuNS0uNS45LS45Ljl6TTEwIDQuNmMtLjUgMC0uOS0uNC0uOS0uOXYtMS4zYzAtLjUuNC0uOS45LS45cy45LjQuOS45djEuM2MwIC41LS40LjktLjkuOXpNMi4xIDIuNWg5Ljl2MTBoLTkuOXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMi4xIDRoOS45djEuMmgtOS45ek0yLjggNi4zaDguM3Y1LjJoLTguM3oiLz48cGF0aCBmaWxsPSIjOTFDQTZCIiBkPSJNMi4xIDcuMmg5Ljl2LjVoLTkuOXpNMi4xIDguNmg5Ljl2LjVoLTkuOXpNMi4xIDEwLjFoOS45di41aC05Ljl6TTYuOCA1LjdoLjV2Ni4zaC0uNXpNNS4zIDUuN2guNXY2LjNoLS41ek0zLjggNS43aC41djYuM2gtLjV6TTkuOCA1LjdoLjV2Ni4zaC0uNXpNOC4zIDUuN2guNXY2LjNoLS41eiIvPjwvc3ZnPg==");
+
+// background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22+width%3D%2214%22+height%3D%2214%22+viewBox%3D%220+0+14+14%22%3E%3Cpath+fill%3D%22%2391CA6B%22+d%3D%22M4.1+4.6c-.5+0-.9-.4-.9-.9v-1.3c0-.5.4-.9.9-.9s.9.4.9.9v1.3c-.1.5-.5.9-.9.9zM10+4.6c-.5+0-.9-.4-.9-.9v-1.3c0-.5.4-.9.9-.9s.9.4.9.9v1.3c0+.5-.4.9-.9.9zM2.1+2.5h9.9v10h-9.9z%22%2F%3E%3Cpath+fill%3D%22%23fff%22+d%3D%22M2.1+4h9.9v1.2h-9.9zM2.8+6.3h8.3v5.2h-8.3z%22%2F%3E%3Cpath+fill%3D%22%2391CA6B%22+d%3D%22M2.1+7.2h9.9v.5h-9.9zM2.1+8.6h9.9v.5h-9.9zM2.1+10.1h9.9v.5h-9.9zM6.8+5.7h.5v6.3h-.5zM5.3+5.7h.5v6.3h-.5zM3.8+5.7h.5v6.3h-.5zM9.8+5.7h.5v6.3h-.5zM8.3+5.7h.5v6.3h-.5z%22%2F%3E%3C%2Fsvg%3E");
+/* 	background-image:url(http://admissions.creighton.edu/profiles/cu_admissions/themes/creighton_admissions/images/events_listing_date_red-sm.png); */
+	background-position:left 1px;
+	background-repeat:no-repeat;
+	padding-left:20px;
+	width: 50%;
+	line-height: 18px;
+	margin-bottom: 2px;
+
+}
+
+@media (max-width: 48em) {
+  .creighton-event-calendar-center .cu-event-date {
+    width: 100%;
+  }
+}
+
+
+.creighton-event-calendar-center .cu-event-time {
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij48ZyBmaWxsPSIjZmZmIiBzdHJva2U9IiM5MUNBNkIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCI+PGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjUiLz48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik00LjUgNy4xaDIuNWwyLjQtMi40Ii8+PC9nPjwvc3ZnPg==");
+
+/*     background-image: url(http://admissions.creighton.edu/profiles/cu_admissions/themes/creighton_admissions/images/events_listing_time_red-sm.png); */
+    background-position: left 1px;
+    background-repeat: no-repeat;
+//     width: 47%;
+    padding-left: 17px;
+//     margin-left: 10px;
+	line-height: 18px;
+	margin-bottom: 2px;
+}
+@media (max-width: 48em) {
+  .creighton-event-calendar-center .cu-event-time {
+   margin-left: 0;
+   width: 100%;
+  }
+}
+    
+
+

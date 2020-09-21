@@ -1,0 +1,5 @@
+name = Subsite Parent Logo Crumbs picker
+description = Add parent site selector to Site Information form to preset crumbs path and logo
+package = Creighton
+dependencies[] = menu_breadcrumb
+core = 7.x

@@ -1,0 +1,97 @@
+.form-item label {
+    margin-bottom: unset;
+        font-size: 1em;
+
+}
+#edit-title {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 24px;
+
+}
+#cke_1_contents {
+    height: 260px !important;
+}
+.col-md-6.radix-layouts-contentcolumn2.panel-panel input {
+max-width:90%;
+}
+@media all {
+    @media (min-width: 992px) {
+        .col-md-6 {
+            width: 50%;
+        }
+        .col-md-6 input, .col-md-6 select,  {
+            max-width: 250px;
+        }
+    }
+}
+.panel-pane.pane-node-form-publishing {
+    background-color: #CCC;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.panel-pane.pane-node-form-author {
+    background-color: #CCC !important;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+#edit-field-address-und-0 {
+    border-left-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    margin-left: unset;
+    margin-right: unset;
+    padding-left: unset;
+    padding-right: unset;
+}
+@media screen {
+    input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="file"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0.35355em 0;
+        padding: 0.35355em 0.70711em;
+        max-width: 100%;
+        border: 1px solid #dddddd;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+        font-size: 1em;
+        line-height: 1.41421em;
+        background: white;
+        -webkit-background-clip: padding;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+    }
+}
+@media screen {
+    [dir="ltr"] .form-select {
+        padding-right: 3.51961em;
+        background-position: right -5px center;
+        max-width: 300px;
+    }
+}
+.col-md-4.radix-layouts-sidebar.panel-panel h1,.col-md-4.radix-layouts-sidebar.panel-panel h2 {
+        font-weight: 200;
+        font-size: 30px;
+    }
+
+/********************* Event ************************/
+/* permalink styles */
+.form-item.form-type-textfield.form-item-path-alias {
+    font-size: 12px;
+}
+#edit-path-alias {
+    max-width: 500px;
+    margin-top:0;
+}

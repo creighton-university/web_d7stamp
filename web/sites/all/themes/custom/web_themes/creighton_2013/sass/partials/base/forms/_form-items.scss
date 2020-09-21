@@ -1,0 +1,52 @@
+/**
+ * $FORM-ITEM
+ */
+.form-item {
+  @extend %color-dkgray;
+
+  label {
+    margin-bottom: 0.4em;
+  }
+  .form-select,
+  .form-text,
+  .form-textarea {
+    @extend %display-block;
+    @extend %background-white;
+    @extend %color-dkgray;
+    @include box-shadow(inset, 0 1px 1px rgba($black, 0.5));
+    @include transition(border linear 0.2s, box-shadow linear 0.2s);
+    border: 1px solid $coolgray;
+    width: 100%;
+    // padding: em(16) em(8);
+    // background-color: #FFF;
+    // border: 1px solid $coolgray;
+    // color: %color-dkgray;
+    // vertical-align: middle;
+  }
+  .form-text{
+    // line-height: 1;
+    // text-indent: 10px;
+  }
+  .description {
+    margin-top: 0.2em;
+    font-style: italic;
+  }
+}
+
+.container-inline {
+  .form-select,
+  .form-text,
+  .form-textarea {
+    width: auto;
+  }
+}
+
+// NOTE: Unsure if this was part of omega
+// select,
+// input,
+// textarea {
+//   &:focus {
+//     @include box-shadow(0 0 4px 1px rgba(lighten($orange, 15%), 0.3));
+//     outline: 1px solid lighten($orange, 15%);
+//   }
+// }

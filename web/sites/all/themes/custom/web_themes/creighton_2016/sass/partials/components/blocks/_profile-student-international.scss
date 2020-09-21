@@ -1,0 +1,67 @@
+.view-profile-student-international-view { 
+	.views-row {
+		background-color: #F3F3F3;
+		padding: 15px;
+		height: 180px;
+	}
+	.profile-stud-int-info-country {
+		font-weight: bold;
+	}
+	.views-row {
+		margin: 0 0 20px 0;
+	}
+	.profile-stud-int-image {
+		clear: left;
+		float: left;
+		width: 33%;
+	}
+	.profile-stud-int-info {
+		padding-left: 10px;
+	}
+}
+				
+@include at-breakpoint(em($tablet-start) 12) {
+	.view-profile-student-international-view {
+		.views-row-odd {
+			clear: left;
+			float: left;
+			width: 48%;
+		}
+		.views-row-even {
+			float: right;
+			width: 48%;
+		}
+		.profile-stud-int-info {
+			float: right;
+			width: 67%;
+			overflow: visible;
+		}
+	}
+}
+	
+.content-body {
+	div.field--name-field-international-profile-larg {
+		float: left;
+		padding: 0px 10px 10px 0px;
+		@include at-breakpoint(12 em($mobile-end)) {
+			float: none;
+		}
+	}
+	div.group-intl-student-contact-info {
+		float: left;
+		@include at-breakpoint(12 em($mobile-end)) {
+			padding-left: 0px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+	}
+	div.field--name-field-international-profile-head {
+	    font-size: 28px;
+		font-family: $bebas;
+		color: $dkblue;
+		padding-bottom: 10px;
+    }
+	div.field--name-body {
+		clear: both;
+	}
+}

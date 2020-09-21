@@ -1,0 +1,5 @@
+name = Video Embed Field Extras
+description = Offers additional functionality for Embed Field Extras module from drupal.org/project/video_embed_field
+package = Creighton
+dependencies[] = video_embed_field
+core = 7.x

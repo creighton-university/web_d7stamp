@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * A forms api callback, returns the settings form for the provider
+ * Uses the default form handler and inserts a setting to control JSAPI
+ *
+ * @param $defaults - default/current values for your provider, the currently saved settings
+ *                       with empty values filled with the defaults provided in info hook
+ * @return a form as defined by forms api
+ *
+ * @see http://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7
+ */
+function video_embed_field_extras_video_embed_handler_form($defaults) {
+  $form = video_embed_field_handler_youtube_form($defaults);
+
+  $youtube_jsapi = array(
+    '#type' => 'checkbox',
+    '#title' => 'Enable JSAPI',
+    '#description' => 'Enables the YouTube JavaScript API.',
+    '#default_value' => $defaults['enablejsapi'],
+  );
+
+  _video_embed_field_extras_array_splice_assoc($form, 'vq', 0, array('enablejsapi' => $youtube_jsapi));
+  return $form;
+}
+
+/**
+ * Performs alterations on video_embed_field handlers.
+ * Overrides the default YouTube handler function to alter the embed code as well as the handler form
+ *
+ * @param $info
+ *   Array of information on video handlers exposed by
+ *   hook_video_embed_handler_info() implementations.
+ */
+function video_embed_field_extras_video_embed_handler_info_alter(&$info) {
+  if (isset($info['youtube'])) {
+    $info['youtube']['function'] = 'video_embed_field_extras_video_embed_handle_youtube';
+    $info['youtube']['form'] = 'video_embed_field_extras_video_embed_handler_form';
+    $info['youtube']['defaults']['enablejsapi'] = 1;
+  }
+}
+
+/**
+ * Handler for Youtube videos.
+ * Overrides the default YouTube handler embed code, though everything else should be identical
+ */
+function video_embed_field_extras_video_embed_handle_youtube($url, $settings) {
+  $output = array();
+
+  //Grab the minutes and seconds, and just convert it down to seconds
+  preg_match('/#t=((?P<min>\d+)m)?((?P<sec>\d+)s)?/', $url, $matches);
+  //Give it some default data in case there is no #t=...
+  $matches += array(
+  	"min" => 0,
+  	"sec" => 0,
+  );
+  $time = ($matches["min"] * 60) + $matches["sec"];
+  $time = "&start=" . $time;
+  
+  $id = _video_embed_field_get_youtube_id($url);
+  if (!$id) {
+    // We can't decode the URL - just return the URL as a link
+    $output['#markup'] = l($url, $url);
+    return $output;
+  }
+  // Construct the embed code
+  $settings['wmode'] = 'opaque';
+  $settings_str = _video_embed_code_get_settings_str($settings);
+
+  $output['#markup'] = '<div class="youtube-embed" id="youtube-embed-' . $id . '" data-embed="' . $id . '" data-youtube-height="' . $settings['height'] . '" data-youtube-width="' . $settings['width'] . '"></div>';
+  
+  return $output;
+}
+
+/**
+ * Helper function to splice an associate array
+ *
+ * @param $input
+ *   Array to splice.
+ * @param $offset
+ *   Associative array key to use as reference point for insertion.
+ * @param $length
+ *   Number of array keys to replace when insertinng $replacement.
+ * @replacement
+ *   Array to insert.
+ */
+function _video_embed_field_extras_array_splice_assoc(&$input, $offset, $length, $replacement) {
+  $replacement = (array) $replacement;
+  $key_indices = array_flip(array_keys($input));
+  if (isset($input[$offset]) && is_string($offset)) {
+    $offset = $key_indices[$offset];
+  }
+  if (isset($input[$length]) && is_string($length)) {
+    $length = $key_indices[$length] - $offset;
+  }
+
+  $input = array_slice($input, 0, $offset, TRUE)
+    + $replacement
+    + array_slice($input, $offset + $length, NULL, TRUE);
+}

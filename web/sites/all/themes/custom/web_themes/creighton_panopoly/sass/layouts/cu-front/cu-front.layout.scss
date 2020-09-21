@@ -1,0 +1,410 @@
+/*******************************************************************************
+ * _layout.scss
+ *
+ * Styling of the Creighton University "default" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+@import "../../partials/utility";
+@import "../../partials/base";
+@import "../../partials/components";
+
+.l-region--highlighted,
+.l-region--help,
+.l-region--sidebar-first,
+.l-region--sidebar-second {
+  margin-bottom: $vert-spacing-unit; 
+}
+
+
+.l-header {
+  @include clearfix;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  @include at-breakpoint(12 em($tablet-end)) {
+    z-index: inherit;
+    position: relative;
+    padding-top: 0;
+  }
+}
+.l-branding {
+  @include span-columns(12);
+  @include omega;
+    
+  @include at-breakpoint(12 em($tablet-end)) {
+    margin-bottom: em(16);
+    padding-top: em(45);
+    text-align: center;
+  }
+  @include at-breakpoint(em($tablet-start) 12) {   
+  }
+  @include at-breakpoint(em($desk-start) 12) {
+    padding-top: 18px;
+    text-align: left;
+  }
+}
+.l-region--header {
+  @include span-columns(12 omega, 12);
+}
+
+/*
+ * Front Page Alternate sections
+ */
+.left-second-section {
+  @include span-columns(9, 12);
+  @include at-breakpoint(12 em($tablet-end)) {
+    @include span-columns(12, 12);
+  }
+  .pane-content{
+    padding: 2em 0;
+
+    @include at-breakpoint(12 em($tablet-end)) {
+      padding: 2em 0 0 0;
+    }
+  }
+
+}
+.right-second-section {
+  padding: 2em 0 0 0;
+  @include span-columns(3 omega, 12);
+  @include at-breakpoint(12 em($tablet-end)) {
+    @include span-columns(12, 12);
+    padding: 2em 0 0 0;
+  }
+
+  .pane-content{
+    margin-bottom: 1.5em;
+  }
+}
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+.hidden-element {
+  position: absolute;
+  left: -9999px;
+  top: -1000px;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+img.alignleft {
+  margin-right: 1em;
+  margin-bottom: 1em;
+  @include at-breakpoint(12 em(700)) {
+    float: none;
+  }
+}
+
+img.alignright {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  @include at-breakpoint(12 em(700)) {
+    float: none;
+  }
+}
+
+.container {
+  @include container;
+  max-width: 100%;
+  position: relative;
+  margin-left: 3%;
+  margin-right: 3%;
+  
+  @include at-breakpoint(em($desk-start) 12) {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+
+  @include at-breakpoint(12 em($tablet-end)) {
+    
+    padding-right: em(32);
+    padding-left: em(32);
+
+  }
+}
+section.container {
+  @include at-breakpoint(12 em($tablet-end)) {   
+      padding: 0;
+      margin: 0 auto;  
+  }
+}
+    
+.feature {
+  padding: 0 0 1em;
+}
+
+.main-header {
+  background-color: $dkblue;
+  //background-color: $fp-dkblue-header-alpha-fallback;
+  background-color: $fp-dkblue-header-alpha;
+  box-shadow: 0 0 8px rgba(black, 0.4);
+  position: relative;
+  @include at-breakpoint(12 em($tablet-end)) {
+    background: $dkblue;
+    .container{
+      padding: 0;
+    }
+  }
+}
+
+.l-main{
+  padding-bottom: em(48);
+  @include at-breakpoint(12 em($tablet-end)){
+    padding-bottom: 0;
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+// General Footer Styles
+.l-footer {
+  @extend %background-primaryblue;
+  @extend %color-white;
+  padding: 2em 0;
+  box-shadow: inset 0 10px 10px -10px rgba(black, 0.4);
+  #block-cu-custom-blocks-footer-image-block{
+    @include at-breakpoint(12 em(460)){
+        margin-top: 20px;
+        text-align: center;
+    }
+  }
+}
+
+.l-best-college {
+  @include span-columns(3, 12);
+  @include at-breakpoint(12 em(700)){
+    @include span-columns(12, 12);
+    text-align: center;
+  }
+}
+.l-left-footer {
+  @include span-columns(6, 12);
+  @include at-breakpoint(12 em(900px)) {
+    @include span-columns(9 omega, 12);
+    margin-bottom: 1em;
+  }
+  @include at-breakpoint(12 em(700)){
+    @include span-columns(12, 12);
+  }
+}
+
+.l-right-footer {
+  @include span-columns(3 omega, 12);
+  @include at-breakpoint(12 em(900px)) {
+    @include span-columns(12, 12);
+  }
+}
+.block--cu-custom-blocks-footer-image-block {
+  @include at-breakpoint(12 em(768)) {
+    text-align: center;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Front page two column
+
+#front-page-2col {
+	#body-content {
+		z-index: 52;
+		position: relative;
+		top: -60px;
+		@include at-breakpoint(12 em($mobile-end)) {
+			top: 10px;
+		}
+	}
+
+	.second_section_left_2col {
+		@include span-columns(4, 12);
+		display: inline;
+
+		h2 {
+			@extend %color-primaryblue;
+			@extend %font-family-bebas;
+			background-color: white !important;
+			display: block;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			font-size: 1.5em;
+			margin-left: 5px;
+		}
+		
+		@include at-breakpoint(12 em($desk-start)) {
+			.creighton-event-calendar-right{
+				width: 58%;
+			}
+		}
+		
+		@include at-breakpoint(12 em($mobile-end)) {
+			.creighton-event-calendar-right{
+				width: 73%;
+			}
+		}
+		
+		@include at-breakpoint(12 em(810px)) {
+			.creighton-event-calendar-right{
+				width: 54%;
+			}
+		}
+		
+		.cu-event-name {
+			line-height: 18px;
+		}
+		
+		@include at-breakpoint(12 em($tablet-end)) {
+			.creighton-event-item{
+				width: 110%;
+				padding: 10px 0;
+			}
+		}
+		
+		@include at-breakpoint(12 em($mobile-end)) {
+			.creighton-event-item{
+				width: 140%;
+				padding: 0px;
+			}
+		}
+
+		.view-events-summary {	
+			border: 1px solid #7e898a;
+			box-sizing: border-box;
+			display: inline-block;
+			margin-top: 10px;
+			@include span-columns(12, 12);
+
+			.view-content {
+			    @extend .icon-dot;		    
+			    background-repeat: repeat-x;
+			    padding-top: 10px;
+		    }
+		    padding: 0 10px;
+		}
+		@include at-breakpoint(12 em($mobile-end)) {
+			float: none;
+		}
+	}
+	.second_section_right_2col {
+		@include span-columns(8 omega, 12);
+		border: 1px solid #7e898a;
+		background-color: white;
+		padding: 10px 20px;
+		
+		.front-page-elements-headline {
+		    @extend .icon-dot;		    
+			background-repeat: repeat-x;
+		    background-position: bottom left;
+
+			.field--name-field-headline,  .field--name-field-subhead, .views-field-field-headline, .views-field-field-subhead {
+			@extend h1.page-title;
+			
+			}
+			.views-field-field-headline {
+ 				font-size: 2.5em;
+				padding-bottom: 0px;
+				}
+			.views-field-field-subhead {
+				font-size: 1.5em;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+			}
+		}
+		.front-page-elements-summary {
+			clear: both;
+    			@extend .icon-dash;
+    			@include span-columns(4, 12);
+    			background-repeat: repeat-x;
+    			padding: 2.5em 0 0 0;
+    			margin-left: 0;
+   	 			border: none;
+   				@include at-breakpoint(12 em(845)) {
+      			@include span-columns(12, 12);
+      			position: relative;
+      			margin-bottom: 1em;
+    		}
+    		width: 100%;
+    		div.fp-summary-headline {
+    			color: #3255a4;
+				margin-top: 10px;
+				font-family: $gryesBold;
+				font-size: em(25px);
+				margin-bottom: .4em;
+
+    		}
+    		
+    		span.field-content a {
+    			@extend .btn-primary-blue;
+    			padding: .5em 1.5em .5em .5em;
+    		}
+    		@include at-breakpoint(12 em($mobile-end)) {
+    			.fp-summary-body img{
+    				display: none;
+    			}
+    		}
+    	}
+	
+		div.views-field-field-headline {
+			color: #ffa300;
+			margin-top: 10px;
+			font-family: $gryesBold;
+	  		font-size: em(25px);
+	  		margin-bottom: .3em;
+
+	  		@include at-breakpoint(12 em(480)) {
+				margin-left: 0;
+				margin-top: 1em;
+	  		}
+		}
+
+		@include at-breakpoint(em($desk-start) 12) {
+			div.front-page-elements-featured-content div.views-row-odd {
+				clear: left;
+				float: left;
+				width: 48%;
+			}
+	
+			div.front-page-elements-featured-content div.views-row-even {
+				float: right;
+				width: 48%;
+			}
+		}
+		span.field-content a {
+			@extend .btn-transparent-orange;
+		}
+		
+		p {
+			margin-bottom: 0px;
+		}
+		@include at-breakpoint(12 em($mobile-end)) {
+			float: right;
+			width: 100%;
+			margin-top: 10px;
+		}
+ 
+ 		.fp-summary-body img {
+ 			float: right;
+ 			width: 45%;
+ 			margin-left: 10px;
+ 		}
+	}
+	
+}
+#mini-panel-front_page_featured_links {
+	border: 1px solid #7e898a;
+	padding: 10px;
+	padding-bottom: 3px;
+	background-color: white;
+}
+
+@include at-breakpoint(12 em($mobile-end)) {
+	.footer{
+		margin-top: 50px;
+	}
+}
+
+

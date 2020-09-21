@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Robots Global Config feature.
+ */
+
+include_once 'robots_global_config.features.inc';

@@ -1,0 +1,11 @@
+name = Features Date Export
+description = Provides date format export capabilities to Features
+core = 7.x
+project = features_date
+;
+; Features support for date_formats
+; https://drupal.org/node/1279928#comment-8139295
+;
+; This features_date.module file is a direct copy of features_date.module provided by tobiasbaehr:
+; https://gist.github.com/tobiasbaehr/7292175
+; CU developers only created this .info file

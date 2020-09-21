@@ -1,0 +1,87 @@
+/**
+ * $TABLES-STYLED
+ */
+table {
+  margin-bottom: 2em;
+  p{
+    margin: 0;
+  }
+  thead {
+    th {
+      @extend %background-primaryblue;
+      @extend %color-white;
+      @extend %font-family-bebas;
+      text-align: left;
+      letter-spacing: 2px;
+      padding: .25em .5em;
+      font-size: em(18);
+      border-left: 1px solid $white;
+      border-bottom: 4px solid $white;
+      font-weight: normal;
+
+      @include at-breakpoint(9 em(1000px)){
+        padding: .25em;
+        font-size: 16px;
+      }
+
+      a {
+        @extend %color-white;
+        &.active{
+          @extend %color-white;
+          text-decoration: none;
+          &:hover{
+            @extend %color-dkblue;
+          }
+        }
+        &:after {
+          @include transition-property(all);
+          @include transition-duration(0.2s);
+          content: '';
+          border-top: 5px solid $white;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          display: inline-block;
+          padding-top: .20em;
+          margin-left: .35em;
+        }
+        &:hover {
+          @extend %color-dkblue;
+          &:after {
+              border-top-color: $dkblue;
+          }
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      @include at-breakpoint( em(846px) 9){
+        &:hover {
+          td { border-bottom: 1px solid $dkgray; }
+        }
+        // Might not need this because of drupal default tr.odd, .even styles
+        // &:nth-child(even) { background: #ebebeb; }
+      }
+
+      td {
+        padding: .5em;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+
+        a { color: $dkblue; }
+
+        @include transition-duration(0.2s);
+        @include transition-property(border-color);
+        &.fullcell {
+          @extend %background-primaryblue;
+          @extend %color-white;
+          &.program-name {
+            @extend %color-gray;
+            background: transparent;
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

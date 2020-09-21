@@ -1,0 +1,13 @@
+name = Academics Search SPOKE
+description = Academics Search SPOKE
+core = 7.x
+package = Academics
+version = 7.x-1.0
+project = academics_search_spoke
+dependencies[] = remote_viewer
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = spoke_view_program_description_search
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][entity] = entity

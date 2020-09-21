@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the 2nd Tier Page Panelizer feature.
+ */
+
+include_once 'creighton_2tier_page_panelizer.features.inc';

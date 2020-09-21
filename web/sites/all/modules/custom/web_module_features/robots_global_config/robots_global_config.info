@@ -1,0 +1,15 @@
+name = Robots Global Config
+description = Basic Configuration for all sites robot.txt files.
+core = 7.x
+package = Creighton Core Settings
+version = 7.x-1.0
+project = robots_global_config
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = robotstxt
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = administer robots.txt
+features[variable][] = robotstxt
+mtime = 1444145481

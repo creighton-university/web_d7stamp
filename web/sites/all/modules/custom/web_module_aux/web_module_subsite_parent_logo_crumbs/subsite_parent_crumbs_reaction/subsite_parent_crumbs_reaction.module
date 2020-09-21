@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implements hook_context_plugins().
+ */
+function subsite_parent_crumbs_reaction_context_plugins() {
+  $plugins = array();
+  $plugins['subsite_parent_crumbs_reaction_context_reaction_creighton_crumbs'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'subsite_parent_crumbs_reaction') . '/plugins',
+      'file' => 'subsite_parent_crumbs_reaction_context_reaction_creighton_crumbs.inc',
+      'class' => 'subsite_parent_crumbs_reaction_context_reaction_creighton_crumbs',
+      'parent' => 'context_reaction_breadcrumb',
+    ),
+  );
+  return $plugins;
+}
+
+/**
+ * Implements hook_context_registry().
+ */
+function subsite_parent_crumbs_reaction_context_registry() {
+  return array(
+    'reactions' => array(
+      'creighton_crumbs' => array(
+        'title' => t('Creighton Breadcrumb'),
+        'description' => t('Set the breadcrumb trail to the selected menu item while adhering to Creighton\'s breadcrumb structure.'),
+        'plugin' => 'subsite_parent_crumbs_reaction_context_reaction_creighton_crumbs',
+      ),
+    ),
+  );
+}
+
+/**
+* Implements hook_page_delivery_callback_alter().
+* Based on menu_position's and menu_trail_by_path's implementations.
+*/
+function subsite_parent_crumbs_reaction_page_delivery_callback_alter() {
+  if ($plugin = context_get_plugin('reaction', 'creighton_crumbs')) {
+    $plugin->execute();
+  }
+}

@@ -1,0 +1,121 @@
+/*
+ * Alerts in Header
+*/
+
+.header-alert {
+  margin: 0;
+  padding: 10px 0;
+  color: $white;
+  li {
+    color: $white;
+  }
+  img {
+    margin: 9px 44px 26px 20px;
+    float: left;
+  }
+    a, a:visited, a:hover {
+    color: $white;
+  }
+  #alert-content {
+    width: 80%;
+    padding-top: 10px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    padding-bottom: 20px;
+    float: left;
+    
+    a#alert-info {
+    padding-right: 30px;
+    background: url("/sites/all/themes/custom/web_themes/creighton_2015/images/alert-header/alert-arrow.png") no-repeat 125px 4px;   
+    color: $white; 
+  }
+
+    
+	img {
+// 		 display: none;
+	    }
+    
+    
+    #alert-headline {
+	    @extend %font-family-bebas;
+	    font-size: 36px;
+		line-height: 40px;
+		text-align: left;
+		text-transform: uppercase;
+		width: 100%;
+		margin: 0 0 10px 0;
+    }
+    p {
+	    line-height: 1.1em;
+	    font-size: 1em;
+	    
+	    em {
+		    font-weight: bold;
+		    font-family: Helvetica, Arial, sans-serif;
+	    }
+	    big {
+		    font-family: "Times New Roman", serif;
+		    font-size: 1em;
+	    }
+    }
+    @include at-breakpoint(12 em($mobile-end)) {
+    	width: 100%
+    }
+  }
+  }
+.alert-red {
+  background-color: $alert-red;
+  height: 350px;
+    
+     @include at-breakpoint(12 em($mobile-end)) {
+	    	height: 200px;
+	    }
+	.container {
+	    overflow-y: auto;
+	    padding-left: 0;
+		height: 330px;
+		width: 90%;
+    
+	    @include at-breakpoint(12 em($mobile-end)) {
+	    	height: 180px;
+	    	width: 100%;
+	    }
+    }
+
+}
+
+
+.alert-orange {
+  background-color: $alert-orange;
+  height: auto;
+  max-height: 330px;
+  
+  @include at-breakpoint(12 em($mobile-end)) {
+	    	max-height: 200px;
+	    }
+   .container {
+	    overflow-y: auto;
+	    padding-left: 0;
+		height: auto;
+		max-height: 330px;
+		width: 90%;
+    
+	    @include at-breakpoint(12 em($mobile-end)) {
+	    	max-height: 180px;
+	    	width: 100%;
+	    }
+    }
+ 
+}
+@include at-breakpoint(12 em($mobile-end)) {
+  .header-alert {
+	  width: 100%;
+    img {
+	    margin: 9px 10px 0 10px;
+    }
+    #alert-content {
+      
+     float: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/*
+ * Alerts in Header
+*/
+
+.header-alert {
+  margin: 0;
+  padding: 10px 0;
+  color: $white;
+  li {
+    color: $white;
+  }
+  img {
+    margin: 9px 44px 26px 27px;
+    float: left;
+  }
+  a#alert-info {
+    padding-right: 20px;
+    background: url("../images/alert-header/alert-arrow.png") no-repeat 125px 4px;   
+    color: $white; 
+  }
+  a, a:visited, a:hover {
+    color: $white;
+  }
+  #alert-content {
+    float: left;
+    width: 80%;
+    margin-top: -30px;
+    padding-top: 10px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 15px;
+  }
+}
+.alert-red {
+  background-color: $alert-red;
+}
+
+.alert-orange {
+  background-color: $alert-orange;
+}
+@include at-breakpoint(12 em(600)) {
+  .header-alert {
+    img {
+      width: 5%;
+    }
+    #alert-content {
+      width: 70%;
+    }
+  }
+}

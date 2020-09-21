@@ -1,0 +1,477 @@
+.program-image {
+  margin-bottom: em(40px);
+}
+.program-avail-container {
+  max-width: 320px;
+  float: right;
+  margin-left: 15px;
+  .program-avail {
+   float: left;
+   margin-left: 30px;
+  }
+  .island__other-programs {
+    float: left;
+    max-width: em(360px);
+    margin-top: 22px;
+    margin-left: 30px;
+    padding: 0 30px 30px 0;  
+    h3 {
+      margin-top: 0;
+    }
+  }
+  @include at-breakpoint(12 em($mobile-end)) {
+    width: 100%;
+    max-width: 100%;
+    .program-avail,
+    .island__other-programs {
+      float: left;
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+.view-id-academic_program_title{
+  margin-bottom: em(30px);
+
+  h1 {
+    @extend %color-dkblue;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin: 0;
+    line-height: 1.5;
+  }
+  &.icon-dash {
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    padding-bottom: em(52px);
+  }
+}
+
+/*
+ **  $Grid Matrix Filter Sidebar
+ */
+
+.academics--filter-sidebar {
+  @include span-columns(12, 12);
+
+  @include at-breakpoint(em(846) 3){
+    @include span-columns(3, 12);
+  }
+  .form-item label {
+    display: inline;
+  font-family: 'Times New Roman',serif;
+  }
+  div.views-submit-button input {
+    display: none;
+  }
+}
+.academics--matrix-content {
+  @include span-columns(12 omega, 12);
+  border-top: 2px solid $primaryblue;
+  @include at-breakpoint(em(846px) 9){
+    @include span-columns(9 omega, 12);
+    border-top: none;
+  }
+}
+
+.nav__academics-filter {
+  @extend %pull-right;
+  
+  //@include at-breakpoint(em(846px) 9) {
+  //  display: none;
+  //}
+
+
+  h3{
+    @extend %font-family-bebas;
+    @extend %color-primaryblue;
+    @extend %display-inline-block;
+    margin: 7px 24px 0 0;
+  }
+  a{
+    @extend %display-inline-block;
+    @extend %font-family-bebas;
+    @extend %background-primaryblue;
+    @extend %color-white;
+    @extend %pull-right;
+    padding: 8px 14px;
+    border-top: 2px solid $primaryblue;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:last-child{
+      margin-right: 2px;
+    }
+    &.active{
+      @extend %color-primaryblue;
+      // pointer-events: none;
+      // cursor: default;
+      background-color: $gray1;
+      border-bottom: 2px solid $gray1;
+    }
+  }
+}
+/*nav.nav__academics-filter.mobile {
+  @include at-breakpoint(12 em(600px)) {
+    display:none;
+  }
+  @include at-breakpoint(12 em(601px)) {
+  display: block;
+  }
+  @include at-breakpoint(12 em(800px)) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 659px) {
+  nav.nav__academics-filter.mobile {
+    display: none;
+  }
+}
+@media only screen
+and (min-device-width: 660px) {
+  nav.nav__academics-filter.mobile {
+    display: block;
+  }
+}
+/*@media only screen
+and (min-device-width: 800px) {
+  nav.nav__academics-filter.mobile {
+    display: none;
+  }
+}*/
+@media only screen and (max-width: 659px) {
+  /* line 129, ../sass/partials/pages/_academics.scss */
+  nav.nav__academics-filter.mobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 660px) and (max-width: 860px) {
+  /* line 135, ../sass/partials/pages/_academics.scss */
+  nav.nav__academics-filter.mobile {
+    display: block;
+  }
+}
+@media only screen and (min-width: 861px) {
+  /* line 129, ../sass/partials/pages/_academics.scss */
+  nav.nav__academics-filter.mobile {
+    display: none;
+  }
+}
+#edit-aca-prg-interests-wrapper, /* used for interest filter */
+#edit-submit-academics-matrix,
+#edit-alpha-wrapper,
+#edit-online-wrapper,
+#edit-accelerated-wrapper,
+#edit-professional-wrapper,
+#edit-prg-offered-wrapper{
+  @extend %element-hidden;
+}
+#edit-name-wrapper, 
+#edit-name-1-wrapper, 
+#edit-name-2-wrapper, 
+#edit-name-3-wrapper, 
+#edit-name-4-wrapper, 
+#edit-name-5-wrapper, 
+#edit-name-6-wrapper, 
+#edit-name-7-wrapper, 
+#edit-name-8-wrapper, 
+#edit-name-8-wrapper, 
+#edit-name-9-wrapper, 
+#edit-name-10-wrapper, 
+#edit-name-11-wrapper, 
+#edit-name-12-wrapper, 
+#edit-name-13-wrapper, 
+#edit-name-14-wrapper {
+  display: none;
+}
+#edit-submit-academics-programs-matrix-college {
+  display:none;
+}
+.filter__academics {
+  @include clearfix;
+  display: block;
+  margin: 0 0 20px 0;
+  background-color: $gray1;
+  padding: 20px;
+  width: 100%;
+
+  &.button-list{
+    @include at-breakpoint(em(845px) 9){
+      background-color: transparent;
+      padding: 0;
+    }
+
+    a{
+      @extend %pull-right;
+      border-bottom: 1px solid $blue;
+      margin-right: 10px;
+      margin: 8px 10px 0 0;
+      font-size: em(13);
+      line-height: 1;
+      text-decoration: none;
+      &:hover{
+        border-bottom-color: $dkblue;
+      }
+    }
+    button{
+      @extend %pull-right;
+      @extend %background-dkblue;
+      @extend %font-family-bebas;
+      @extend %color-white;
+      @include transition(color 0.2s, background-color 0.2s);
+      padding: 6px 16px;
+      border: none;
+      letter-spacing: 1px;
+      &:hover{
+        @extend %background-primaryblue;
+      }
+    }
+  }
+
+  @include at-breakpoint(9 em(845px) ) {
+    @include transition(display 0.2s);
+    display: none;
+    border-bottom: 2px solid $primaryblue;
+    margin-bottom: 0;
+    &.hide {
+      display: none;
+    }
+  }
+  &.show{
+    display: block;
+    @include at-breakpoint(12 em(845)){
+      border-bottom: none;
+    }
+  }
+
+  h3{
+    @extend %font-family-bebas;
+    @extend %color-primaryblue;
+    margin: 0;
+  }
+  .form-item{
+    margin-bottom: 4px;
+    font-family: 'Times New Roman',serif;
+  }
+  form{
+    padding-left: 4px;
+    margin: 0;
+  }
+  label,
+  input{
+    @extend %display-inline-block;
+    margin: 0;
+  }
+  label{
+    @extend %color-dkblue;
+    margin-left: 4px;
+    font-weight: normal;
+    font-size: em(14px);
+  }
+}
+
+.filter__academics.button-list {
+  a {
+    font-size: 1em;  
+  }
+}
+ 
+.views-exposed-form .views-exposed-widget{
+  float: none;
+  padding: 0;
+}
+
+.views-widget-filter-field_aca_prg_title_value{
+  label{
+    @extend %color-primaryblue;
+    @extend %font-family-bebas;
+    @extend %element-hidden;
+  }
+  input{
+    @extend .icon-search-icon-drkblue;
+    background-position: 10px center;
+    text-indent: 26px;
+    font-size: em(16);
+
+    &#edit-title {
+      line-height: em(30px);
+    }
+  }
+}
+
+.alpha-filter{
+  max-width: 100%;
+  margin-bottom: 24px;
+  padding: 4px 0;
+  text-align: center;
+  border-bottom: 1px solid $gray1;
+  border-top: 1px solid $gray1;
+
+  @include at-breakpoint(12 em(845)){
+    display: none;
+  }
+  span{
+    @extend %display-inline-block;
+  }
+
+  a{
+    @extend %font-family-bebas;
+    @extend %color-dkblue;
+    padding: 6px;
+    text-decoration: none;
+    line-height: 1;
+    &:hover{
+      text-decoration: none;
+      background-color: $gray1;
+    }
+  }
+}
+
+.tablesaw {
+  @include at-breakpoint(9 em(845)) {
+    border-left: 1px solid $gray1;
+    border-right: 1px solid $gray1;
+  }
+
+  .tbody .tr {
+    border-bottom-color: $gray1;
+    @include at-breakpoint(12 em(480px)) {
+      border-bottom: 2px solid $white;
+    }
+
+      .online-course {
+      //display: flex;
+    }
+    ul {
+      padding: 0 0 0 15px !important;
+      margin: 0 0 0 0;
+
+
+      @include at-breakpoint(9 em(1000px)) {
+        font-size: 13px;
+        td {
+          padding: .5em;
+        }
+      }
+
+      @include at-breakpoint(12 em(845px)) {
+        font-size: 14px;
+        //border-bottom: 1px solid rgba($gray, 0.5);
+        &.odd {
+          background-color: rgba($gray, 0.3);
+          .td {
+            //border-top: 1px solid rgba(179, 180, 179, 0.5);
+            &:first-child {
+              border: none;
+            }
+          }
+        }
+        &.even {
+          background-color: transparent;
+          .td {
+            border-top: 1px solid rgba(179, 180, 179, 0.5);
+            &:first-child {
+              border: none;
+            }
+          }
+        }
+        .td {
+          border-right: none;
+          border-bottom: none;
+        }
+      }
+      @include at-breakpoint(12 em(480px)) {
+         border-bottom: 0 none;
+       }
+    }
+  }
+}
+
+  .tablesaw-stack {
+    .tr {
+      @include at-breakpoint(12 em(480px)) {
+        padding: 10px 0;
+      }
+    }
+    .th {
+      @media (max-width: 1140px) {
+        letter-spacing: 0 !important;
+      }
+    }
+    a {
+      display: block;
+    }
+    .td, .th {
+      @include at-breakpoint(12 em(480px)) {
+        width: 90%;
+      }
+    }
+    .td {
+      font-family: 'Open Sans', sans-serif;
+      font-size: .8em;
+      font-weight: 100;
+      letter-spacing: 0 !important;
+    }
+    .td:first-child {
+      position: inherit;
+      left: -10px;
+      font-weight: bold;
+      @include at-breakpoint(12 em(640px)) {
+        left: 0px;
+      }
+    }
+    .td .tablesaw-cell-label {
+      @extend %font-family-bebas;
+      @extend %color-primaryblue;
+      font-weight: bold;
+      @include at-breakpoint(12 em(845px)) {
+        min-width: 18%;
+      }
+      @include at-breakpoint(12 em(600px)) {
+        min-width: 24%;
+      }
+      @include at-breakpoint(12 em(600px)) {
+        min-width: 30%;
+      }
+    }
+
+      .views-field-field-aca-prg-title {
+        width: 30%;
+        //max-width: 254px;
+        flex: 2 1 200px !important;
+        word-wrap: break-word;
+      }
+      .views-field-field-aca-prg-bachelors,
+      .views-field-field-aca-prg-masters-title,
+      .views-field-field-aca-prg-doctorate-title,
+      .views-field-field-aca-prg-certificate-title,
+      .views-field-field-aca-prg-associates-title {
+        width: 14%;
+        ul li {
+          @include at-breakpoint(12 em(600px)) {
+            margin-left: 20px;
+          }
+        }
+      }
+
+  }
+
+.table.tablesaw-stack .thead .th {
+  border-left: none;
+  border-right: 1px solid #fff;
+  flex: 1 1 100px;
+}
+
+.tablesaw-stack .tr.odd {
+  background-color: #ddd;
+}
+.tablesaw-stack .tr.even {
+  background-color: #eee;
+}
+.view-gradschool-clone-of-programs-matrix-by-tax-term .table .thead .th {
+  letter-spacing: 0;
+}

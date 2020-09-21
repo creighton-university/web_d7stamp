@@ -124,7 +124,29 @@
         "drupal/themekey": "3.2",
         "drupal/token": "1.6",
         "drupal/total_control": "2.4",
-        "drupal/transliteration": "3.2"
+        "drupal/transliteration": "3.2",
+        "drupal/typogrify": "1.0-rc10",
+        "drupal/ultimate_cron": "2.0",
+        "drupal/varnish": "1.0-beta3",
+        "drupal/video_filter": "3.x-dev",
+        "drupal/view_unpublished": "1.1",
+        "drupal/views": "3.15",
+        "drupal/views_data_export": "3.1",
+        "drupal/views_json_query": "1.x-dev",
+        "drupal/views_php": "1.0-alpha3",
+        "drupal/views_slideshow": "3.1",
+        "drupal/vppr": "1.0",
+        "drupal/webform": "4.14",
+        "drupal/webform_ajax": "1.1",
+        "drupal/webform_layout": "^2.3",
+        "drupal/webform_validation": "^1.18",
+        "drupal/workflow": "2.10",
+        "drupal/wysiwyg": "^2.6",
+        "drupal/wsclient": "^1.0",
+        "drupal/wysiwyg_filter": "1.6-rc2",
+        "drupal/xmlsitemap": "^2.6",
+        "drupal/bootstrap": "3.23",
+        "drupal/omega": "4.4"
     },
     "extra": {
         "custom-installer": {
@@ -143,6 +165,15 @@
             "drupal/ife 2.0-alpha2": {
                 "ife-add_global_activation_checkbox": "http://www.drupal.org/files/issues/ife-add_global_activation_checkbox-750594-13-D7.patch",
                 "replace-todo-permission-description": "http://www.drupal.org/files/issues/replace-todo-permission-description-2321637-1.patch"
+            },
+            "drupal/views 3.15": {
+                "views-case_insensitive_search-1805272-56": "https://www.drupal.org/files/issues/views-case_insensitive_search-1805272-56.patch"
+            },
+            "drupal/views_json_query 1.x-dev": {
+                "views-json-query-add-array-functionality-2598600-6_0": "https://www.drupal.org/files/issues/views-json-query-add-array-functionality-2598600-6_0.patch"
+            },
+            "drupal/webform_ajax 1.1": {
+                "webform_ajax-webform-4.x-support-2102029": "http://drupal.org/files/webform_ajax-webform-4.x-support-2102029.patch"
             }
         }
     }

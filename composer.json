@@ -44,12 +44,12 @@
     },
     "extra": {
         "custom-installer": {
-            "drupal-module": "docroot/sites/all/modules/contrib/{$name}/",
-            "drupal-theme": "docroot/sites/all/themes/contrib/{$name}/",
-            "drupal-library": "docroot/sites/all/libraries/{$name}/",
-            "drupal-drush": "docroot/sites/all/drush/{$name}/",
-            "drupal-profile": "docroot/profiles/{$name}/",
-            "drupal-core": "docroot/"
+            "drupal-module": "web/sites/all/modules/contrib/{$name}/",
+            "drupal-theme": "web/sites/all/themes/contrib/{$name}/",
+            "drupal-library": "web/sites/all/libraries/{$name}/",
+            "drupal-drush": "web/sites/all/drush/{$name}/",
+            "drupal-profile": "web/profiles/{$name}/",
+            "drupal-core": "web/"
         }
     }
 }

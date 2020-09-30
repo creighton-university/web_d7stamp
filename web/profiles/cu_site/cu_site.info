@@ -101,3 +101,10 @@ dependencies[] = environment_variables
 ;dependencies[] = expire
 ;dependencies[] = memcache
 ;dependencies[] = varnish
+
+; Enable custom Pantheon modules
+;dependencies[] = apachesolr
+;dependencies[] = apachesolr_search
+dependencies[] = pantheon_api
+dependencies[] = pantheon_login
+;dependencies[] = pantheon_apachesolr

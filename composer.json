@@ -149,7 +149,7 @@
         "drupal/views_php": "1.0-alpha3",
         "drupal/views_slideshow": "3.1",
         "drupal/vppr": "1.0",
-        "drupal/webform": "4.14",
+        "drupal/webform": "4.23",
         "drupal/webform_ajax": "1.1",
         "drupal/webform_layout": "^2.3",
         "drupal/webform_validation": "^1.18",

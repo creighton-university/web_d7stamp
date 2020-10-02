@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Remote Content Setup - Remote Site feature.
- */
-
-include_once 'remote_content_setup_remote_site.features.inc';

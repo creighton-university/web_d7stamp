@@ -1,6 +1,0 @@
-name = Creighton Quick Search Blocks
-description = Blocks for the Header and Footer holding the search form
-core = 7.x
-package = Creighton
-files[] = cu_quick_search_blocks.module
-version = "7.x-2.22"

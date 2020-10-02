@@ -1,6 +1,0 @@
-name = Subsite Parent Crumbs Reaction for Context
-description = Add new Context reaction to create breadcrumbs consistent with the Creighton.edu architecture
-package = Creighton
-dependencies[] = subsite_parent_logo_crumbs
-dependencies[] = context
-core = 7.x

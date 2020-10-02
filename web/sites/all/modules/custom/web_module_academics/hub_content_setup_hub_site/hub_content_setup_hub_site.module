@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Hub Content Setup - Hub Site feature.
- */
-
-include_once 'hub_content_setup_hub_site.features.inc';

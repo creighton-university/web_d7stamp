@@ -1,7 +1,0 @@
-name = XML Sitemap Views Integration
-description = Enables integration of Views pages with XML Sitemap. Mimics Custom Link functionality with XML Sitemap in an automated fashion from given View(s).
-package = Creighton
-dependencies[] = views
-dependencies[] = xmlsitemap
-core = 7.x
-files[] = xmlsitemap_views_views_plugin_display_extender.inc

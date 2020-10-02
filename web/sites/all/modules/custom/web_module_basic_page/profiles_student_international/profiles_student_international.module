@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Profiles Student International feature.
- */
-
-include_once 'profiles_student_international.features.inc';

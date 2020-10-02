@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Media feature.
- */
-
-include_once 'creighton_media.features.inc';

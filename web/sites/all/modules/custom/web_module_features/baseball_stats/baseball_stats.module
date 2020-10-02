@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Baseball Stats feature.
- */
-
-include_once 'baseball_stats.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the News and Events feature.
- */
-
-include_once 'creighton_news_events.features.inc';

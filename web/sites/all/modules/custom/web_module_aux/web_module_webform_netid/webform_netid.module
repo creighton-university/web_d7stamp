@@ -1,0 +1,260 @@
+<?php
+
+/**
+ * @file
+ * Webform module NetID component.
+ */
+
+// add additional description text to field_key field to instruct user how to name fields
+function webform_netid_form_alter(&$form, &$form_state, $form_id) {
+  // Check if is a webform form.
+  if (strpos($form_id, 'webform_client_form_') === 0 && (isset($form['#node']->webform['components']))) {
+    drupal_add_js(drupal_get_path('module', 'webform_netid'). '/webform_netid.ajax_user.js');
+  }
+  if($form_id == 'webform_component_edit_form') {
+    $is_netid_form = FALSE;
+    foreach($form['#node']->webform['components'] as $comp) {
+      if($comp['type'] == 'netid') {
+        $is_netid_form = TRUE;
+        $netid_form_key = $comp['form_key'];
+        break;
+      }
+    }
+    if($is_netid_form) {
+      $netid_fields = array(
+                        'fullname' => 'Full Name (combined first and last name in a single field)',
+                        'firstname' => 'First Name',
+                        'lastname' => 'Last Name',
+                        'location' => 'Office Location',
+                        'phonenumber' => 'Phone Number',
+                        'email' => 'Friendly E-mail Address',
+                        'department' => 'Department',
+                        'title' => 'Title'
+                      );
+      $form['form_key']['#description'] .= t("<br /><br /><strong>NOTE:</strong><br />Use the following Field Key naming scheme to enable a field to be prepopulated from NetID:<br /><br /><ul>");
+      foreach($netid_fields as $field_key => $field_desc) {
+        $form['form_key']['#description'] .= t("<li><strong>{$netid_form_key}_{$field_key}</strong> - {$field_desc}</li>");
+      }
+      $form['form_key']['#description'] .= t("</ul>");
+    }
+  }
+}
+
+// Define component and its basic capabilities
+function webform_netid_webform_component_info() {
+  $components = array();
+  $components['netid'] = array(
+    'label' => t('NetID'),
+    'description' => t('Create a NetID text field with validation and javascript autopopulate for select form fields.'),
+    'features' => array(
+      'csv' => TRUE,
+      'email' => TRUE,
+      'email_address' => FALSE,
+      'email_name' => FALSE,
+      'required' => TRUE,
+      'title_display' => TRUE,
+      'title_inline' => TRUE,
+      'conditional' => TRUE,
+      'group' => FALSE,
+      'spam_analysis' => FALSE,
+      'attachment' => FALSE,
+    ),
+  );
+  return $components;
+}
+
+/**
+ * Implements _webform_defaults_component().
+ */
+function _webform_defaults_netid() {
+  return array(
+    'name' => '',
+    'form_key' => NULL,
+    'pid' => 0,
+    'weight' => 0,
+    'value' => '',
+    'required' => 0,
+    'extra' => array(
+      'width' => '8',
+      'maxlength' => '8',
+      'field_prefix' => '',
+      'field_suffix' => '',
+      'disabled' => 0,
+      'unique' => 0,
+      'title_display' => 0,
+      'description' => '',
+      'description_above' => FALSE,
+      'placeholder' => '',
+      'attributes' => array(),
+      'private' => FALSE,
+      'analysis' => FALSE,
+    ),
+  );
+}
+
+/**
+ * Implements _webform_theme_component().
+ */
+function _webform_theme_netid() {
+  return array(
+    'webform_display_netid' => array(
+      'render element' => 'element',
+    ),
+  );
+}
+
+/**
+ * Implements _webform_edit_component().
+ */
+function _webform_edit_netid($component) {
+  $form = array();
+  $form['value'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Default value'),
+    '#default_value' => $component['value'],
+    '#description' => t('The default value of the field.') . ' ' . theme('webform_token_help'),
+    '#size' => 60,
+    '#maxlength' => 1024,
+    '#weight' => 0,
+  );
+  $form['display']['width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Width'),
+    '#default_value' => $component['extra']['width'],
+    '#description' => t('Width of the textfield.') . ' ' . t('Leaving blank will use the default size.'),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#weight' => 0,
+    '#parents' => array('extra', 'width'),
+  );
+  $form['display']['placeholder'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Placeholder'),
+    '#default_value' => $component['extra']['placeholder'],
+    '#description' => t('The placeholder will be shown in the field until the user starts entering a value.'),
+    '#weight' => 1,
+    '#parents' => array('extra', 'placeholder'),
+  );
+  $form['validation']['maxlength'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maxlength'),
+    '#default_value' => $component['extra']['maxlength'],
+    '#description' => t('Maximum length of the textfield value.'),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#weight' => 2,
+    '#parents' => array('extra', 'maxlength'),
+  );
+  return $form;
+}
+
+/**
+ * Implements _webform_render_component().
+ */
+function _webform_render_netid($component, $value = NULL, $filter = TRUE, $submission = NULL) {
+  $node = isset($component['nid']) ? node_load($component['nid']) : NULL;
+
+  $element = array(
+    '#type' => 'textfield',
+    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
+    '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
+    '#default_value' => $filter ? webform_replace_tokens($component['value'], $node) : $component['value'],
+    '#required' => $component['required'],
+    '#weight' => $component['weight'],
+    '#description' => $filter ? webform_filter_descriptions($component['extra']['description'], $node) : $component['extra']['description'],
+    '#attributes' => $component['extra']['attributes'],
+    '#theme_wrappers' => array('webform_element'),
+    '#translatable' => array('title', 'description', 'field_prefix', 'field_suffix'),
+    '#attributes' => array('onkeyup' => 'autoFill(this, 8, user)'),
+    '#element_validate' => array('webform_netid_validate'),
+  );
+
+  if ($component['required']) {
+    $element['#attributes']['required'] = 'required';
+  }
+
+  if ($component['extra']['placeholder']) {
+    $element['#attributes']['placeholder'] = $component['extra']['placeholder'];
+  }
+
+  // Change the 'width' option to the correct 'size' option.
+  if ($component['extra']['width'] > 0) {
+    $element['#size'] = $component['extra']['width'];
+  }
+  if ($component['extra']['maxlength'] > 0) {
+    $element['#maxlength'] = $component['extra']['maxlength'];
+  }
+
+  if (isset($value[0])) {
+    $element['#default_value'] = $value[0];
+  }
+
+  return $element;
+}
+
+/**
+ * Implements _webform_display_component().
+ */
+function _webform_display_netid($component, $value, $format = 'html', $submission = array()) {
+  return array(
+    '#title' => $component['name'],
+    '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
+    '#weight' => $component['weight'],
+    '#theme' => 'webform_display_textfield',
+    '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
+    '#format' => $format,
+    '#value' => isset($value[0]) ? $value[0] : '',
+    '#translatable' => array('title'),
+  );
+}
+
+/**
+ * Format the output of data for this component.
+ */
+function theme_webform_display_netid($variables) {
+  $element = $variables['element'];
+  $value = $element['#format'] == 'html' ? check_plain($element['#value']) : $element['#value'];
+  return $value !== '' ? ($value) : ' ';
+}
+
+/**
+ * Implements _webform_table_component().
+ */
+function _webform_table_netid($component, $value) {
+  return check_plain(empty($value[0]) ? '' : $value[0]);
+}
+
+/**
+ * Implements _webform_action_set_component().
+ */
+function _webform_action_set_netid($component, &$element, &$form_state, $value) {
+  $element['#value'] = $value;
+  form_set_value($element, $value, $form_state);
+}
+
+/**
+ * Implements _webform_csv_headers_component().
+ */
+function _webform_csv_headers_netid($component, $export_options) {
+  $header = array();
+  $header[0] = '';
+  $header[1] = '';
+  $header[2] = $export_options['header_keys'] ? $component['form_key'] : $component['name'];
+  return $header;
+}
+
+/**
+ * Implements _webform_csv_data_component().
+ */
+function _webform_csv_data_netid($component, $export_options, $value) {
+  return !isset($value[0]) ? '' : $value[0];
+}
+
+/**
+ * Validate NetID format abc12345 or ab12345g
+ */
+function webform_netid_validate($element, &$form_state) {
+  if(! (preg_match('/[A-Za-z]{3}[0-9]{5}/', $element['#value']) || preg_match('/[A-Za-z]{2}[0-9]{5}g/', $element['#value']))) {
+    form_error($element, 'Invalid NetID format');
+  }
+}

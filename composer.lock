@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b13e493b8e64c46bbe4968f8890368b",
+    "content-hash": "60e5a1bb600426ed944acdb702a3b107",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -743,7 +743,8 @@
             "homepage": "https://www.drupal.org/project/block_api",
             "support": {
                 "source": "https://git.drupalcode.org/project/block_api"
-            }
+            },
+            "time": "2012-06-01T15:43:51+00:00"
         },
         {
             "name": "drupal/block_class",
@@ -1062,7 +1063,8 @@
             "homepage": "https://www.drupal.org/project/cer",
             "support": {
                 "source": "https://git.drupalcode.org/project/cer"
-            }
+            },
+            "time": "2014-08-08T20:17:03+00:00"
         },
         {
             "name": "drupal/ckeditor_link",
@@ -1980,22 +1982,22 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.73.0",
+            "version": "7.72.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.73"
+                "reference": "7.72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.73.zip",
-                "reference": "7.73",
-                "shasum": "253212fb23a2d23daa3292a1d64ac9e44cfe207c"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.72.zip",
+                "reference": "7.72",
+                "shasum": "0cb4cf16f4f7e9957e16978ff5504c70cf0314e6"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.73",
+                    "version": "7.72",
                     "datestamp": "1600280131",
                     "security-coverage": {
                         "status": "covered",
@@ -7563,7 +7565,8 @@
             "homepage": "https://www.drupal.org/project/video_filter",
             "support": {
                 "source": "https://git.drupalcode.org/project/video_filter"
-            }
+            },
+            "time": "2017-02-22T04:10:09+00:00"
         },
         {
             "name": "drupal/view_unpublished",
@@ -7948,7 +7951,8 @@
             "homepage": "https://www.drupal.org/project/views_json_query",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_json_query"
-            }
+            },
+            "time": "2018-02-09T18:09:10+00:00"
         },
         {
             "name": "drupal/views_php",
@@ -8712,7 +8716,8 @@
                 "url": "https://github.com/malsup/cycle",
                 "reference": "master"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2020-10-01T21:21:55+00:00"
         }
     ],
     "packages-dev": [],

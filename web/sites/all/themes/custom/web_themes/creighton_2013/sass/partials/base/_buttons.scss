@@ -1,0 +1,244 @@
+/**
+ * $BUTTONS
+ */
+
+// NOTE: Check if we ever use a base btn style and base transparent btn
+// .btn {
+//   @extend %font-family-bebas;
+//   @extend %display-inline-block;
+//   @include transition-duration(0.2s);
+//   @include transition-property(background-color);
+//   cursor: pointer;
+//   margin: em(4px) 0;
+//   border: 0;
+//   background-position: 95% center;
+//   text-decoration: none;
+//   font-size: em(19px);
+//   line-height: 1;
+//   padding: em(8px) em(24px) em(8px) em(8px);
+// }
+//
+// .btn-transparent {
+//   @include btn-style(background-transparent, color-gray, icon-gray-arrow);
+//   padding-left: 0;
+//   &:hover {
+//     @extend %color-dkblue;
+//     @extend .icon-dkblue-arrow;
+//   }
+// }
+
+// GREEN BUTTONS
+.btn-green {
+  @include btn-style(background-green, color-white, icon-white-arrow); // $background-extend, $color-extend, $icon-arrow-extend
+  &:hover {
+    @extend %background-dkblue;
+    @extend %color-white;
+  }
+}
+.btn-transparent-green{
+  @include btn-style(background-transparent, color-green, icon-green-arrow);
+  padding-left: 0;
+  &:hover{
+    @extend %color-dkblue;
+    @extend .icon-dkblue-arrow;
+  }
+}
+
+.btn-featured-green,
+a.btn-featured-green{
+  @include btn-style(background-green, color-white, icon-white-arrow);
+  @extend %display-block;
+  @include btn-size(24px, em(8px) em(32px) em(8px) em(8px) );
+  &:hover{
+    @extend %background-dkblue;
+    @extend %color-white;
+  }
+}
+
+// DARK BLUE BUTTONS
+.btn-dkblue {
+  @include btn-style(background-dkblue, color-white, icon-white-arrow);
+  &:hover {
+    @extend %background-blue;
+    @extend %color-white;
+  }
+}
+.btn-transparent-dkblue{
+  @include btn-style(background-transparent, color-dkblue, icon-dkblue-arrow);
+  padding-left: 0;
+  &:hover{
+    @extend %color-blue;
+    @extend .icon-blue-arrow;
+  }
+}
+
+// Primary Blue
+.btn-primary-blue {
+  @include btn-style(background-primaryblue, color-white, icon-white-arrow);
+  &:hover {
+    @extend %background-primaryblue;
+    @extend %color-white;
+  }
+}
+.btn-transparent-primaryblue{
+  @include btn-style(background-transparent, color-primaryblue, icon-primaryblue-arrow);
+  padding-left: 0;
+  &:hover{
+    @extend %color-primaryblue;
+    @extend .icon-primaryblue-arrow;
+  }
+}
+
+// Orange
+.btn-orange {
+  @include btn-style(background-orange, color-white, icon-white-arrow);
+  &:hover {
+    @extend %background-red;
+    @extend %color-white;
+  }
+}
+.btn-transparent-orange {
+  @include btn-style(background-transparent, color-orange, icon-orange-arrow);
+  padding-left: 0;
+  &:hover {
+    @extend %color-dkblue;
+    @extend .icon-dkblue-arrow;
+  }
+}
+
+.btn-featured-orange,
+a.btn-featured-orange{
+  @include btn-style(background-orange, color-white, icon-white-arrow);
+  @extend %display-block;
+  @include btn-size(24px, em(8px) em(32px) em(8px) em(8px) );
+  &:hover{
+    @extend %color-dkblue;
+    @extend .icon-dkblue-arrow;
+  }
+}
+
+// Yellow
+.btn-yellow {
+  @include btn-style(background-yellow, color-white, icon-white-arrow);
+  &:hover {
+    @extend %background-red;
+    @extend %color-white;
+  }
+}
+.btn-transparent-yellow{
+  @include btn-style(background-transparent, color-yellow, icon-yellow-arrow);
+  padding-left: 0;
+  &:hover{
+    @extend %color-dkblue;
+    @extend .icon-dkblue-arrow;
+  }
+}
+
+// BLUE BUTTONS
+.btn-blue {
+  @include btn-style(background-blue, color-white, icon-white-arrow);
+  &:hover {
+    @extend %background-primaryblue;
+    @extend %color-white;
+  }
+}
+.btn-transparent-blue {
+  @include btn-style(background-transparent, color-blue, icon-blue-arrow);
+  padding-left: 0;
+  &:hover {
+    @extend %color-primaryblue;
+    @extend .icon-primaryblue-arrow;
+  }
+}
+
+.btn-transparent-blue-alt {
+  @include btn-style(background-transparent, color-blue, icon-blue-arrow);
+  padding-left: 0;
+  &:hover {
+    @extend %color-white;
+    @extend .icon-white-arrow;
+  }
+}
+
+.btn-featured,
+a.btn-featured{
+  @include btn-style(background-primaryblue, color-white, icon-white-arrow);
+  @extend %display-block;
+  @include btn-size(24px, em(8px) em(32px) em(8px) em(8px) );
+  &:hover{
+    @extend %background-dkblue;
+    @extend %color-white;
+  }
+}
+
+.l-region--left-footer {
+ .menu-name-menu-a {
+   &.btn-featured:hover {
+     @extend %background-dkblue;
+   }
+ } 
+}
+
+// White
+.btn-transparent-white{
+  @include btn-style(background-transparent, color-white, icon-white-arrow);
+  padding-left: 0;
+  @include btn-size(16px, em(4px) em(24px) em(4px) em(4px) );
+  &:hover{
+    @extend %color-white;
+    @extend .icon-white-arrow;
+  }
+}
+.btn-featured-white,
+a.btn-featured-white{
+  @include btn-style(background-transparent, color-white, icon-white-arrow);
+  @extend %display-block;
+  @include btn-size(20px, em(4px) em(28px) em(4px) em(4px) );
+  &:hover{
+    @extend %background-transparent;
+    @extend %color-white;
+  }
+}
+
+.views-row-1 a.btn-featured {
+	margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO: Look to see if this is needed still
+//     /* Make any button have no background */
+//     &.btn-transparent, &.btn-transparent:hover {
+//         background-color: transparent;
+//     }
+//     /* Slightly larger button */
+//     &.btn-large {
+//         padding: .5em 2em 0.5em .5em;
+//         font-size: 1.5em;
+//     }
+//     /* Make a button a block element */
+//     &.btn-block {
+//         display: block;
+//     }
+// }
+// a.btn:visited {
+//     color: #fff;
+// }
+// a.btn.btn-transparent {
+//     color: $gray;
+// }
+
+
+
+
+
+

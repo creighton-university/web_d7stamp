@@ -1,0 +1,71 @@
+/*
+div.front-page-2col section.hero {
+	background-image: url(http://cbu04905.web-dev.creighton.edu/sites/cbu04905.web-dev.creighton.edu/files/media/top.png);
+	height: 310px;
+	margin-top: 150px;
+}
+*/
+
+.second_section_left_2col {
+/*
+	float: left;
+	width: 34%;
+	margin-right: 3%;
+*/
+/* 	margin-top: -100px */
+}
+.second_section_right_2col {
+/*
+	float: right;
+	width: 63%;
+*/
+/* 	margin-top: -100px; */
+
+}
+.second_section_right_center_left_2col {
+    float: left;
+}
+.second_section_right_center_right_2col {
+    float: right;
+}
+.second_section_right_top_2col {
+    margin-bottom: 0;
+    
+section#body-content>.container {
+    	margin-top: -65px;
+    }
+   
+.main-header {
+	background-color: rgba(0, 46, 111, 1);
+}
+
+/*.panel-3col .panel-col-first {
+  float: left;
+  width: 25%;
+}
+
+.panel-3col .panel-col-first .inside {
+  margin: 0 .5em 1em 0;
+}
+
+.panel-3col .panel-col {
+  float: left;
+  width: 50%;
+}
+
+.panel-3col .panel-col .inside {
+  margin: 0 .5em 1em .5em;
+}
+
+.panel-3col .panel-col-last {
+  float: left;
+  width: 25%;
+}
+
+.panel-3col .panel-col-last .inside {
+  margin: 0 0 1em .5em;
+}
+
+.panel-3col .panel-separator {
+  margin: 0 0 1em 0;
+}*/

@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function cu_quick_search_blocks_block_info() {
+  $blocks = array();
+  $blocks['header_search_block'] = array(
+    'info' => t('Secondary Header Quick Search'),
+    'status' => TRUE,
+    'region' => 'secondary_header',
+  );
+  $blocks['footer_search_block'] = array(
+    'info' => t('Footer Quick Search'),
+    'status' => TRUE, 
+    'region' => 'footer',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function cu_quick_search_blocks_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'header_search_block' :
+      $block['subject'] = 'Header Quick Search';
+      $block['content'] = get_search_block("topsearch","quick-search");
+      break;
+    case 'footer_search_block' :
+      $block['subject'] = 'Footer Quick Search';
+      $block['content'] = get_search_block("bottomsearch","outline-search");
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Custom function to assemble renderable array for block content.
+ *
+ * @param string $id
+ *  The id of the search
+ * @param string $class
+ *  The class of the search
+ *
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
+ */
+
+function get_search_block($id,$class) {
+  global $base_url;
+  $site_search = '<form method="get" action="https://search.creighton.edu/s/search.html"> 
+  <input type="hidden" name="collection" value="creighton-search">
+  <input type="text" name="query" class="cu-query" placeholder="Search">
+</form>';
+
+
+  // Block output in HTML with div wrapper
+  $block = array(
+      'message' => array(
+          '#prefix' => '<div class="' . $class . ' cbu04905">',
+          '#type' => 'markup',
+          '#markup' => $site_search,
+          '#suffix' => '</div>',
+      )
+  );
+
+  return $block;
+}
+

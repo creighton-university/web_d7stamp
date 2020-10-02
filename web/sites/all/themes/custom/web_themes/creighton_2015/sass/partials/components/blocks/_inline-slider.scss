@@ -1,0 +1,81 @@
+.bean-inline-slider{
+  .field-collection-view,
+  .field-collection-container{
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+    position: relative;
+  }
+}
+.slideshow {
+  margin-bottom: 2em;
+  position: relative;
+  @include opacity(0);
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .caption {
+    position: absolute;
+    bottom: 0;
+    padding: 1em 10%;
+    color: #fff;
+    @include rgba-background(rgba($dkblue, 0.8));
+    width: 100%;
+    @include at-breakpoint(12 em(540)) {
+      position: relative;
+      bottom: auto;
+      font-size: em(13);
+      line-height: em(17);
+      background-color: $dkblue;
+    }
+  }
+  .bx-wrapper {
+    position: relative;
+  }
+  .bx-viewport {
+    @include at-breakpoint(12 em(540)) {
+      height: auto !important;
+    }
+  }
+  .bx-controls {
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    @include at-breakpoint(12 em(540)) {
+      //33.75em
+      bottom: auto;
+      top: 42%;
+    }
+
+    a {
+      @extend %display-inline-block;
+      @extend .icon-left-right-arrows;
+      height: 26px;
+      width: 16px;
+      text-indent: -1999px;
+      overflow: hidden;
+      // background: url(images/left-right-arrows.png) no-repeat;
+      // .svg & {
+      //   background: url(images/left-right-arrows.svg) no-repeat;
+      // }
+      &.bx-next {
+        float: right;
+        margin-right: 3%;
+        background-position: -18px -1px;
+        background-size: auto;
+        &:hover {
+          background-position: -18px -30px;
+        }
+      }
+      &.bx-prev {
+        float: left;
+        margin-left: 3%;
+        background-size: auto;
+        &:hover {
+          background-position: 0px -29px;
+        }
+      }
+    }
+  }
+}

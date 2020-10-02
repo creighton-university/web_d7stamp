@@ -1,0 +1,133 @@
+/**
+ * $FIELDSETS
+ */
+.form-wrapper {
+  margin-bottom: $vert-spacing-unit;
+  clear: both;
+}
+
+fieldset {
+  margin-left: 0;
+  margin-right: 0;
+  padding: ($vert-spacing-unit / 2) $horz-spacing-unit $vert-spacing-unit $horz-spacing-unit;
+
+  border-color: $coolgray;
+}
+
+legend {
+  @include font-size(18px);
+  padding: 0 0.8em;
+  color: $coolgray;
+}
+
+.fieldset-description {
+  margin-bottom: $vert-spacing-unit / 2;
+  color: $coolgray;
+  font-style: italic;
+}
+
+.vertical-tabs fieldset.vertical-tabs-pane {
+  padding: $vert-spacing-unit $horz-spacing-unit;
+}
+
+.name-family-wrapper{
+	margin-right: .8em;
+}
+
+
+
+
+
+/* New Code To Reformat Panopoly's Content Page */
+body.not-front.logged-in.page-admin.page-admin-content.region-content:not(.page-admin-content-file){
+  
+  ul.action-links{
+    padding-left:20px;
+    list-style: none;
+    font-weight:bold;
+    font-size:20px;
+    margin-left:-20px;
+  }
+  
+  ul.action-links li:before{
+    content: "+";
+    margin-right:4px;
+  }
+  
+  .views-exposed-form .views-exposed-widgets.clearfix{
+    #edit-title-wrapper, #edit-type-wrapper, #edit-author-wrapper, #edit-status-wrapper, #edit-vid-wrapper{
+      display:table-cell;
+      float:left;
+      width:16%;
+      padding-right:10px;
+    }
+    
+    .views-exposed-widget.views-reset-button, .views-exposed-widget.views-submit-button{
+      display:table-cell;
+      input{
+        height: 30px;
+        margin-top: 17px !important;
+        border:none;
+        color:white;
+        font-weight:bold;
+        background-color:#007acc;
+        border-radius:4px;
+      }
+    }
+  
+    .views-exposed-widget.views-reset-button #edit-reset{
+       margin-left: 10px;
+    }
+  
+    #edit-title, #edit-author{
+      height:22px;
+    }
+    
+     border: solid;
+    border-width: 1px;
+    border-color: #b3b3b3;
+    padding: 10px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    background-color: #e6e6e6;
+  }
+  
+  .view-content .vbo-views-form{
+    #edit-select{
+      background-color: #e6e6e6;
+      padding-top: 15px;
+      margin-top: 18px;
+      
+      legend{
+        margin-bottom:0px;
+        width:0%;
+      }
+      
+      .fieldset-wrapper{  
+        #edit-submit--2{
+          border:none;
+          color:white;
+          font-weight:bold;
+          background-color:#007acc;
+          border-radius:3px;
+        }
+        
+        .form-item.form-type-select.form-item-operation{
+          width:180px;
+        }
+      }
+      
+      .fieldset-legend{
+        display:none;
+      }   
+    }
+    
+    .sticky-header{
+      width:63%;
+    }
+    
+    .views-table.sticky-enabled.sticky-table{
+      width:100%;
+    }
+  }  
+}

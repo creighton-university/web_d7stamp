@@ -1,0 +1,29 @@
+%btn {
+  @extend %font-family-bebas;
+  @extend %display-inline-block;
+  @include transition-duration(0.2s);
+  @include transition-property(background-color);
+  cursor: pointer;
+  margin: em(4px) 0;
+  border: 0;
+  background-position: 95% center;
+  text-decoration: none;
+  font-size: em(19px);
+  line-height: 1;
+  padding: em(8px) em(24px) em(8px) em(8px);
+}
+
+@mixin btn-style($background-extend, $color-extend, $icon-arrow-extend ) {
+  @extend %btn;
+  @extend %#{$background-extend};
+  @extend %#{$color-extend};
+  @extend .#{$icon-arrow-extend} !optional;
+  &:visited{
+    @extend %#{$color-extend};
+  }
+}
+
+@mixin btn-size($font-size-extend, $padding...) {
+  padding: $padding;
+  font-size: em($font-size-extend);
+}

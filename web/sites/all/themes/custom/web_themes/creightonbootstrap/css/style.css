@@ -1,0 +1,200 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+.views-field {
+    padding: 5px 0;
+}
+
+.views-label {
+    text-transform: uppercase;
+}
+
+.main-container {
+    width: 100%;
+    padding: 0;
+}
+
+.main-container .row {
+    padding: 20px;
+}
+
+.panels-flexible-my_creighton .panels-flexible-region {
+    padding-top: 8px;
+}
+
+.breadcrumb, #navbar {
+    display: none;
+}
+
+#panels-ipe-paneid-47, #panels-ipe-paneid-42, #panels-ipe-paneid-43 {
+    padding: 20px;
+    background: #0079b3;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header {
+    background-color: #0054a6;
+    min-height: 40px;
+    line-height: 2.25;
+    overflow: visible;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    display: block !important;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1, h4 {
+    font-size: 20px;
+    color: #0054a6;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+h4 {
+    padding:
+}
+
+h3 {
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
+    padding: 0;
+    font-size: 24px;
+    font-family: 'Open Sans Light', sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    color: #0054a6;
+    text-decoration: none;
+}
+
+.smallText {
+    color: #868686;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+}
+
+.text_regular strong {
+    text-transform: uppercase;
+    padding-right: 12px;
+}
+
+button.btn, button.btn-success {
+    background-color: #ffffff !important;
+    border: 1px solid #0054a6 !important;
+    color: #0054a6 !important;
+    text-align: center;
+    font-size: 18px;
+    height: 46px;
+    line-height: 30px;
+    font-family: 'Open Sans Light', sans-serif;
+}
+
+button.btn:hover, button.btn-success:hover {
+    opacity: 0.9;
+}
+
+footer {
+    color: #757575;
+    font-size: 13px;
+}
+
+.foot-nav {
+    padding-top: 7px;
+    padding-left: 5px;
+}
+
+.footer-nav a {
+    color: #0054a6;
+}
+
+label {
+    padding: 20px 0 5px;
+}
+
+.form-radios label {
+    padding: 5px 22px;
+}
+
+td.views-field {
+    vertical-align: middle !important;
+}
+
+td.views-field a {
+    font-size: 13px;
+    display: block;
+    border: 1px solid #0054a6;
+    color: #0054a6 !important;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin: 8px;
+    text-align: center;
+}
+
+td.views-field a:hover {
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.views-field-field-netid {
+    font-weight: bold;
+}
+
+select, input, textarea {
+    max-width: 360px;
+}
+
+.university-logo img {
+    max-width: 100%;
+}
+
+#studenthiddendata {
+    display: none;
+}
+
+#loadingMessage {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#edit-preview {
+    display: none;
+}
+
+.print-site_name, .print-breadcrumb, .print-title {
+    display: none;
+}
+
+.print-content {
+    font-size: 14px;
+}
+
+.print-content .text_regular {
+    margin: 0 0 5px;
+}

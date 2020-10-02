@@ -1,0 +1,124 @@
+/* Courses Accordion */
+.courses-accordion-link {
+  width: 100%;
+  float: left;
+  /*background-image: linear-gradient(to right, black 33%, rgba(150,150,150,0) 0%);*/
+  background-position: top;
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  padding: .5em 1em;
+}
+.courses-acc-content {
+  display: none;
+  float: left;
+  width: 100%;
+}
+.course-header {
+  width: 100%;
+  color: #73b865;
+  font-family: "bebas_neueregular", Helvetica, Arial, sans-serif;
+  font-size: 140%; 
+}
+.course-title-row {
+  font-size: 100%;
+  color: #555555;
+}
+
+.course-title-row, .course-header-accordion {
+  display: block;
+  float: left;
+}
+.courses-accordion-link div.field-collection-view {
+	padding: 0;
+}
+.course-first-col {
+  margin-left: 0;
+	padding-right: 20px;
+} 
+.course-header-accordion.course-first-col {
+  width: 300px;
+  margin-left: 0;
+}
+.course-header-accordion.course-sec-col {
+	width: 130px;
+	margin-left: 35px;
+}
+.course-header-accordion.course-third-col {
+	width: 100px;
+}
+.course-title-row.course-first-col {
+	width: 300px;
+	font-weight: bold;
+}
+.course-title-row.course-sec-col {
+	width: 130px;
+	padding-right: 10px;
+}
+.course-title-row.course-third-col {
+	width: 100px;
+}
+.field-collection-view .field-collection-item-field-general-accordion-rows {
+	width: 98%;
+}
+
+@media (max-width: 48em) {
+	.course-header-accordion.course-first-col {
+		width: 125px;
+		margin-left: 6%;
+	}
+	.course-header-accordion.course-sec-col {
+	}
+	.course-header-accordion.course-third-col {
+	}
+	.course-title-row.course-first-col {
+	}
+	.course-title-row.course-sec-col {
+	}
+	.course-title-row.course-third-col {
+	}
+}
+
+.course-expand {
+	width: 20px;
+	color: #019cdb;
+  	font-weight: bold;
+}
+.courses-acc-content, .courses-accordion-link.active {
+  background-color: #EAECEB;  
+}
+.courses-acc-content {
+  margin: 1em;
+}
+@media (max-width:601px) {
+	.course-header-accordion.course-sec-col {
+		width: 23%;
+		margin-left: 6%;
+	}
+	.course-first-col {
+		margin-left: 0;
+	}
+	.course-header-accordion.course-first-col {
+		width: 50%;
+		margin-left: 0;
+	}
+	.course-header-accordion.course-third-col {
+		width: 16.5%;
+	}
+	.course-title-row.course-sec-col {
+		width: 25%;
+		padding-right: 10px;
+	}
+	.course-title-row.course-first-col {
+		width: 55%;
+		padding-right: 10px;
+	}
+	.course-title-row.course-third-col {
+		width: 15%;
+	}
+	.course-expand {
+		width: 3%;
+		color: #019cdb;
+		font-weight: bold;
+		margin-right: 4px;
+	}
+}

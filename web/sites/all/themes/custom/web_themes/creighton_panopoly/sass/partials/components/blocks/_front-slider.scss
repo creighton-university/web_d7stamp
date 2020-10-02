@@ -1,0 +1,350 @@
+/**
+ * $FRONT-SLIDER
+ */
+@media screen and (max-width: $tablet-end) {
+  .front-page-slider.primary .field-collection-view {
+    min-height: 282px;
+  }
+}
+/* Alt sites not main www site */
+@media screen and (min-width: 901px) {
+  .front-page-slider.alternate .field-collection-view {
+   height: auto;
+   min-height: 220px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 267px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 214px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .front-page-slider.alternate .field-collection-view {
+    min-height: 100px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .front-page-slider.alternate .field-collection-view {
+
+  }
+}
+.node--panel section.hero{
+  padding: 0;
+}
+.hero {
+  height: 600px; //Set initial height this is set to auto after page loads
+  position: relative;
+  background-size: 100%;
+  background-color: $primaryblue;
+  background-repeat: no-repeat;
+  @include at-breakpoint(12 em($mobile-end)) {
+    display: none;
+  }
+}
+.front-page-alternate .hero {
+  background-image: none;
+  background-color: #fff;
+}
+.front .tabs--primary{
+  @extend %element-hidden;
+}
+html.js .hero .contextual-links-wrapper{
+  bottom: 15px;
+  right: 10px;
+  top: auto;
+}
+.front-page-slider {
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  .field-collection-container{
+    @include opacity(0);
+    margin-bottom: 0;
+    border-bottom: none;
+    .page-block &{
+      @include opacity(1);
+    }
+  }
+  .field-collection-view {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    .field-collection-view-links{
+      @extend %element-hidden;
+    }
+    @include at-breakpoint(em($desk-start) 12){
+      height: 600px;
+    }
+    @include at-breakpoint(em(1440) 12){
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .container{
+    @include at-breakpoint(12 em(599)) {
+      padding-left: em(10);
+      padding-right: em(10);
+    }
+  }
+}
+.front-page-slider.alternate {
+  .field-collection-container {
+    opacity: 1;
+  }
+}
+// Primary Slider styles
+.front-page-slider{
+  article{
+    position: relative;
+    overflow: hidden;
+  }
+  .slide-content{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding-top: 16.5%;
+
+    @include at-breakpoint(12 em(1040)) {
+      padding-top: 19.5%;
+    }
+    @include at-breakpoint(12 em(599)) {
+      padding-top: 0;
+    }
+    a {
+      @extend %font-family-gryes-bold;
+      @extend %color-yellow;
+      @include transition(color, 0.2s);
+      font-size: 1.2em;
+      @include at-breakpoint(12 em(845)) {
+        font-size: em(17);
+      }
+      @include at-breakpoint(12 em(480)) {
+        font-size: em(13);
+      }
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  h1 {
+    @extend %font-family-gryes-bold;
+    @extend %color-white;
+    font-size: 3em;
+
+    @include at-breakpoint(12 65em) {
+      font-size: 2.5em;
+    }
+    @include at-breakpoint(12 em(845)) {
+      font-size: 2.2em;
+    }
+    @include at-breakpoint(12 em(480)) {
+      font-size: 1.5em;
+    }
+    strong {
+      @extend %font-family-bebas;
+      @extend %display-block;
+      @extend %color-yellow;
+      font-weight: normal;
+      font-size: 1.6em;
+      line-height: 1em;
+    }
+  }
+  .bx-controls {
+    display: none;
+  }
+}
+// Alternative Slider Styles
+.front-page-slider {
+  .alternate {
+    article {
+      position: relative;
+      overflow: hidden;
+    }
+    img{
+      @include at-breakpoint(12 em(1024)) {
+        position: relative;
+        right: 0;
+        top: 0;
+        height: 360px !important;
+        width: auto;
+        max-width: none !important;
+      }
+      @include at-breakpoint(12 em(845)) {
+        position: relative;
+        height: inherit !important;
+        max-width: 100% !important;
+      }
+    }
+    .slide-content {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      padding-top: 16%;
+
+      @include at-breakpoint(12 em($tablet-end)) {
+        padding-top: 22%;
+      }
+      &.multi-link {
+        @include at-breakpoint(12 em($tablet-end)) {
+          padding-top: 0%;
+        }
+        @include at-breakpoint(em(846px) 12) {
+          padding-top: 7%;
+        }
+        @include at-breakpoint(em($desk-start) 12) {
+          padding-top: 16%;
+        }
+      }
+      @include at-breakpoint(12 em(960)) {
+        padding-top: 26%;
+      }
+      @include at-breakpoint(12 em(845)) {
+        padding-top: 8%;
+      }
+      @include at-breakpoint(12 em(599)) {
+        padding-top: 0;
+      }
+      a {
+        @extend %font-family-gryes-bold;
+        @extend .icon-white-arrow;
+        @extend %color-white;
+        @include transition(color, 0.2s);
+        background-position: right center;
+        letter-spacing: 1px;
+        padding-right: 24px;
+        font-size: 1.3em;
+        @include at-breakpoint(12 em($tablet-end)) {
+          font-size: 1em;
+        }
+        @include at-breakpoint(12 em(845)) {
+          font-size: em(17);
+        }
+        @include at-breakpoint(12 em(480)) {
+          font-size: em(13);
+        }
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    h1 {
+      @extend %font-family-gryes-bold;
+      @extend %color-white;
+
+      @include at-breakpoint(12 em($tablet-end)) {
+        margin-bottom: 0;
+      }
+
+      font-size: 2.5em;
+      @include at-breakpoint(12 em(1140)) {
+        font-size: 2em;
+      }
+      @include at-breakpoint(12 em($mobile-end)) {
+        font-size: 1.7em;
+      }
+      @include at-breakpoint(12 em(480)) {
+        font-size: 1.2em;
+      }
+      strong {
+        font-weight: normal;
+        font-size: 1.8em;
+        line-height: 1.1em;
+      }
+    }
+
+  }
+}
+//Alt pages w/ Prev / Next and 3 links
+#fp-slider-three-links {
+  h1 {
+    position: relative;
+    top: 5px;
+
+    strong {
+      @include at-breakpoint(em($desk-start) 12) {
+        font-size: .8em;
+      }
+      @include at-breakpoint(em(1200px) 12) {
+        font-size: 1.1em;
+      }
+      @include at-breakpoint(em(1400px) 12) {
+        font-size: 1.8em;
+      }
+    }
+  }
+  p {
+    position: relative;
+    height: 50px;
+    width: 49%;
+    margin: 0 0 20px 0;
+    font-size: 21px;
+    color: white;
+    overflow: hidden;
+  }
+   a {
+    text-decoration: none;
+    padding-left: 17px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-position: left center;
+    @extend %font-family-bebas;
+    font-size: 18px;
+    @extend %color-yellow;
+    @extend .icon-arrows-yellow-right;
+    @include at-breakpoint(12 em($tablet-end)) {
+      float: left;
+      width: 100%;
+      margin-top: 7px;
+    }
+  }
+}
+
+#front-page-2col .front-page-slider .bx-slide-controls {
+	bottom: 70px;
+}
+
+.front-page-slider .bx-slide-controls {
+  display: block;
+  position: absolute;
+  right: 37px;
+  z-index: 999;
+  bottom: 10px;
+
+
+  .bx-slide-next, .bx-slide-prev {
+    float: right;
+  }
+  .bx-slide-prev {
+    margin-right: 25px;
+  }
+  a.bx-prev, a.bx-next {
+    display: block;
+    height: 44px;
+    width: 44px;
+    background: url('/sites/all/themes/custom/web_themes/creighton_panopoly/images/front-page/slider-arrows.png') no-repeat;
+  }
+  a.bx-prev {
+    background-position: 0px 0px;
+  }
+  a.bx-next {
+    background-position: -46px 0px;
+  }
+}
+.front-page-slider .multi-link .bx-slide-controls {
+  @include at-breakpoint(12 em($tablet-end)) {
+   bottom: 0px;
+  }
+  @include at-breakpoint(em(846px) 12) {
+   bottom: -15px;
+  }
+  @include at-breakpoint(em($desk-start) 12) {
+    top: 130px;
+  }
+}

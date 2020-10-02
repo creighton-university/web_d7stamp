@@ -1,0 +1,43 @@
+/**
+ * $BREADCRUMB
+ */
+.breadcrumb {
+  @extend %hlist;
+  margin-top: em(8);
+  margin-bottom: em(16);
+  li {
+    @extend %color-dkblue;
+    @extend %display-inline-block;
+    @extend %font-family-sans-serif;
+    color: rgba($dkblue, .7);
+    letter-spacing: 1px;
+    font-size: em(12);
+    padding-right: 0.4em;
+    &:after {
+      content: ">";
+      padding-left: 0.4em;
+      vertical-align: baseline;
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+  a {
+    // @extend %color-dkgray;
+    color: rgba($dkblue, .7);
+    text-decoration: none;
+    &:hover{
+      // @extend %color-dkblue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.top-image .breadcrumb {
+  li{
+    color: rgba($white, .7);
+  }
+  a{
+    color: rgba($white, .7);
+  }
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Front Page Content Cards feature.
+ */
+
+include_once 'front_page_content_cards.features.inc';

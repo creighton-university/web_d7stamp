@@ -1,0 +1,6 @@
+name = Creighton Custom Blocks
+description = Creates a custom block for Creighton.edu theming layer
+core = 7.x
+package = Creighton
+files[] = cu_custom_blocks.module
+version = "7.x-2.22"

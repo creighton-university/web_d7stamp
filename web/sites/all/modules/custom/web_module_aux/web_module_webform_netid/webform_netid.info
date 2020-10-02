@@ -1,0 +1,6 @@
+name = Webform NetID Component
+description = Add custom Webform component with validation for proper NetID formatting. Includes javascript to attempt to prepopulate form fields.
+package = Creighton
+core = 7.x
+dependencies[] = webform
+files[] = webform_netid.ajax_user.js

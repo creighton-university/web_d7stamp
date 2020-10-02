@@ -1,0 +1,459 @@
+
+/* Page Top */
+/* line 201, ../../../sass/layouts/cu-default/cu-default.layout.scss */
+.top {
+  position: relative;
+  padding-top: 7.5em;
+  margin-bottom: 1.875em;
+}
+@media (max-width: 65.625em) {
+  /* line 201, ../../../sass/layouts/cu-default/cu-default.layout.scss */
+  .top {
+    padding-top: 7.5em;
+  }
+}
+
+
+@media (min-width: 48em) {
+  /* line 217, ../../../sass/partials/base/_menus.scss */
+  .site-logo {
+    margin: 0 auto;
+  }
+}
+
+/* line 140, ../../../sass/partials/base/_footer.scss */
+footer.footer .site-logo {
+	width: 100%;
+	margin-left: 7px;
+}
+
+@media (min-width: 65.6875em) {
+  /* line 3, ../../../sass/partials/base/_footer.scss */
+  body.subsite footer.footer {
+    height: 350px;
+  }
+}
+
+
+	/* Hand coded for retheme menu development - move to scss file */
+
+	.secondary-header {
+		position: static !important;
+		top: 0 !important;
+		left: 0 !important;
+		margin-top: 0 !important;
+		z-index: 998;
+		border-bottom: none !important;
+		background: #002E6D !important;
+		overflow: visible !important;
+	}
+
+	/* Fix admissions page title color and link font size. Wrike 117223791 */
+	.block--featured_content_2 .title a, .block--featured_content_2 .title {
+    color: #FFCC4F;
+  }
+  .block--featured_content_2 .btn-transparent-blue-alt {
+   font-size: 1.1875em;
+  }
+	/* END - Fix admissions page title color and link font size. Wrike 117223791 */
+
+	.quick-search {
+		width: 100% !important;
+		float: none !important;
+		margin: 0;
+		padding: 0;
+	}
+
+	.quick-search input[type="text"], .quick-search form.gray-search {
+		background: #fff !important;
+		height: 36px !important;
+	}
+
+	.main-header div.site-logo a.site-logo,
+	#main_mega_nav .panel-display .pane-page-logo a {
+		padding: 16px 10px 10px 0;
+		display: inline-block;
+		width: 170px;
+	}
+
+
+  body.subsite .site-logo img, body.subsite .pane-page-logo img {
+      max-width: 275px;
+  }
+
+  body.basicLogo .site-logo img, body.basicLogo .pane-page-logo img, body.subsite.www15 .site-logo img, body.subsite.www15 .pane-page-logo img {
+      max-width: 170px;
+  }
+
+	.top.header-image {
+    padding-top: 11em;
+	}
+
+	.top.no-image {
+    position: relative;
+    padding-top: 7.5em;
+    margin-bottom: 1.875em;
+	}
+
+	.secondary-header nav {
+		/*position: relative;*/
+		width: auto !important;
+		margin-right: 0 !important;
+		right: inherit;
+		top: inherit;
+	}
+
+
+
+
+	#main_mega_nav .nav-item > a[data-main-menu-ico="main-hamburger-menu-ico"] /*span#main-hamburger-menu-ico*/ {
+		background: #0054a6 url('/sites/all/themes/custom/web_themes/creighton_2016/images/megamenu-icons/menu-hamburger-h.png') no-repeat 8px 50%;
+		padding: 6px 8px 6px 34px;
+		/*width: 21px;
+		*height: 18px;
+		*display: inline-block;
+		*margin-top: 7px;*/
+	}
+
+	#main_mega_nav .nav-item > a[data-main-menu-ico="main-hamburger-menu-ico"].open /*.open span#main-hamburger-menu-ico */ {
+		background: #0054a6 url('/sites/all/themes/custom/web_themes/creighton_2016/images/megamenu-icons/menu-hamburger-x.png') no-repeat 8px 50%;
+		/*background-position: -30px 0px;*/
+	}
+
+	#block-menu-block-header-main-menu .menu > li.active > a,
+	#block-menu-block-header-main-menu .menu > li.active-trail > a,
+	#mini-panel-fullmenutoo > div:first-child .menu > li.active > a,
+	#mini-panel-fullmenutoo > div:first-child .menu > li.active-trail > a {
+		border-bottom: 5px solid #019cdb;
+	}
+
+
+
+	@media (max-width: 1250px) and (min-width: 768px) {
+
+
+		#block-menu-block-header-main-menu, #main_mega_nav .panel-display > .panel-panel:first-child > .panel-panel { float: none !important; }
+		#block-menu-block-header-main-menu .menu > li, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li { float: left !important; }
+		#block-menu-block-header-main-menu .menu > li a {  background-color: inherit !important;  border-bottom: 0 !important; }
+		#block-menu-block-header-main-menu .menu > li { float: left !important; }
+		#block-menu-block-header-main-menu { overflow: inherit !important; }
+
+		#main-header-search .quick-search input[type="text"],
+		#main-header-search .quick-search form.gray-search {
+			margin: 0;
+			padding: 4px 36px 4px 6px;
+			height: 32px !important;
+		}
+
+
+		#main_mega_nav .panel-display .pane-page-logo a {
+			padding: 24px 10px 8px;
+			display: inline-block;
+			width: 143px;
+			margin: 0 auto;
+		}
+
+		}
+
+	@media (max-width: 1300px) {
+
+		.secondary-header {
+			height: auto !important;
+			min-height: 0 !important;
+			max-height: none !important;
+		}
+
+	}
+
+	@media (min-width: 65.6875em) {
+		.container {
+			max-width: 1300px !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+    .bean-front-page-featured-content.alternate > .content {
+        max-width: 1300px !important;
+    }
+
+		footer.footer .dropdown-menu li a {
+			font-size: 16px !important;
+		}
+
+	}
+
+
+
+	@media (max-width: 767px) {
+		#main-header-search,
+		#main-header-tranlinks,
+		#main-header-dropdown {
+			width: 100%;
+		}
+
+
+		#main-header-tranlinks #block-menu-menu-transaction-menu ul li a {
+			padding: 12px 8px;
+		}
+
+
+		#block-menu-menu-transaction-menu ul li {
+			font-size: 16px !important;
+		}
+
+	}
+
+
+footer.footer #block-bean-footer-badge-us-news-2015 {
+    width: 100%;
+}
+@media (max-width:767px) {
+
+	.top.header-image {
+		display: none;
+	}
+
+	 footer.footer #block-bean-footer-badge-us-news-2015 {
+        margin-left: -9px;
+    }
+
+    footer.footer #block-bean-footer-badge-us-news-2015 img {
+        width: 120px;
+    }
+}
+@media (min-width:48em) {
+	 footer.footer #block-bean-footer-badge-us-news-2015 {
+        width: 105%;
+        margin-left: -10%;
+        margin-top: -40px;
+    }
+
+}
+@media (min-width:65.6875em) {
+    footer.footer #block-bean-footer-badge-us-news-2015 {
+        width: 58%;
+        height: 165px;
+        margin-left: -8%;
+        margin-top: 4px;
+    }
+}
+
+
+/* tablet styles */
+@media (min-width:768px) and (max-width: 1250px) {
+
+	footer.footer #block-bean-footer-badge-us-news-2015 {
+    	width: 100%;
+    	margin-left: -10%;
+    	margin-top: 0px;
+	}
+
+}
+
+/************************ Styles for main menu block   **********************/
+
+#main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu > li.leaf a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	padding-top: 0;
+	padding-left: .5em;
+	padding-right: .5em;
+	padding-bottom: 0;
+	font-family: 'OpenSans-Semibold', sans-serif;
+}
+
+
+/************************ Styles for subsites   **********************/
+
+body.subsite footer.footer .menu-block-footer_main_menu, body.subsite footer.footer .mobile-main-menu-footer ul.menu, body.subsite #block-menu-block-footer-main-menu {
+  position: absolute;
+  top: 0px;
+  left: 6px;
+  width: 100%;
+}
+body.subsite.admissions footer.footer .menu-block-footer_main_menu, body.subsite.www15 footer.footer .menu-block-footer_main_menu { left: 0px;}
+body.subsite.www15 footer.footer .mobile-main-menu-footer ul.menu { left: -3px; }
+
+body.subsite.admissions footer.footer .site-logo img, body.subsite.www15 footer.footer .site-logo img {
+    max-width: 132px;
+}
+
+body.admissions.basicLogo .main-header div.site-logo a.site-logo, body.admissions.basicLogo #main_mega_nav .panel-display .pane-page-logo a { width: 170px !important; }
+body.admissions.basicLogo footer.footer .site-logo { width: 170px !important; }
+body.subsite footer.footer .site-logo img { width: 258px; }
+body.subsite.front .main-header, body.node-type-2tier-page .header-bgimage .main-header { background: rgba(0,84,166,0.8); position: absolute; }
+
+body.subsite #block-menu-block-header-main-menu .menu > li > a, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li > a { font-family: "bebas_neueregular"; font-size: 22px; }
+body.subsite #main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu > li.leaf a { font-family: "bebas_neueregular"; font-size: 22px; }
+
+body.subsite .main-header div.site-logo a.site-logo, #main_mega_nav .panel-display .pane-page-logo a, #main_mega_nav .sub-nav.open .panel-display .pane-page-logo a { padding: 16px 10px 10px 0 !important; display: inline-block; width: 275px !important; }
+
+body.subsite .site-logo { margin: 0px auto; }
+body.subsite .creighton-event-item .creighton-event-calendar-right .cu-event-date, .creighton-event-item .creighton-event-calendar-right .cu-event-time, .creighton-event-item .creighton-event-calendar-right .cu-event-location, .creighton-event-item .creighton-event-calendar-right .cu-event-desc-bottom p, .creighton-event-item .creighton-event-calendar-right .cu-event-more-info { font-family: 'OpenSans-Regular' !important; font-size: 14px !important; line-height: 14px !important; }
+body.subsite #block-menu-block-footer-main-menu { width: 100% !important; float: right !important;}
+body.subsite footer.footer .mobile-main-menu-footer ul.menu { float: inherit; width: auto; }
+
+body.subsite #block-menu-block-header-main-menu .menu > li, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li { line-height: 20px !important; }
+
+body.subsite #front-page-2col #body-content { top: -25px !important; }
+body.subsite #front-page-2col .front-page-slider .bx-slide-controls { bottom: 30px !important; }
+
+body.subsite .college-about p { font-size: 1.3em!important; }
+body.subsite .bean-front-page-featured-content.alternate > .content { max-width: 1300px; }
+body.subsite .bean-front-page-featured-content .match { width: 386px; }
+
+footer.footer .site-logo { margin-left: 0 !important; }
+footer .dropdown { left: 322px; }
+
+body.subsite .view-display-id-block_alternate .event { width: 16.4em; margin-right: 40px; }
+
+/************************ Styles for subsites (Mobile)  **********************/
+
+@media (max-width: 767px) {
+   body.subsite #front-page-2col #body-content { top: 20px !important; }
+	 body.subsite .front-page-alternate .college-about p { font-size: 1em!important; }
+	 body.subsite .nav-menu { display: block; float: right; margin-top: 69px; }
+	 body.subsite #main_mega_nav .sub-nav { top: 190px; }
+   body.subsite footer.footer #footer-contact-static { margin-top: 106px; }
+   #block-cu-quick-search-blocks-header-search-block { display: block !important; }
+   body.subsite.admissions .nav-menu, body.subsite.www15 .nav-menu { margin-top: 40px; }
+   body.subsite.admissions #main_mega_nav .sub-nav, body.subsite.www15 #main_mega_nav .sub-nav { top: 160px; }
+   body.subsite footer.footer .menu-block-footer_main_menu, body.subsite footer.footer .mobile-main-menu-footer ul.menu, body.subsite #block-menu-block-footer-main-menu { position: static; }
+}
+
+@media (max-width: 1050px) { .top { padding-top: 0; }}
+@media (max-width: 1050px) and (min-width: 768px)  {
+	body.subsite .main-header { background: #0054a6 !important; position: relative !important; }
+	body.subsite .dropdown-menu > li a { font-size:15px; }
+	body.subsite #block-menu-block-header-main-menu .menu > li > a, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li > a { font-size: 18px !important; }
+	body.subsite #main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu > li.leaf a { font-size: 18px !important; }
+  .breadcrumb { margin-top: 2.5em; }
+  body.law #block-menu-block-header-main-menu .menu, body.law #main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu { width: 1200px; }
+}
+@media (max-width: 1250px) and (min-width: 768px) {
+  body.subsite .top.header-image {
+    padding-top: 11em;
+  }
+
+  body.subsite .top.no-image {
+    position: relative;
+		padding-top: 0 !important;
+		margin-top: 11em;
+    margin-bottom: 1.875em;
+  }
+
+  footer.footer .menu-name-menu-transaction-menu ul a {
+    padding: 0 12px !important;
+  }
+
+  body.subsite footer.footer .site-logo img, body.subsite .pane-page-logo img {
+    max-width: 230px;
+  }
+
+  body.subsite footer.footer .contact-address {
+      margin-top: 9px;
+      margin-left: 3px !important;
+  }
+
+  body.subsite footer.footer .menu-block-footer_main_menu, body.subsite footer.footer .mobile-main-menu-footer ul.menu, body.subsite #block-menu-block-footer-main-menu {
+      position: static;
+      display: block;
+      top: 0px;
+      right: 0px;
+      width: 100%;
+   }
+
+  body.subsite.basicLogo .main-header div.site-logo img, body.basicLogo #main_mega_nav .panel-display .pane-page-logo img, body.admissions .main-header div.site-logo img, body.admissions #main_mega_nav .panel-display .pane-page-logo img, body.subsite.www15 .main-header div.site-logo img, body.subsite.www15 #main_mega_nav .panel-display .pane-page-logo img { max-width: 170px !important; }
+	body.subsite .main-header div.site-logo img, #main_mega_nav .panel-display .pane-page-logo img { max-width: 275px !important; margin: 0 auto; }
+	/* body.subsite .bx-wrapper { margin: -40px auto 0 auto !important; } */
+	body.subsite #block-menu-block-header-main-menu .menu > li > a, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li > a, body.subsite #main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu > li.leaf a { font-size: 18px !important; padding: 0 .5em; }
+	footer.footer #block-bean-footer-badge-us-news-2015 { margin-top: 0px !important; }
+	footer .dropdown { left: 60px; width: 70% !important; }
+  body.not-front .l-header { width: 100% !important; position: absolute !important; z-index: 50 !important; }
+  body.not-front .l-header { z-index: 50 !important; position: absolute !important; padding-top: 0 !important; width: 100% !important; }
+  body.not-front .l-region--header-image { position: absolute !important; max-height: 110%; }
+
+	body.business #main-header-search, body.nursing #main-header-search { width: 240px !important; }
+
+  body.front footer .social-media {
+    top: 170px !important;
+  }
+  @media (min-width: 48em) {
+    body.front footer .social-media {
+        top: 170px !important;
+    }
+
+    body.subsite footer.footer #block-cu-quick-search-blocks-footer-search-block {
+        top: 114px !important;
+        width: 265px;
+    }
+  }
+
+  footer .outline-search input[type="submit"] {
+    right: 0;
+    left: 0 !important;
+    float: none;
+    margin-right: 10px;
+    top: -40px;
+  }
+}
+
+@media (max-width: 47.9375em) {
+  footer .dropdown {
+    position: relative;
+    left: 0;
+  }
+
+  footer .outline-search form input[type="submit"] {
+      left: 89% !important;
+      top: -43px !important;
+  }
+
+  input#bottomsearch {
+    line-height: 36px;
+  }
+
+}
+
+#main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu {
+  margin-top: 13px !important;
+}
+
+footer.footer .menu-name-menu-transaction-menu ul a {
+  padding: 0 12px !important;
+}
+
+@media (min-width: 48em) {
+  footer.footer .mobile-main-menu-footer ul.menu {
+    padding: 10px 0 10px 3px !important;
+    float: right;
+    width: initial;
+  }
+
+  body.basicLogo footer.footer .mobile-main-menu-footer ul.menu {
+    padding: 10px 0 10px 12px !important;
+  }
+}
+
+@media (min-width: 1051px) {
+  footer .dropdown {
+      left: 306px !important
+    }
+
+  body.basicLogo .main-header div.site-logo a.site-logo, body.basicLogo #main_mega_nav .panel-display .pane-page-logo a { width: 170px !important; }
+
+}
+
+.main-header div.site-logo a.site-logo, #main_mega_nav .panel-display .pane-page-logo a {
+  width: 170px !important;
+}
+
+@media (max-width: 1250px) and (min-width: 768px) {
+  body.subsite #block-menu-block-header-main-menu .menu > li > a.active-trail, #main_mega_nav .panel-pane.pane-system-main-menu .menu > li > a.active-trail, body.subsite #main_mega_nav .nav-item .sub-nav .menu-name-main-menu ul.menu > li.leaf a.active-trail { border-bottom: 5px solid #019cdb !important; }
+}
+
+strong {
+    font-family: "OpenSans-Semibold", Helvetica, Arial, sans-serif;
+}

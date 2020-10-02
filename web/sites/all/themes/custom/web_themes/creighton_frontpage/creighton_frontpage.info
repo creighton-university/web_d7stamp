@@ -1,0 +1,62 @@
+name = Creighton University frontpage
+description = This theme is for development only.
+base theme = bootstrap
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/styles.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/site.js
+
+; ========================================
+; Regions
+; ========================================
+regions[alert_header] = Alert Header
+regions[header] = Main Header
+regions[secondary_header] = Secondary Header
+regions[header_image] = Header Image
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[academics_program_title] = Academics Program Title
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[footer] = Footer
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; New Regions for Main Navigation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+regions[main_nav] = Main Mega Navigation
+regions[dropdown_menu] = Drop down toggle for menu
+
+; ========================================
+; Plugins
+; ========================================
+plugins[panels][layouts] = panels
+
+; ========================================
+; Settings
+; ========================================
+settings[toggle_logo] = 1
+settings[toggle_name] = 0
+settings[toggle_slogan] = 0
+settings[toggle_node_user_picture] = 1
+settings[toggle_comment_user_picture] = 1
+settings[toggle_comment_user_verification] = 1
+settings[toggle_favicon] = 1
+settings[toggle_main_menu] = 1
+settings[toggle_secondary_menu] = 1
+;settings[omega_toggle_front_page_content] = 1
+settings[default_logo] = 0
+settings[logo_path] = "sites/all/themes/custom/web_themes/creighton_2016/images/logos/CU_Logo.png"
+settings[logo_upload] = ""
+settings[default_favicon] = 0
+settings[favicon_path] = ""
+settings[favicon_upload] = ""

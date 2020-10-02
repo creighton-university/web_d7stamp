@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Implementation of hook_menu_breadcrumb_alter().
+ *
+ * Alter links in the active trail before it is rendered as the breadcrumb.
+ */
+function subsite_parent_logo_crumbs_menu_breadcrumb_alter(&$active_trail, $item) {
+  // replace " | Creighton University" in site_name if present
+  $active_trail[0]['title'] = str_replace(' | Creighton University', '', variable_get('site_name'));
+  $ps = variable_get('subsite_parents');
+  $p = variable_get('subsite_top_level_site');
+  // if current site is WWW, remove first element from $active_trail to avoid "Home > Creighton University" from appearing in breadcrumb
+  if($p == 'www') {
+    array_shift($active_trail);
+  }
+  // if current site is a subsite, insert parent site into breadcrumb path unless parent site is WWW
+  if(variable_get('subsite_is_subsite') && isset($ps[$p]) && isset($ps[$p]['url']) && $p != 'www') {
+    array_unshift($active_trail, array('title' => $ps[$p]['title'], 'href' => $ps[$p]['url'], 'localized_options' => array()));
+  }
+  array_unshift($active_trail, array('title' => t('Home'), 'href' => 'https://www.creighton.edu', 'localized_options' => array()));
+}
+
+/**
+ * Implementation of hook_form_alter().
+ *
+ * Add site and subsite selector to Site Information form
+ * Disable logo section conditionally on Appearance theme settings form
+ */
+function subsite_parent_logo_crumbs_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'system_site_information_settings') {
+    $form_mod[key($form)] = array_shift($form);
+    $form_mod['subsite'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Sub-site settings'),
+    );
+    $form_mod['subsite']['subsite_is_subsite'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Current site is a sub-site'),
+      '#description' => t('Selecting this checkbox will insert the parent site in the breadcrumb path.'),
+      '#default_value' => variable_get('subsite_is_subsite'),
+      '#ajax' => array(
+        'callback' => '_subsite_is_subsite_ajax_callback',
+        'wrapper' => 'subsite_top_level_site_container',
+      ),
+    );
+    $form_mod['subsite']['subsite_top_level_site'] = array(
+      '#type' => 'radios',
+      '#title' => t(_subsite_top_level_site_title($form_state)),
+      '#description' => t('Select the top-level site. This could be the current site or it could be the parent site, if the current site is a sub-site. This determines the site logo and, if the current site is a sub-site, the breadcrumb path. Note that if "none" is selected, a custom logo file must be provided on the theme settings page.'),
+      '#options' => _subsite_top_level_site_options($form_state),
+      '#required' => TRUE,
+      '#prefix' => '<div id="subsite_top_level_site_container">',
+      '#suffix' => '</div>',
+    );
+    if(variable_get('subsite_top_level_site')) {
+      $form_mod['subsite']['subsite_top_level_site']['#default_value'] = variable_get('subsite_top_level_site');
+    }
+    $form = array_merge($form_mod, $form);
+    $form['#validate'][] = '_subsite_parent_logo_crumbs_form_validate';
+  }
+  if($form_id == 'system_theme_settings') {
+    if(variable_get('subsite_is_subsite') || variable_get('subsite_top_level_site') != 'none') {
+      foreach($form['logo'] as $key=>$arr) {
+        if(substr($key, 0, 1) != '#') {
+          unset($form['logo'][$key]);
+        }
+      }
+      $form['logo']['#description'] = 'Logo settings are disabled because current site is either a sub-site or non-custom top-level site (see <a href="/admin/config/system/site-information">Site information</a> settings).';
+    }
+  }
+}
+
+function _subsite_parent_logo_crumbs_form_validate($form, &$form_state) {
+  $rval = TRUE;
+  if($form_state['values']['subsite_is_subsite'] == TRUE && $form_state['values']['subsite_top_level_site'] == 'none') {
+    $rval = FALSE;
+    form_set_error('subsite_top_level_site', 'Parent site cannot be "none" when current site is a sub-site');
+  }
+  return $rval;
+}
+
+function _subsite_is_subsite_ajax_callback($form, $form_state) {
+  return $form['subsite']['subsite_top_level_site'];
+}
+
+function _subsite_top_level_site_title($form_state) {
+  if(isset($form_state['values'])) {
+    $cval = $form_state['values']['subsite_is_subsite'];
+  } else {
+    $cval = variable_get('subsite_is_subsite');
+  } 
+  return ($cval == TRUE) ? 'Parent site' : 'Top-level site';
+}
+
+function _subsite_top_level_site_options(&$form_state) {
+  $parents = array();
+  if(isset($form_state['values'])) {
+    $cval = $form_state['values']['subsite_is_subsite'];
+  } else {
+    $cval = variable_get('subsite_is_subsite');
+  }
+  if($cval == TRUE) {
+    $parents = array();
+    if(isset($form_state['values']['subsite_top_level_site']) && $form_state['values']['subsite_top_level_site'] == 'none') {
+      unset($form_state['values']['subsite_top_level_site']);
+      variable_del('subsite_top_level_site');
+    }
+  } else {
+    $parents = array('none' => t('none'));
+  }
+  // subsite_parents variable set in variables feature
+  foreach(variable_get('subsite_parents') as $label=>$arr) {
+    $parents[$label] = $arr['title'];
+  }
+  return $parents;
+}

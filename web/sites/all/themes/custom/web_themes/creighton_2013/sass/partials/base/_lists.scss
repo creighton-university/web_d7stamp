@@ -1,0 +1,137 @@
+/**
+ * $LISTS
+ */
+ul {
+  li {
+    @extend %color-basegray;
+    word-wrap: break-word;
+    ul {
+      margin-top: .5em;
+	     margin-bottom: .5em;
+      li {
+        margin-bottom: .5em;
+      }
+    }
+  }
+}
+
+ol {
+  & > li {
+    @extend %color-basegray;
+    word-wrap: break-word;
+    ol {
+      margin-top: .5em;
+	     margin-bottom: .5em;
+      li {
+        margin-bottom: .5em;
+        list-style: lower-alpha;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+/**
+ * $UNSTYLED-LIST
+ */
+.unstyled {
+  @extend %pad-0;
+  margin: 0 0 1em;
+  li {
+    @extend %display-inline-block;
+    @include no-bullet;
+  }
+}
+
+/**
+ * $MEDIA-LIST
+ */
+.media-list,
+.block--related-links{
+  h2{
+    font-size: em(20);
+    margin-bottom: em(8);
+  }
+  .field__item{
+    margin: 0 0 5px;
+    a{
+      @extend %color-blue;
+      font-size: em(14);
+    }
+  }
+  .field-collection-view{
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .field-collection-container{
+    border: none;
+    margin: 0;
+  }
+}
+ul, ol{
+  margin: 1em 0 1em 0;
+}
+
+// TODO: Refactor to a better module styled list.
+// .media-list {
+//     margin: 2em 0 0;
+//     padding: 0;
+//     color: $gold;
+//     position: relative;
+//     li {
+//         position: relative;
+//         margin: 0 0 1em;
+//         @include no-bullets;
+//         .date {
+//             color: $blue;
+//             font-family: $bebas;
+//             font-size: 1.4em;
+//             margin-bottom: .5em;
+//         }
+//         .details {
+//             h5 {
+//                 font-family: $gryes;
+//                 font-size: 1em;
+//                 margin: 0 0 .5em;
+//                 line-height: 1.2em;
+//                 a {
+//                     text-decoration: none;
+//                     color: $blue;
+//                     &:hover {
+//                         color: $dkblue;
+//                     }
+//                 }
+//             }
+//             .time, .location {
+//                 display: block;
+//                 color: $dkblue;
+//                 font-style: italic;
+//                 line-height: 1.1em;
+//             }
+//             p.excerpt {
+//                 margin: 0;
+//                 font-size: .8em;
+//                 color: $dkblue;
+//             }
+//         }
+//     }
+//     &.feature-related {
+//         li {
+//             background: url(images/dot.png) repeat-x 0 0.25em;
+//             @include span-columns(4, 12);
+//             @include nth-omega(3n);
+//             & + li + li {
+//                 margin-right: 0;
+//             }
+//             .date {
+//                 background: #fff;
+//                 display: inline-block;
+//                 padding: 0 0.5em 0 0;
+//             }
+//             h5 {
+//                 font-size: 1.25em;
+//             }
+//         }
+//     }
+// }

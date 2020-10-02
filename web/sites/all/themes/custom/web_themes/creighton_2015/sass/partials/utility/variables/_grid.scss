@@ -1,0 +1,30 @@
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 18px;
+$horz-spacing-unit: 32px;
+
+// Define Susy grid variables mobile first.
+$total-columns: 12;
+$column-width: 64px;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: $gutter-width;
+// $debug-grid: true;
+
+$container-style: magic;
+$container-width: 1140px;
+
+
+$tab: 48em 12;
+$desk: 62.5em 12;
+
+/*
+ * 100% = 1 em ~= 16px ~= 14pt
+ * 768px = 48em
+ * 845px = 52.813em
+ * 900px = 56.25em
+ * 1000px = 62.5em
+*/
+
+$mobile-end: 767px;
+$tablet-start: 768px;
+$tablet-end: 1050px;
+$desk-start: 1051px;

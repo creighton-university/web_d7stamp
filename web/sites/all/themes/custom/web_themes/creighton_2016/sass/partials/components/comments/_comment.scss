@@ -1,0 +1,61 @@
+/**
+ * $COMMENT
+ */
+.comment__info {
+  margin-top: $vert-spacing-unit;
+  margin-bottom: $vert-spacing-unit;
+
+  .username {
+    margin-bottom: $vert-spacing-unit / 2;
+
+    color: $blue;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.comment__content {
+  background-color: #FFF;
+
+  @extend %island;
+}
+
+.comment__submitted {
+  display: inline;
+}
+
+@include at-breakpoint($tab) {
+  .comment__info {
+    float: left;
+    width: 25%;
+
+    text-align: center;
+
+    .user-picture {
+      width: 70%;
+      margin: 0 auto ($vert-spacing-unit / 2) auto;
+    }
+    .username {
+      display: block;
+    }
+  }
+
+  .comment__content {
+    float: right;
+    width: 70%;
+    margin-left: 5%;
+
+    &:after {
+      top: 20px;
+    }
+  }
+
+  .comment__submitted {
+    display: block;
+    margin-bottom: $vert-spacing-unit / 2;
+  }
+}

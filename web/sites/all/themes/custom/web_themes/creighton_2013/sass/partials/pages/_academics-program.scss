@@ -1,0 +1,9 @@
+//Mobile
+@include at-breakpoint(12 em(480px)){
+  .view-academic-program-title h1 {
+    font-size: 1.5em;   
+  } 
+  .view-academic-program-title h2 {
+    font-size: 1.2em;   
+  }
+}

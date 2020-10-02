@@ -1,0 +1,207 @@
+// ---------------------------------------------------------------------------
+//Responsive Footer    
+footer.footer {
+  color: $white;
+  background-color: $primaryblue;
+  font-family: $helvetica;
+  .menu-name-menu-transaction-menu {
+    @include clearfix;
+    margin-bottom: em(16);
+    ul {
+      @include btn-list(background-blue, color-white, background-dkblue, color-white);
+    }
+  }
+  #footer-logo-badge {
+    float: left;
+  } 
+  #footer-contact-static {
+    float: left; 
+  }   
+  .static-menu {
+    @include clearfix;
+    margin-top: em(16);
+    h2 {
+        @extend %color-white;
+        font-size: em(16);
+        line-height: em(16);
+        float: left;
+    }
+    .menu-name-menu-static {
+      @extend .simple-menu;
+      color: $yellow;
+      @include clearfix;
+      float: left;
+      margin-bottom: 16px;
+      li {
+        color: $yellow;
+        width: 90%;
+        text-align: left; 
+        &:after { content: ""; }
+        a {
+          font-family: $helvetica;
+          color: $yellow;
+          font-size: em(20); 
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }  
+    }       
+  }
+  .contact-address a {
+    color: $yellow;
+  }
+  #block-bean-footer-badge-us-news-2015 {
+    width: 100%;
+  }
+  @include at-breakpoint(12 em(320px)) {  
+      #footer-logo-badge {
+      width: 120px;
+    }
+  }
+  @include at-breakpoint(em(321px) 12) {  
+    #footer-logo-badge {
+    width: 120px;
+  }
+  }
+  //Mobile Only
+  @include at-breakpoint(12 em($mobile-end)) {
+    height: auto;
+    .menu-name-menu-transaction-menu ul {
+      display: none;
+    }
+    #footer-logo-badge {
+      /*width: 120px;*/
+      margin-top: 22px;
+    }
+    .site-logo {
+      width: 140%;
+    }
+    #block-bean-footer-badge-us-news-2015 {
+      margin-left: -9px;
+      img{
+        width: 120px;
+      }
+    }
+    #footer-contact-static {
+      width: 138px;
+      margin-left: 15px;
+      margin-top: 77px;
+    }
+    .static-menu {
+      h2 {
+        float: none;  
+      }
+      .menu-name-menu-static li {
+        padding: 0;
+        width: 100%;
+        text-align: left;
+      } 
+    }
+  }
+  //Tablet Start
+  @include at-breakpoint(em($tablet-start) 12) {
+    height: 350px;
+    #block-cu-quick-search-blocks-footer-search-block { 
+      position: absolute;
+      right: 30px;
+      top: 110px;
+    } 
+    #block-menu-block-footer-main-menu {
+      font-size: .5em;
+      width: 80%;
+      float: right;
+    }
+    .mobile-main-menu-footer ul.menu {
+      float: left;
+      width: 95%;
+      padding: 10px 0;
+      li {
+        height: 15px;
+        padding: 0 2px;
+      }
+    }       
+    .menu-name-menu-transaction-menu ul {
+      display: block;
+      float: right;
+      text-align: center;
+      margin: 0;
+    }
+    #footer-logo-badge {      
+      position: relative;
+      top: -36px;
+      width: 20%;
+    }
+    #block-bean-footer-badge-us-news-2015 {
+      width: 105%;
+      margin-left: -10%;
+      margin-top: -40px;
+    }
+    .site-logo {
+      width: 120%;
+      margin-left: 7px;
+    }
+    .contact-address {
+      margin: 9px 0 0 0;
+      margin-left: 9%;
+    }
+    #footer-contact-static {
+      width: 52%;
+    }
+    .static-menu {
+      float: left;
+      width: 45%;
+      margin-top: 9px;
+    }
+    .outline-search input[type="submit"] {
+      left: 173px;
+    }
+  }
+  //Desktop Start
+  @include at-breakpoint(em($desk-start) 12) { 
+    height: 280px;
+    .site-logo {
+      width: 100%;
+      margin-left: 0;
+    } 
+    .contact-address {
+      margin: 9px 8px 0px 18px;
+    }
+    #footer-contact-static {
+      width: 50%;
+    }
+    .static-menu {
+      width: 45%;
+    }
+     #footer-logo-badge {      
+      width: 24%;
+    }
+    #block-bean-footer-badge-us-news-2015 {
+      width: 58%;
+      height: 165px;
+      margin-left: -8%;
+      margin-top: 4px;
+    }
+    #footer-contact-static {
+      position: absolute;
+      width: 50%;
+      top: 80px;
+      left: 300px;
+    }
+  #block-cu-quick-search-blocks-footer-search-block { 
+      top: 94px;
+      right: 3%;
+    } 
+  .dropdown-menu li a {
+    font-size: 1.3em;    
+  }  
+  }
+}
+//Note doing this because home page logo is diff than alt page logos
+//Mobile Only
+@include at-breakpoint(12 em($mobile-end)) {
+  body.site-www footer.footer #footer-contact-static {
+    margin-top: 22px;
+    float: right;
+  }
+}

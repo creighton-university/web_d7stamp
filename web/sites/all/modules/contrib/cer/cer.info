@@ -1,0 +1,10 @@
+name = Corresponding Entity References
+description = Syncs the entity references between entity types which have an entityreference to each other.
+core = 7.x
+package = Fields
+dependencies[] = entityreference
+dependencies[] = ctools
+
+files[] = handler.inc
+
+configure = admin/config/system/cer

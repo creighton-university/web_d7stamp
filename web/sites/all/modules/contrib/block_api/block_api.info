@@ -1,0 +1,6 @@
+name = Block API
+description = Allows to create block instances of predefined block types.
+core = 7.x
+dependencies[] = block
+files[] = block_api.module
+files[] = tests/block_api.test

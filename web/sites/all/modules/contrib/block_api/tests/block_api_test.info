@@ -1,0 +1,6 @@
+name = Block API testing
+description = Tests Block API module functionality. Do not enable.
+core = 7.x
+package = Testing
+hidden = TRUE
+dependencies[] = block_api

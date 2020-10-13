@@ -25,6 +25,8 @@
             }
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "drupal/drupal": "7.72",
         "cweagans/composer-patches": "^1.6",

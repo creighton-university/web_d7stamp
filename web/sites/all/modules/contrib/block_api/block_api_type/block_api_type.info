@@ -1,0 +1,8 @@
+name = Custom block type
+description = Allows to create custom block types.
+core = 7.x
+dependencies[] = block_api
+dependencies[] = entity
+
+; Hidden until matured. Use drush to enable/disable.
+hidden = TRUE

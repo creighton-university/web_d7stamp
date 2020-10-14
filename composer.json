@@ -28,7 +28,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "drupal/drupal": "7.72",
+        "drupal/drupal": "7.73",
         "cweagans/composer-patches": "^1.6",
         "drupal/views_bulk_operations": "3.3",
         "drupal/addressfield": "1.2",

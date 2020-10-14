@@ -145,7 +145,7 @@
         "drupal/varnish": "1.0-beta3",
         "drupal/video_filter": "3.x-dev",
         "drupal/view_unpublished": "1.1",
-        "drupal/views": "3.15",
+        "drupal/views": "3.21",
         "drupal/views_data_export": "3.1",
         "drupal/views_json_query": "1.x-dev",
         "drupal/views_php": "1.0-alpha3",

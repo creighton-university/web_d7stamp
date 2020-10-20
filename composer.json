@@ -155,7 +155,7 @@
         "drupal/webform_ajax": "1.1",
         "drupal/webform_layout": "^2.3",
         "drupal/webform_validation": "^1.18",
-        "drupal/workflow": "2.10",
+        "drupal/workflow": "2.13",
         "drupal/wysiwyg": "^2.6",
         "drupal/wsclient": "^1.0",
         "drupal/wysiwyg_filter": "1.6-rc2",

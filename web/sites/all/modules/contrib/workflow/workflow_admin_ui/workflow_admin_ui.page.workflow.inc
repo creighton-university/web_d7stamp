@@ -221,7 +221,7 @@ function workflow_admin_ui_edit_form_validate($form, &$form_state) {
 
   // Make sure workflow name is not a duplicate.
   foreach (workflow_load_multiple() as $stored_workflow) {
-    if ($name == check_plain($stored_workflow->getName()) && $workflow->wid != $stored_workflow->wid) {
+    if ($name == $stored_workflow->name && $workflow->wid != $stored_workflow->wid) {
       form_set_error('name', t('A workflow with the name %name already exists. Please enter another name for this workflow.',
         array('%name' => $name)));
       break;
@@ -248,6 +248,7 @@ function workflow_admin_ui_edit_form_submit($form, &$form_state) {
     $workflow->tab_roles = array_filter($form_state['values']['tab_roles']);
     $workflow->options = array(
       'name_as_title' => $form_state['values']['name_as_title'],
+      'fieldset' => $form_state['values']['fieldset'],
       'options' => $form_state['values']['options'],
       'schedule' => $form_state['values']['schedule'],
       'schedule_timezone' => $form_state['values']['schedule_timezone'],
@@ -262,7 +263,7 @@ function workflow_admin_ui_edit_form_submit($form, &$form_state) {
   if ($insert) {
     $args = array(
       '%name' => $workflow->getName(),
-      '@url' => url('admin/config/workflow/workflow/edit/' . $workflow->wid),
+      '@url' => url(WORKFLOW_ADMIN_UI_PATH . "/edit/$workflow->wid"),
     );
     watchdog('workflow', 'Created workflow %name', $args);
     drupal_set_message(t('The workflow %name was created. Please maintain the states and transitions.', $args), 'status');
@@ -272,5 +273,5 @@ function workflow_admin_ui_edit_form_submit($form, &$form_state) {
   }
   // This redirect is needed, when changing the workflow name, with name in URL.
   // Also for cloning a workflow.
-  $form_state['redirect'] = 'admin/config/workflow/workflow/manage/' . $workflow->wid;
+  $form_state['redirect'] = WORKFLOW_ADMIN_UI_PATH . "/manage/$workflow->wid";
 }

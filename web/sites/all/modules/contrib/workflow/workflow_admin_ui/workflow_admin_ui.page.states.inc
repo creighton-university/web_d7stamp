@@ -59,7 +59,7 @@ function workflow_admin_ui_states_form($form, &$form_state, $workflow, $op) {
         '#type' => 'textfield',
         '#size' => 30,
         '#maxlength' => 255,
-        '#default_value' => check_plain($label),
+        '#default_value' => $label,
       ),
 
       'name' => array(
@@ -305,7 +305,7 @@ function workflow_admin_ui_states_form_submit($form, &$form_state) {
   }
 
   drupal_set_message(t('The workflow was updated.'));
-  // $form_state['redirect'] = 'admin/config/workflow/workflow';
+  // $form_state['redirect'] = WORKFLOW_ADMIN_UI_PATH;
 }
 
 /**

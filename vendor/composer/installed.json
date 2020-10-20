@@ -8765,22 +8765,22 @@
     },
     {
         "name": "drupal/workflow",
-        "version": "2.10.0",
-        "version_normalized": "2.10.0.0",
+        "version": "2.13.0",
+        "version_normalized": "2.13.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/workflow.git",
-            "reference": "7.x-2.10"
+            "reference": "7.x-2.13"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/workflow-7.x-2.10.zip",
-            "reference": "7.x-2.10",
-            "shasum": "c99ee6f6a3534d27cb8a3433af96dde5f669f61e"
+            "url": "https://ftp.drupal.org/files/projects/workflow-7.x-2.13.zip",
+            "reference": "7.x-2.13",
+            "shasum": "b4156f69278e1e2e38f88b267b2098f56e21799b"
         },
         "require": {
             "drupal/drupal": "*",
-            "drupal/entity": "^1.6"
+            "drupal/entity": "^1.7"
         },
         "require-dev": {
             "drupal/entity": "*",
@@ -8793,8 +8793,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "7.x-2.10",
-                "datestamp": "1558543998",
+                "version": "7.x-2.13",
+                "datestamp": "1558597384",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"

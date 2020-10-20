@@ -184,7 +184,7 @@ function workflow_tokens($type, $tokens, array $data = array(), array $options =
         switch (end($name_parts)) {
           case 'comment':
             if (isset($entity->workflow_transitions) && isset($entity->workflow_transitions[$name_parts[0]])) {
-              $replacements[$original] = $entity->workflow_transitions[$name_parts[0]]->$name_parts[1];
+              $replacements[$original] = $entity->workflow_transitions[$name_parts[0]]->{$name_parts[1]};
             }
             break;
         }
@@ -317,7 +317,7 @@ function _workflow_token_get_token($wrapper, $options) {
   // If there is a label for a property, e.g., defined by an options list or an
   // entity label, make use of it.
   if ($label = $wrapper->label()) {
-    return empty($options['sanitize']) ? $label : check_plain(t($label, array(), array('langcode' => $langcode)));
+    return $label;
   }
 
   switch ($wrapper->type()) {

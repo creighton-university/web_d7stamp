@@ -162,7 +162,8 @@
         "drupal/xmlsitemap": "^2.6",
         "drupal/bootstrap": "3.23",
         "drupal/omega": "4.4",
-        "malsup/cycle": "dev-master"
+        "malsup/cycle": "dev-master",
+        "drupal/node_export": "^3.1"
     },
     "extra": {
         "custom-installer": {

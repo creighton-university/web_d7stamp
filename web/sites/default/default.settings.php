@@ -659,3 +659,11 @@ $conf['file_scan_ignore_directories'] = array(
   'node_modules',
   'bower_components',
 );
+
+/**
+ * global settings to be applied to all upstream sites.
+ */
+$global_settings = __DIR__ . "/global.settings.php";
+if (file_exists($local_services)) {
+  include $global_settings;
+}

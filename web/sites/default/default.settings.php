@@ -664,6 +664,6 @@ $conf['file_scan_ignore_directories'] = array(
  * global settings to be applied to all upstream sites.
  */
 $global_settings = __DIR__ . "/global.settings.php";
-if (file_exists($local_services)) {
+if (file_exists($global_settings)) {
   include $global_settings;
 }

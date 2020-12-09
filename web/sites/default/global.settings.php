@@ -23,3 +23,5 @@ $databases['hub']['default'] = array(
   'server' => 'dbserver.dev.417e48f5-7e72-433e-a021-17d2da467dad.drush.in',
   'port' => '11386'
 );
+
+$drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];

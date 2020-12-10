@@ -1,9 +1,3 @@
 api_version: 1
 
 web_docroot: true
-workflows:
-  deploy_product:
-    after:
-      - type: webphp
-        description: Installs drupal after a site is created
-        script: private/scripts/create-settings.php

@@ -20,7 +20,9 @@ $databases['hub']['default'] = array(
   'username' => 'pantheon',
   'password' => '1ddad38f53454188bf844b60692c1060',
   'host' => 'dbserver.dev.417e48f5-7e72-433e-a021-17d2da467dad.drush.in',
-  'port' => '11386'
+  'port' => '11386',
+  'prefix' => '',
+  'collation' => 'utf8mb4_general_ci',
 );
 
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];

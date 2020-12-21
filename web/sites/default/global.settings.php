@@ -19,8 +19,8 @@ $databases['hub']['default'] = array(
   'database' => 'pantheon',
   'username' => 'pantheon',
   'password' => '3fb722c59e484edfb2096ebd7de775cc',
-  'host' => 'dbserver.dev.a7d64488-2ce4-40a1-ac7e-6d677f5cdf8c.drush.in',
-  'port' => '14145',
+  'host' => 'e9e745bc4888455b9473a65ba51e4b75',
+  'port' => '10148',
   'prefix' => '',
 );
 

@@ -22,7 +22,19 @@ function creighton_2017_preprocess_html(&$variables) {
   $js_footer_options = array('scope' => 'footer', 'group' => JS_THEME);
   $js_header_options = array('scope' => 'header', 'group' => JS_DEFAULT, 'weight' => 101);
 
-
+  // onetrust scripts
+  drupal_add_js('https://cdn.cookielaw.org/consent/df287db6-4630-4290-b0bf-a9fb72d40742/OtAutoBlock.js', 'external');
+  $onetrust_script = array(
+    '#tag' => 'script',
+    '#attributes' => array('src' => 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', 'data-domain-script' => 'df287db6-4630-4290-b0bf-a9fb72d40742'),
+    '#value' => '',
+  );
+  drupal_add_html_head($onetrust_script, 'one_trust_autoblock');
+  drupal_add_js(
+    'function OptanonWrapper() { }',
+    array('type' => 'inline', 'scope' => 'header', 'weight' => 1)
+  );
+  // end of onetrust scripts
 
   // all/libraries/flexslider/jquery.flexslider.js adds thumbnail images dynamically, but leaves out attributes for AT
   // also remove redundant aria role attributes

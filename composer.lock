@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca83e76eaae8ee2fb4c1a5f9f8e32041",
+    "content-hash": "e40aa9767cab3042ecd35c83f0df2eb3",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -6306,17 +6306,17 @@
         },
         {
             "name": "drupal/rules",
-            "version": "2.9.0",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/rules.git",
-                "reference": "7.x-2.9"
+                "reference": "7.x-2.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/rules-7.x-2.9.zip",
-                "reference": "7.x-2.9",
-                "shasum": "4a03e9be76911c2c24abc58d8a6948986a0f1711"
+                "url": "https://ftp.drupal.org/files/projects/rules-7.x-2.12.zip",
+                "reference": "7.x-2.12",
+                "shasum": "11e14c958b3c4117032ff7e1b328e03feb4163d5"
             },
             "require": {
                 "drupal/drupal": "~7.0",
@@ -6329,8 +6329,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-2.9",
-                    "datestamp": "1492697942",
+                    "version": "7.x-2.12",
+                    "datestamp": "1548305581",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8848,7 +8848,7 @@
                 "reference": "master"
             },
             "type": "drupal-library",
-            "time": "2020-10-20T19:14:55+00:00"
+            "time": "2021-02-08T15:59:05+00:00"
         }
     ],
     "packages-dev": [],
@@ -8865,6 +8865,5 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

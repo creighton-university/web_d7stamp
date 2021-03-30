@@ -34,6 +34,12 @@ function creighton_faculty_directory_context_default_contexts() {
         ),
       ),
     ),
+    'creighton_crumbs' => array(
+      0 => 'main-menu:node/51',
+    ),
+    'menu' => array(
+      0 => 'main-menu:node/51',
+    ),
   );
   $context->condition_mode = 0;
 

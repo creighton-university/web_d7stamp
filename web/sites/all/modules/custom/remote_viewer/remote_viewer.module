@@ -43,7 +43,7 @@ function remote_viewer_entity_view_alter(&$build, $type) {
   global $databases;
 
   $remote_content = RemoteViewerContentController::$remoteContent;
-  
+
   // Remote View.
   if (!empty($remote_content)) {
     $remote_server  = $databases[$remote_content]['default']['server'];
@@ -60,8 +60,8 @@ function remote_viewer_entity_view_alter(&$build, $type) {
           if ($build_value['#field_type'] == 'file') {
             $uri = $build_value[0]['#file']->uri;
             $file_name = str_replace('public://', '', $uri);
-            
-            $uri = $protocol . '://' . $remote_server . '/sites/' . $remote_server . '/files/' . $file_name;
+
+            $uri = $protocol . '://' . $remote_server . '/sites/default/files/' . $file_name;
             $build_value[0]['#file']->uri = $uri;
           }
           // Entity References.
@@ -175,10 +175,10 @@ function remote_viewer_file_url_alter(&$uri) {
 
     $uri  = str_replace('__remote_viewer__', '', $uri);
     $url  = $protocol . '://' . $remote_server;
-    $path = 'sites/' . $remote_server . '/files';
+    $path = 'sites/default/files';
     $uri  = str_replace('public://', $url . '/' . $path . '/', $uri);
   }
- 
+
 }
 
 /**
@@ -197,12 +197,12 @@ function remote_viewer_views_api() {
 function remote_viewer_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
   if (!RemoteViewerContentController::$remoteContent) {
     return;
-  } 
+  }
   if ($element['content']['file']['#attributes']['class'][0] == 'file') {
     $uri = $element['content']['file']['#file']->uri;
-    $element['content']['file']['#file']->uri = '__remote_viewer__'.$uri; 
+    $element['content']['file']['#file']->uri = '__remote_viewer__'.$uri;
   }
-  if ($element['content']['#bundle'] == 'image') {      
+  if ($element['content']['#bundle'] == 'image') {
     $uri = $element['content']['file']['#item']['uri'];
     $element['content']['file']['#item']['uri'] = '__remote_viewer__'.$uri;
   }

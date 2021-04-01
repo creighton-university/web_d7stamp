@@ -175,7 +175,7 @@ function remote_viewer_file_url_alter(&$uri) {
 
     $uri  = str_replace('__remote_viewer__', '', $uri);
     $url  = $protocol . '://' . $remote_server;
-    $path = 'sites/' . $remote_server . '/files';
+    $path = 'sites/default/files';
     $uri  = str_replace('public://', $url . '/' . $path . '/', $uri);
   }
 

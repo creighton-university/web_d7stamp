@@ -31,7 +31,16 @@ function creighton_faculty_directory_views_default_views() {
   $handler->display->display_options['query']['options']['json_file'] = 'https://dms.creighton.edu/rest/faculty-list.php';
   $handler->display->display_options['query']['options']['row_apath'] = '/';
   $handler->display->display_options['query']['options']['enable_pagination_query_parameters'] = 0;
-  $handler->display->display_options['query']['options']['show_errors'] = 1;
+  $handler->display->display_options['query']['options']['show_errors'] = 0;
+  $handler->display->display_options['query']['options']['ssl_allow_self_signed'] = 0;
+  $handler->display->display_options['query']['options']['ssl_cafile'] = '';
+  $handler->display->display_options['query']['options']['ssl_capath'] = '';
+  $handler->display->display_options['query']['options']['ssl_local_cert'] = '';
+  $handler->display->display_options['query']['options']['ssl_passphrase'] = '';
+  $handler->display->display_options['query']['options']['ssl_CN_match'] = '';
+  $handler->display->display_options['query']['options']['ssl_verify_depth'] = '';
+  $handler->display->display_options['query']['options']['ssl_SNI_enabled'] = 0;
+  $handler->display->display_options['query']['options']['ssl_SNI_server_name'] = '';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -69,6 +78,13 @@ function creighton_faculty_directory_views_default_views() {
 </style>
 ';
   $handler->display->display_options['footer']['area']['format'] = 'full_html_plus_media';
+  /* No results behavior: Global: PHP */
+  $handler->display->display_options['empty']['php']['id'] = 'php';
+  $handler->display->display_options['empty']['php']['table'] = 'views';
+  $handler->display->display_options['empty']['php']['field'] = 'php';
+  $handler->display->display_options['empty']['php']['label'] = 'drupal_not_found()';
+  $handler->display->display_options['empty']['php']['empty'] = TRUE;
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php drupal_not_found(); ?>';
   /* Field: field_faculty_first_name: value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'json';
@@ -345,9 +361,18 @@ return $midInitial;';
   $handler->display->display_options['query']['options']['json_file'] = 'https://dms.creighton.edu/rest/faculty-profile.php';
   $handler->display->display_options['query']['options']['row_apath'] = '/';
   $handler->display->display_options['query']['options']['enable_pagination_query_parameters'] = 0;
-  $handler->display->display_options['query']['options']['show_errors'] = 1;
+  $handler->display->display_options['query']['options']['show_errors'] = 0;
+  $handler->display->display_options['query']['options']['ssl_allow_self_signed'] = 0;
+  $handler->display->display_options['query']['options']['ssl_cafile'] = '';
+  $handler->display->display_options['query']['options']['ssl_capath'] = '';
+  $handler->display->display_options['query']['options']['ssl_local_cert'] = '';
+  $handler->display->display_options['query']['options']['ssl_passphrase'] = '';
+  $handler->display->display_options['query']['options']['ssl_CN_match'] = '';
+  $handler->display->display_options['query']['options']['ssl_verify_depth'] = '';
+  $handler->display->display_options['query']['options']['ssl_SNI_enabled'] = 0;
+  $handler->display->display_options['query']['options']['ssl_SNI_server_name'] = '';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -368,6 +393,13 @@ return $midInitial;';
     $view->build_info[\'title\'] .= ", {$view->result[0]->field_faculty_name_suffix}";
   }
 ?>';
+  /* No results behavior: Global: PHP */
+  $handler->display->display_options['empty']['php']['id'] = 'php';
+  $handler->display->display_options['empty']['php']['table'] = 'views';
+  $handler->display->display_options['empty']['php']['field'] = 'php';
+  $handler->display->display_options['empty']['php']['label'] = 'drupal_not_found()';
+  $handler->display->display_options['empty']['php']['empty'] = TRUE;
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php drupal_not_found(); ?>';
   /* Field: field_faculty_first_name: value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'json';
@@ -432,6 +464,7 @@ return $midInitial;';
   $handler->display->display_options['arguments']['query_string']['table'] = 'json';
   $handler->display->display_options['arguments']['query_string']['field'] = 'query_string';
   $handler->display->display_options['arguments']['query_string']['ui_name'] = 'fid';
+  $handler->display->display_options['arguments']['query_string']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['query_string']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['query_string']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['query_string']['name'] = 'fid';
@@ -454,6 +487,181 @@ return $midInitial;';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[view:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title], faculty member of Creighton University.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => 'https://www.creighton.edu/sites/all/themes/custom/web_themes/creighton_2015/images/logos/CU_Logo.png',
+        'default' => 'https://www.creighton.edu/sites/all/themes/custom/web_themes/creighton_2015/images/logos/CU_Logo.png',
+      ),
+      'canonical' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'set_cookie' => array(
+        'value' => '',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+        'default' => '',
+      ),
+      'pragma' => array(
+        'value' => '',
+      ),
+      'cache-control' => array(
+        'value' => '',
+      ),
+      'expires' => array(
+        'value' => '',
+      ),
+      'dcterms.title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'dcterms.creator' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.subject' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.contributor' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.date' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.type' => array(
+        'value' => 'Text',
+        'default' => 'Text',
+      ),
+      'dcterms.format' => array(
+        'value' => 'text/html',
+        'default' => 'text/html',
+      ),
+      'dcterms.identifier' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.language' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.relation' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.coverage' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'dcterms.rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'faculty-directory-profile';
 
   /* Display: faculty-profile-sidebar-block-contact */
@@ -557,12 +765,28 @@ print \'<div class="block--copy-block sidebar-item contact-us"></div><script>var
   $handler->display->display_options['query']['options']['json_file'] = 'https://dms.creighton.edu/rest/faculty-list.php';
   $handler->display->display_options['query']['options']['row_apath'] = '/';
   $handler->display->display_options['query']['options']['enable_pagination_query_parameters'] = 0;
-  $handler->display->display_options['query']['options']['show_errors'] = 1;
+  $handler->display->display_options['query']['options']['show_errors'] = 0;
+  $handler->display->display_options['query']['options']['ssl_allow_self_signed'] = 0;
+  $handler->display->display_options['query']['options']['ssl_cafile'] = '';
+  $handler->display->display_options['query']['options']['ssl_capath'] = '';
+  $handler->display->display_options['query']['options']['ssl_local_cert'] = '';
+  $handler->display->display_options['query']['options']['ssl_passphrase'] = '';
+  $handler->display->display_options['query']['options']['ssl_CN_match'] = '';
+  $handler->display->display_options['query']['options']['ssl_verify_depth'] = '';
+  $handler->display->display_options['query']['options']['ssl_SNI_enabled'] = 0;
+  $handler->display->display_options['query']['options']['ssl_SNI_server_name'] = '';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: PHP */
+  $handler->display->display_options['empty']['php']['id'] = 'php';
+  $handler->display->display_options['empty']['php']['table'] = 'views';
+  $handler->display->display_options['empty']['php']['field'] = 'php';
+  $handler->display->display_options['empty']['php']['label'] = 'drupal_not_found()';
+  $handler->display->display_options['empty']['php']['empty'] = TRUE;
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php drupal_not_found(); ?>';
   /* Field: field_faculty_first_name: value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'json';

@@ -15,6 +15,7 @@ $databases['default']['default'] = array(
 
 
 $databases['hub']['default'] = array(
+  'server' => 'live-legacy-creighton-hub.pantheonsite.io',
   'driver' => 'mysql',
   'database' => 'pantheon',
   'username' => 'pantheon',

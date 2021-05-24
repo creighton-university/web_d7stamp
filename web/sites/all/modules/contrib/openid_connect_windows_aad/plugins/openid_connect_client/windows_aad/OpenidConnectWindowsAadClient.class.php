@@ -178,10 +178,14 @@ class OpenidConnectWindowsAadClient extends OpenIDConnectClientBase {
       $profile_data['name'] = $profile_data[$name];
 
       if (!isset($profile_data['email'])) {
+        //azure ad uses mail
+        if(isset($profile_data['mail'])){
+          $profile_data['email'] = $profile_data['mail'];
+        }
         // See if we have the Graph otherMails property and use it if available,
         // if not, add the principal name as email instead, so Drupal still will
         // create the user anyway.
-        if ($this->getSetting('userinfo_graph_api_use_other_mails') == 1) {
+        elseif ($this->getSetting('userinfo_graph_api_use_other_mails') == 1) {
           if (!empty($profile_data['otherMails'])) {
             // Use first occurrence of otherMails attribute.
             $profile_data['email'] = current($profile_data['otherMails']);

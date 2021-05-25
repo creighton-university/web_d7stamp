@@ -177,7 +177,8 @@ class OpenidConnectWindowsAadClient extends OpenIDConnectClientBase {
 
       $profile_data['name'] = $profile_data[$name];
 
-      if (!isset($profile_data['email'])) {
+      // Azure provides 'mail' for userinfo vs email.
+      if (!isset($profile_data['mail'])) {
         // See if we have the Graph otherMails property and use it if available,
         // if not, add the principal name as email instead, so Drupal still will
         // create the user anyway.
@@ -201,6 +202,10 @@ class OpenidConnectWindowsAadClient extends OpenIDConnectClientBase {
 
           $profile_data['email'] = $profile_data[$upn];
         }
+      }
+      else {
+        // OpenID Connect module expects the 'email' token for userinfo.
+        $profile_data['email'] = $profile_data['mail'];
       }
 
       return $profile_data;

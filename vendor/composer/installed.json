@@ -5441,6 +5441,9 @@
                     "status": "not-covered",
                     "message": "Beta releases are not covered by Drupal security advisories."
                 }
+            },
+            "patches_applied": {
+                "openid_connect-account_claiming-3005824-24": "https://www.drupal.org/files/issues/2020-11-05/openid_connect-account_claiming-3005824-24.patch"
             }
         },
         "installation-source": "dist",
@@ -5517,6 +5520,9 @@
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
                 }
+            },
+            "patches_applied": {
+                "correct_email_mapping": "https://git.drupalcode.org/project/openid_connect_windows_aad/-/merge_requests/2.diff"
             }
         },
         "installation-source": "dist",

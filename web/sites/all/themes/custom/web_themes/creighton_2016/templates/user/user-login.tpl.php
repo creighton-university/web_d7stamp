@@ -16,10 +16,20 @@
     <h2><?php print render($intro_text); ?></h2>
     <div id="tabs" class="tabs clearfix">
     <ul class="tabs primary clearfix">
-      <li><a href="#tabs-1">User Login</a></li>
+      <li><a href="#tabs-1">SSO Login</a></li>
       <li><a href="#tabs-2">Administrator Login</a></li>
     </ul>
-
+    <div id="tabs-1">
+      <p>To login, use the 'Login to Blue' link below with your NetID and password:</p>
+      <?php
+        $sso_login = block_load('open_connect', 'openid_connect_login');
+        $sso_auth_output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($sso_login))));
+        print $sso_auth_output;
+      ?>
+      <p>Creighton University uses single sign-on. The goal is to provide an easy to use and secure authentication environment for users.<br />
+      <a href="http://doit.creighton.edu/network-security/security/web-single-sign" target="_blank">Learn more</a>
+      </p>
+    </div>
     <div id="tabs-2">
       <?php
       // split the username and password from the submit button so we can put in links above

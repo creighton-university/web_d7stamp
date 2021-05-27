@@ -16,17 +16,9 @@
     <h2><?php print render($intro_text); ?></h2>
     <div id="tabs" class="tabs clearfix">
     <ul class="tabs primary clearfix">
-      <li><a href="#tabs-1">SSO Login</a></li>
-      <li><a href="#tabs-2">Administrator Login</a></li>
+      <li><a href="#tabs-1">Administrator Login</a></li>
     </ul>
     <div id="tabs-1">
-      <?php
-        $sso_login = block_load('open_connect', 'openid_connect_login');
-        $sso_auth_output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($sso_login))));
-        print $sso_auth_output;
-      ?>
-    </div>
-    <div id="tabs-2">
       <?php
       // split the username and password from the submit button so we can put in links above
       print drupal_render($form['name']);

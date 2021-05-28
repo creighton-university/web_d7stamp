@@ -13,7 +13,11 @@ $databases['default']['default'] = array(
   'port' => $_ENV['DB_PORT']
 );
 
-
+/**
+ * hub connection, this can be the source of the /programs matrix breaking
+ * check that legacy-creighton-hub database connection info matches below
+ * if they don't match change the values below to match pantheons
+ */
 $databases['hub']['default'] = array(
   'server' => 'live-legacy-creighton-hub.pantheonsite.io',
   'driver' => 'mysql',

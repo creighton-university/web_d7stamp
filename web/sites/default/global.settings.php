@@ -23,9 +23,9 @@ $databases['hub']['default'] = array(
   'driver' => 'mysql',
   'database' => 'pantheon',
   'username' => 'pantheon',
-  'password' => '11735cbf939d48a0b273a21b089802a3',
+  'password' => '235f844fd9ce474a82fd5d37d47845e5',
   'host' => 'dbserver.live.8f16d3f9-7730-4512-a10c-11663041c508.drush.in',
-  'port' => '13065',
+  'port' => '11332',
   'prefix' => '',
 );
 

@@ -37,3 +37,8 @@ jobs:
 
     - name: auth with pantheon
       run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
+
+    - name: git hub db creds
+      run: |
+        MYSQL_CREDS=$(terminus connection:info legacy-creighton-hub.dev --fields='mysql_url' --format=string)
+        terminus drush legacy-creighton-hub.dev -- vset hub_db_url $MYSQL_CREDS --exact

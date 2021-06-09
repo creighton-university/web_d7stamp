@@ -29,4 +29,20 @@ $databases['hub']['default'] = array(
   'prefix' => '',
 );
 
+if(isset($conf['hub_db_url'])){
+  $hub_db_creds = parse_url($conf['hub_db_url']);
+
+  $databases['hub']['default'] = array(
+    'server' => 'live-legacy-creighton-hub.pantheonsite.io',
+    'driver' => 'mysql',
+    'database' => 'pantheon',
+    'username' => $hub_db_creds['user'],
+    'password' => $hub_db_creds['pass'],
+    'host' => $hub_db_creds['host'],
+    'port' => $hub_db_creds['port'],
+    'prefix' => '',
+  );
+}
+
+
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];

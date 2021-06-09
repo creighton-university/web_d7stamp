@@ -14,7 +14,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  cleanup_ci_multidevs:
+  update_wedsites_hub_creds:
     runs-on: ubuntu-latest
 
     steps:

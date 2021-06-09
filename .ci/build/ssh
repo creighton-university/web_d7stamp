@@ -2,7 +2,7 @@
 
 set -e
 # erg github sets the home dir to github/home...
-SSH_PATH="/home/.ssh"
+SSH_PATH="~/.ssh"
 
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"

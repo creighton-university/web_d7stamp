@@ -34,7 +34,6 @@ jobs:
       env:
         PRIVATE_KEY: ${{ secrets.BOT_WORKFLOW_SSH }}
       run: |
-        ls ~
         ./.ci/build/ssh
 
     - name: download terminus

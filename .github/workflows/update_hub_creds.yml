@@ -1,0 +1,39 @@
+name: Pantheon web_d7stamp update hub Credentials
+# run every tuesday at 5 am utc
+# on:
+#   schedule:
+#     - cron: '00 5 * * 2'
+on:
+  push:
+    branches:
+      - update-hub-creds-automation
+env:
+  # necessary variables/token for connecting to pantheon/github and setting up
+  # the container for testing and deploy
+  TERMINUS_TOKEN: ${{ secrets.BOT_TERMINUS_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  cleanup_ci_multidevs:
+    runs-on: ubuntu-latest
+
+    steps:
+    # use depth 0 to avoid shallow updates
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+
+    - name: download terminus
+      run: curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
+
+    - name: install terminus
+      run: sudo php installer.phar install
+
+    - name: auth with pantheon
+      run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+# erg github sets the home dir to github/home...
+SSH_PATH="/root/.ssh"
+
+mkdir -p "$SSH_PATH"
+touch "$SSH_PATH/known_hosts"
+
+echo "$PRIVATE_KEY" > "$SSH_PATH/id_rsa"
+
+chmod 700 "$SSH_PATH"
+chmod 600 "$SSH_PATH/known_hosts"
+chmod 600 "$SSH_PATH/id_rsa"
+
+eval $(ssh-agent -s)
+ssh-add "$SSH_PATH/id_rsa"
+ssh-add -l
+ssh-keyscan -t rsa github.com >> "$SSH_PATH/known_hosts"

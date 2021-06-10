@@ -33,8 +33,7 @@ jobs:
     - name: Setup Environment
       env:
         PRIVATE_KEY: ${{ secrets.BOT_WORKFLOW_SSH }}
-      run: |
-        ./.ci/build/ssh
+      run: ./.ci/build/ssh
 
     - name: download terminus
       run: curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
@@ -45,9 +44,7 @@ jobs:
     - name: auth with pantheon, and update creds
       env:
         TERMINUS_TOKEN: ${{ secrets.BOT_TERMINUS_TOKEN }}
-      run: |
-        terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
+      run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
+      
     - name: update hub creds
-      env:
-        PRIVATE_KEY: ${{ secrets.BOT_WORKFLOW_SSH }}
       run: ./.ci/update/hub_credentials

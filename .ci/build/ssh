@@ -6,6 +6,8 @@ SSH_PATH="~/.ssh"
 
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
+touch "$SSH_PATH/config"
+echo "Host *.drush.in\n    StrictHostKeyChecking no" >> "$SSH_PATH/config"
 
 echo "$PRIVATE_KEY" > "$SSH_PATH/id_rsa"
 

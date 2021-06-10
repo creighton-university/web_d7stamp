@@ -4,7 +4,7 @@ set -e
 # erg github sets the home dir to github/home...
 SSH_PATH="~/runner/.ssh"
 
-# mkdir -p "$SSH_PATH"
+mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
 touch "$SSH_PATH/config"
 echo "Host *.drush.in\n    StrictHostKeyChecking no" >> "$SSH_PATH/config"

@@ -29,6 +29,11 @@ jobs:
       with:
         php-version: '7.4'
 
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.BOT_WORKFLOW_SSH }} 
+
     # set up the environment
     - name: Setup Environment
       env:
@@ -45,6 +50,6 @@ jobs:
       env:
         TERMINUS_TOKEN: ${{ secrets.BOT_TERMINUS_TOKEN }}
       run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
-      
+
     - name: update hub creds
       run: ./.ci/update/hub_credentials

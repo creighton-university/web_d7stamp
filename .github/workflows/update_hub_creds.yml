@@ -6,7 +6,7 @@ name: Pantheon web_d7stamp update hub Credentials
 on:
   push:
     branches:
-      - update-hub-creds-automation
+      - uphubcred
 env:
   # necessary variables/token for connecting to pantheon/github and setting up
   # the container for testing and deploy

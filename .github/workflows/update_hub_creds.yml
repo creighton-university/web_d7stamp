@@ -35,12 +35,6 @@ jobs:
         key: ${{ secrets.BOT_WORKFLOW_SSH }} 
         known_hosts: '*.drush.in'
 
-    # # set up the environment
-    # - name: Setup Environment
-    #   env:
-    #     PRIVATE_KEY: ${{ secrets.BOT_WORKFLOW_SSH }}
-    #   run: ./.ci/build/ssh
-
     - name: download terminus
       run: curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
 

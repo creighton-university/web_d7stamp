@@ -47,5 +47,5 @@ jobs:
         TERMINUS_TOKEN: ${{ secrets.BOT_TERMINUS_TOKEN }}
       run: |
         terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
-        MYSQL_CREDS=$(terminus connection:info legacy-creighton-hub.dev --fields='mysql_url' --format=string)
-        terminus drush legacy-creighton-hub.dev -- vset hub_db_url $MYSQL_CREDS --exact
+    - name: update hub creds
+      run: ./.ci/update/hub_credentials

@@ -29,8 +29,10 @@ $databases['hub']['default'] = array(
   'prefix' => '',
 );
 
-if(isset($conf['hub_db_url'])){
-  $hub_db_creds = parse_url($conf['hub_db_url']);
+if(file_exists('sites/default/files/private/secrets.json')){
+  $json_text = file_get_contents('sites/default/files/private/secrets.json');
+  $secrets = json_decode($json_text, TRUE);
+  $hub_db_creds = parse_url($secrets['hub_db_url']);
 
   $databases['hub']['default'] = array(
     'server' => 'live-legacy-creighton-hub.pantheonsite.io',

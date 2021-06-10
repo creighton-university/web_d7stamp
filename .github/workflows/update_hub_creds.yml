@@ -39,7 +39,10 @@ jobs:
       run: curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
 
     - name: install terminus
-      run: sudo php installer.phar install
+      run: |
+        sudo php installer.phar install
+        mkdir -p ~/.terminus/plugins
+        composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:~1
 
     - name: auth with pantheon, and update creds
       env:

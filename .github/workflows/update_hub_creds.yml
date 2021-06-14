@@ -1,12 +1,12 @@
 name: Pantheon web_d7stamp update hub Credentials
-# run every tuesday at 5 am utc
-# on:
-#   schedule:
-#     - cron: '00 5 * * 2'
+# run every 30 minutes
 on:
-  push:
-    branches:
-      - uphubcred
+  schedule:
+    - cron: '*/30 * * * *'
+# on:
+#   push:
+#     branches:
+#       - uphubcred
 env:
   # necessary variables/token for connecting to pantheon/github and setting up
   # the container for testing and deploy
@@ -53,4 +53,4 @@ jobs:
       run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
 
     - name: update hub creds
-      run: ./.ci/update/hub_credentials
+      run: ./.ci/update/hub_credentials test

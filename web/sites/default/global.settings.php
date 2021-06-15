@@ -55,9 +55,14 @@ if(file_exists('sites/default/files/private/secrets.json')){
 
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];
 
-@var Array $varyHeaders
-
-@var Array $environments
+/**
+ * @file
+ * 
+ * @var Array $varyHeaders
+ * 
+ * @var Array $environments
+ * 
+ */
 
 $varyString = implode(', ', $varyHeaders);
 header("Vary: ${varyString}", FALSE);

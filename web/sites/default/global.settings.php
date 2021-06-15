@@ -54,6 +54,7 @@ if(file_exists('sites/default/files/private/secrets.json')){
 
 
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];
+<<<<<<< HEAD
 
 /**
  * @file
@@ -73,3 +74,5 @@ if (in_array($_ENV['PANTHEON_ENVIRONMENT'], $environments) && (isset($_SERVER['H
     $base_url = $base_url . $_SERVER['HTTP_MASKED_PATH'];
   }
 }
+=======
+>>>>>>> afb2df74bdc75b1600c61238f25dfae5234e2a15

@@ -163,7 +163,8 @@
         "drupal/bootstrap": "3.23",
         "drupal/omega": "4.4",
         "malsup/cycle": "dev-master",
-        "drupal/node_export": "^3.1"
+        "drupal/node_export": "^3.1",
+        "drupal/openid_connect_windows_aad": "^1.0"
     },
     "extra": {
         "custom-installer": {
@@ -176,6 +177,12 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/openid_connect": {
+                "openid_connect-account_claiming-3005824-24": "https://www.drupal.org/files/issues/2020-11-05/openid_connect-account_claiming-3005824-24.patch"
+            },
+            "drupal/openid_connect_windows_aad": {
+                "correct_email_mapping": "https://git.drupalcode.org/project/openid_connect_windows_aad/-/merge_requests/2.diff"
+            },
             "drupal/panels_extra_layouts 2.0": {
                 "panels_extra_layouts_line_class_2184953_1": "http://drupal.org/files/issues/panels_extra_layouts_line_class_2184953_1.patch"
             },

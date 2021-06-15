@@ -64,6 +64,7 @@ $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];
  * 
  */
 
+$varyHeaders = [ 'x-masked-host', 'x-masked-path', ];
 $varyString = implode(', ', $varyHeaders);
 header("Vary: ${varyString}", FALSE);
 if (in_array($_ENV['PANTHEON_ENVIRONMENT'], $environments) && (isset($_SERVER['HTTP_X_MASKED_HOST']))) { 

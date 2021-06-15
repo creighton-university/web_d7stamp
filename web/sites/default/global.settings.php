@@ -2,6 +2,23 @@
 
 /**
  * @file
+ *
+ * @var Array $varyHeaders
+ *
+ * @var Array $environments
+ */
+$varyString = implode(', ', $varyHeaders); 
+header("Vary: ${varyString}", FALSE); 
+if (in_array($_ENV['PANTHEON_ENVIRONMENT'], $environments) && (isset($_SERVER['HTTP_X_MASKED_HOST']))) { 
+  $base_url = "https://" . $_SERVER['HTTP_X_MASKED_HOST']; 
+    
+  if (isset($_SERVER['HTTP_X_MASKED_PATH'])) { 
+    $base_url = $base_url . $_SERVER['HTTP_MASKED_PATH']; 
+  } 
+}
+
+/**
+ * @file
  * D7 Creighton site-specific configuration file.
  */
 $databases['default']['default'] = array(

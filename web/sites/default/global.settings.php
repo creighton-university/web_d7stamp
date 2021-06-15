@@ -26,3 +26,16 @@ $databases['hub']['default'] = array(
 );
 
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];
+
+@var Array $varyHeaders
+
+@var Array $environments
+
+$varyString = implode(', ', $varyHeaders);
+header("Vary: ${varyString}", FALSE);
+if (in_array($_ENV['PANTHEON_ENVIRONMENT'], $environments) && (isset($_SERVER['HTTP_X_MASKED_HOST']))) { 
+  $base_url = "https://" . $_SERVER['HTTP_X_MASKED_HOST'];
+  if (isset($_SERVER['HTTP_X_MASKED_PATH'])) {
+    $base_url = $base_url . $_SERVER['HTTP_MASKED_PATH'];
+  }
+}

@@ -29,4 +29,28 @@ $databases['hub']['default'] = array(
   'prefix' => '',
 );
 
+//bandaid fix for the hub credentials changing periodically on pantheon :)
+if(file_exists('sites/default/files/private/secrets.json')){
+  //this file is updated by a periodic workflow on web_d7stamp github actions
+  //the workflow is called update_hub_creds (found in .github/workflows/update_hub_creds.yml)
+  $json_text = file_get_contents('sites/default/files/private/secrets.json');
+  $secrets = json_decode($json_text, TRUE);
+  if(isset($secrets['hub_db_url'])){
+    //the credentials for hub are stored as a url
+    $hub_db_creds = parse_url($secrets['hub_db_url']);
+
+    $databases['hub']['default'] = array(
+      'server' => 'live-legacy-creighton-hub.pantheonsite.io',
+      'driver' => 'mysql',
+      'database' => 'pantheon',
+      'username' => $hub_db_creds['user'],
+      'password' => $hub_db_creds['pass'],
+      'host' => $hub_db_creds['host'],
+      'port' => $hub_db_creds['port'],
+      'prefix' => '',
+    );
+  }
+}
+
+
 $drupal_hash_salt = $_ENV['DRUPAL_HASH_SALT'];

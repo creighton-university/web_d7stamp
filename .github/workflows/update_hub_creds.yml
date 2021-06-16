@@ -53,4 +53,4 @@ jobs:
       run: terminus -n auth:login --machine-token="${{ env.TERMINUS_TOKEN }}"
 
     - name: update hub creds
-      run: ./.ci/update/hub_credentials test
+      run: ./.ci/update/hub_credentials live

@@ -67,6 +67,9 @@ function academics_search_spoke_views_default_views() {
   $handler->display->display_options['fields']['field_pgm_details_description_value']['label'] = '';
   $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['max_length'] = "400";
+  $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_pgm_details_description_value']['alter']['preserve_tags'] = '<strong></strong>';
   $handler->display->display_options['fields']['field_pgm_details_description_value']['element_type'] = '0';
   $handler->display->display_options['fields']['field_pgm_details_description_value']['element_label_colon'] = FALSE;

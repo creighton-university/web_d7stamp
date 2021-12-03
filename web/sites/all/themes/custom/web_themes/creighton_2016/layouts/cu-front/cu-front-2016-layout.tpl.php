@@ -67,9 +67,7 @@ if ($logo) {
 		<div class="container">
 			<div id="secondary-header-navigation">
 				<div id="main-header-search">
-					<?php if (!empty($page['header_searchbox'])): ?>
-						<?php print render($page['header_searchbox']); ?>
-					<?php endif ?>
+					<div id="react-elastic-search"></div>
 				</div>
 				<div id="main-header-tranlinks">
 					<?php if (!empty($page['header_tranlinks'])): ?>

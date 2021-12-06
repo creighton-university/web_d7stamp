@@ -67,7 +67,7 @@
   <!--[if IE 8]><link href="<?php echo $absolute_theme_url; ?>/css/ie.css" rel="stylesheet"><![endif]-->
   <noscript><link href="<?php echo $absolute_theme_url; ?>/css/styles.fallback.css" rel="stylesheet"></noscript>
   <?php print $scripts; ?>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-relative-links-dev/legacy_www_assets.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-relative-links-dev/relative-links.js"></script>
   <link rel="shortcut icon" href="<?php echo $absolute_theme_url; ?>/images/cu_favicon_16x16.ico">
   <link rel="apple-touch-icon" href="<?php echo $absolute_theme_url; ?>/images/cu_favicon_32x32.png">
   <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $absolute_theme_url; ?>/images/cu_favicon_72x72.png">

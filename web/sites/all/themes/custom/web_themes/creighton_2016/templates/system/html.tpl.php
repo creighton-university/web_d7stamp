@@ -117,5 +117,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     });
   </script>
+  <!-- Start Elastic Search JS -->
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/2-react-elastic-search-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/2-react-elastic-search-chunk.js.LICENSE.txt"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/2-react-elastic-search-chunk.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/3-react-elastic-search-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/3-react-elastic-search-chunk.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/main-react-elastic-search-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/main-react-elastic-search-chunk.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/react-elastic-search.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-elastic-search-production/static/js/react-elastic-search.js.map"></script>
+  <!-- End Elastic Search JS -->
 </body>
 </html>

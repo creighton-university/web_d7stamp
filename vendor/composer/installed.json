@@ -6468,6 +6468,64 @@
         }
     },
     {
+        "name": "drupal/rel_to_abs",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/rel_to_abs.git",
+            "reference": "7.x-1.6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/rel_to_abs-7.x-1.6.zip",
+            "reference": "7.x-1.6",
+            "shasum": "1a8f34b8a389bae45fb08c5e0941201cee619229"
+        },
+        "require": {
+            "drupal/drupal": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "7.x-1.6",
+                "datestamp": "1403366027",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/7/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "andrii.tiupa",
+                "homepage": "https://www.drupal.org/user/2932651"
+            },
+            {
+                "name": "danylevskyi",
+                "homepage": "https://www.drupal.org/user/322039"
+            },
+            {
+                "name": "podarok",
+                "homepage": "https://www.drupal.org/user/116002"
+            },
+            {
+                "name": "sanchiz",
+                "homepage": "https://www.drupal.org/user/1671246"
+            }
+        ],
+        "description": "Filter for convertion of relative paths to absolute URLs",
+        "homepage": "https://www.drupal.org/project/rel_to_abs",
+        "support": {
+            "source": "https://git.drupalcode.org/project/rel_to_abs"
+        }
+    },
+    {
         "name": "drupal/robotstxt",
         "version": "1.3.0",
         "version_normalized": "1.3.0.0",

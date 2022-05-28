@@ -770,6 +770,7 @@
 		}
 
 		#main-header-search {
+			height: 36px;
 			width: 250px;
 			padding: 0;
 			margin: 0;

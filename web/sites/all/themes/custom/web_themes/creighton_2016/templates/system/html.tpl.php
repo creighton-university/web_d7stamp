@@ -118,15 +118,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
 <!-- Start Elastic Search JS -->
-<script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/2-internal-react-apps-chunk.js"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/2-internal-react-apps-chunk.js.LICENSE.txt"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/2-internal-react-apps-chunk.js.map"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/3-internal-react-apps-chunk.js"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/3-internal-react-apps-chunk.js.map"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/internal-react-apps.js"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/internal-react-apps.js.map"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/main-internal-react-apps-chunk.js"></script>
-  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-testing/static/js/main-internal-react-apps-chunk.js.map"></script>
+<script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/2-internal-react-apps-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/2-internal-react-apps-chunk.js.LICENSE.txt"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/2-internal-react-apps-chunk.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/3-internal-react-apps-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/3-internal-react-apps-chunk.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/internal-react-apps.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/internal-react-apps.js.map"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/main-internal-react-apps-chunk.js"></script>
+  <script type="text/javascript" src="https://cuwebteam.blob.core.windows.net/cuwebteam-internal-react-apps-production/static/js/main-internal-react-apps-chunk.js.map"></script>
   <!-- End Elastic Search JS -->
 </body>
 </html>
